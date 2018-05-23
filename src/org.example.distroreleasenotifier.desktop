@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=distroreleasenotifier
+Exec=distroreleasenotifier
+Icon=distroreleasenotifier
+Type=Application
+GenericName=A Simple KDE Application
