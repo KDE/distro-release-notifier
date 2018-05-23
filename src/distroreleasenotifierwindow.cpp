@@ -19,6 +19,12 @@
 */
 
 #include "distroreleasenotifierwindow.h"
+#include <KNotification>
+#include <QProcess>
+#include <QStandardPaths>
+#include <QDebug>
+#include <QTextCodec>
+#include <QTimer>
 
 distroreleasenotifierWindow::distroreleasenotifierWindow()
     : QMainWindow()
@@ -26,8 +32,49 @@ distroreleasenotifierWindow::distroreleasenotifierWindow()
     QWidget *widget = new QWidget(this);
     setCentralWidget(widget);
     m_ui.setupUi(widget);
+    //FIXME revert back to 5 * 60 * 1000 on merge
+    QTimer::singleShot(50, this, &distroreleasenotifierWindow::releaseUpgradeCheck);
 }
 
 distroreleasenotifierWindow::~distroreleasenotifierWindow()
 {
+}
+
+void distroreleasenotifierWindow::releaseUpgradeCheck()
+{
+    QString checkerFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("distro-release-notifier/releasechecker"));
+    if (checkerFile.isEmpty()) {
+        qWarning() << "Couldn't find the releasechecker" << checkerFile << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        return;
+    }
+    qDebug() << "XXX Running releasechecker";
+    m_checkerProcess = new QProcess(this);
+    connect(m_checkerProcess, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &distroreleasenotifierWindow::checkReleaseUpgradeFinished);
+    m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
+}
+
+void distroreleasenotifierWindow::checkReleaseUpgradeFinished(int exitStatus)
+{
+    qDebug() << "XXX PackageKitNotifier::checkUpgradeFinished(int exitStatus)";
+    if (exitStatus == 0) {
+        qDebug() << "XXX PackageKitNotifier::checkUpgradeFinished is 0!";
+        QByteArray checkerOutput = m_checkerProcess->readAllStandardOutput();
+        qDebug() << "XXX " << checkerOutput;
+        KNotification *notification = new KNotification(QLatin1String("notification"), KNotification::Persistent | KNotification::DefaultEvent);
+        notification->setIconName(QStringLiteral("system-software-update"));
+        notification->setActions(QStringList{QLatin1String("Upgrade")});
+        notification->setTitle(i18n("Upgrade available"));
+        notification->setText(i18n("New version: %1", QTextCodec::codecForMib(106)->toUnicode(checkerOutput)));
+        connect(notification, &KNotification::action1Activated, this, &distroreleasenotifierWindow::releaseUpgradeActivated);
+        notification->sendEvent();
+    }
+
+    m_checkerProcess->deleteLater();
+    m_checkerProcess = nullptr;
+}
+
+void distroreleasenotifierWindow::releaseUpgradeActivated()
+{
+    qDebug() << "XXX releaseUpgradeActivated()";
+    QProcess::startDetached(QStringLiteral("/usr/share/distro-release-notifier/do-release-upgrade"));
 }

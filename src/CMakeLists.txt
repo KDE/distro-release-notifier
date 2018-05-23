@@ -10,6 +10,7 @@ add_executable( distroreleasenotifier ${distroreleasenotifier_SRCS} )
 target_link_libraries( distroreleasenotifier
     KF5::CoreAddons
     KF5::I18n
+    KF5::Notifications
     Qt5::Widgets
 )
 

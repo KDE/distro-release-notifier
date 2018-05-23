@@ -25,6 +25,7 @@
 #include "ui_distroreleasenotifier.h"
 
 #include <QMainWindow>
+#include <QProcess>
 
 /**
  * This class serves as the main window for distroreleasenotifier.  It handles the
@@ -52,6 +53,11 @@ private:
     // this is the name of the root widget inside our Ui file
     // you can rename it in designer and then change it here
     Ui::mainWidget m_ui;
+    QProcess* m_checkerProcess;
+private Q_SLOTS:
+    void checkReleaseUpgradeFinished(int exitStatus);
+    void releaseUpgradeCheck();
+    void releaseUpgradeActivated();
 };
 
 #endif // DISTRORELEASENOTIFIERWINDOW_H
