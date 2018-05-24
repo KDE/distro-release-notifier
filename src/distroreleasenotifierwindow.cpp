@@ -19,7 +19,7 @@
 */
 
 #include "distroreleasenotifierwindow.h"
-#include <KNotification>
+
 #include <QProcess>
 #include <QStandardPaths>
 #include <QDebug>
@@ -29,12 +29,14 @@
 distroReleaseNotifier::distroReleaseNotifier()
     : QObject()
 {
+    m_notification = nullptr;
     //FIXME revert back to 5 * 60 * 1000 on merge
-    QTimer::singleShot(50, this, &distroReleaseNotifier::releaseUpgradeCheck);
+    QTimer::singleShot(1 * 1000, this, &distroReleaseNotifier::releaseUpgradeCheck);
     
     QTimer *regularCheck = new QTimer(this);
-    regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh at least once every day
+    regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh once every day
     connect(regularCheck, &QTimer::timeout, this, &distroReleaseNotifier::releaseUpgradeCheck);
+    regularCheck->start();
 }
 
 distroReleaseNotifier::~distroReleaseNotifier()
@@ -56,18 +58,24 @@ void distroReleaseNotifier::releaseUpgradeCheck()
 
 void distroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
 {
+    // close old notification first
+    if (m_notification != nullptr) {
+        m_notification->close();
+        m_notification->deleteLater();
+    }
+    m_notification = nullptr;
     qDebug() << "XXX PackageKitNotifier::checkUpgradeFinished(int exitStatus)";
     if (exitStatus == 0) {
         qDebug() << "XXX PackageKitNotifier::checkUpgradeFinished is 0!";
         QByteArray checkerOutput = m_checkerProcess->readAllStandardOutput();
         qDebug() << "XXX " << checkerOutput;
-        KNotification *notification = new KNotification(QLatin1String("notification"), KNotification::Persistent | KNotification::DefaultEvent);
-        notification->setIconName(QStringLiteral("system-software-update"));
-        notification->setActions(QStringList{QLatin1String("Upgrade")});
-        notification->setTitle(i18n("Upgrade available"));
-        notification->setText(i18n("New version: %1", QTextCodec::codecForMib(106)->toUnicode(checkerOutput)));
-        connect(notification, &KNotification::action1Activated, this, &distroReleaseNotifier::releaseUpgradeActivated);
-        notification->sendEvent();
+        m_notification = new KNotification(QLatin1String("notification"), KNotification::Persistent | KNotification::DefaultEvent);
+        m_notification->setIconName(QStringLiteral("system-software-update"));
+        m_notification->setActions(QStringList{QLatin1String("Upgrade")});
+        m_notification->setTitle(i18n("Upgrade available"));
+        m_notification->setText(i18n("New version: %1", QTextCodec::codecForMib(106)->toUnicode(checkerOutput)));
+        connect(m_notification, &KNotification::action1Activated, this, &distroReleaseNotifier::releaseUpgradeActivated);
+        m_notification->sendEvent();
     }
 
     m_checkerProcess->deleteLater();

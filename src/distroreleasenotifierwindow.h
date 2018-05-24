@@ -24,17 +24,10 @@
 
 #include "ui_distroreleasenotifier.h"
 
+#include <KNotification>
 #include <QMainWindow>
 #include <QProcess>
 
-/**
- * This class serves as the main window for distroreleasenotifier.  It handles the
- * menus, toolbars and status bars.
- *
- * @short Main window class
- * @author %{AUTHOR} <%{EMAIL}>
- * @version %{VERSION}
- */
 class distroReleaseNotifier : public QObject
 {
     Q_OBJECT
@@ -54,6 +47,7 @@ private:
     // you can rename it in designer and then change it here
     Ui::mainWidget m_ui;
     QProcess* m_checkerProcess;
+    KNotification *m_notification;
 private Q_SLOTS:
     void checkReleaseUpgradeFinished(int exitStatus);
     void releaseUpgradeCheck();
