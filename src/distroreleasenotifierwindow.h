@@ -35,7 +35,7 @@
  * @author %{AUTHOR} <%{EMAIL}>
  * @version %{VERSION}
  */
-class distroreleasenotifierWindow : public QMainWindow
+class distroreleasenotifierWindow : public QObject
 {
     Q_OBJECT
 public:

@@ -26,12 +26,12 @@
 #include <KLocalizedString>
 
 // Qt headers
-#include <QApplication>
+#include <QCoreApplication>
 #include <QCommandLineParser>
 
 int main(int argc, char **argv)
 {
-    QApplication application(argc, argv);
+    QCoreApplication application(argc, argv);
 
     KLocalizedString::setApplicationDomain("distroreleasenotifier");
 
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
                           i18n("Copyright 2018 Jonathan Riddell <jr@jriddell.org>"));
 
     KAboutData::setApplicationData(aboutData);
-    application.setWindowIcon(QIcon::fromTheme(QStringLiteral("distroreleasenotifier")));
+    //application.setWindowIcon(QIcon::fromTheme(QStringLiteral("distroreleasenotifier")));
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     aboutData.processCommandLine(&parser);
 
     distroreleasenotifierWindow *mainWindow = new distroreleasenotifierWindow;
-    mainWindow->show();
+    //mainWindow->show();
 
     return application.exec();
 }

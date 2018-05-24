@@ -27,17 +27,17 @@
 #include <QTimer>
 
 distroreleasenotifierWindow::distroreleasenotifierWindow()
-    : QMainWindow()
+    : QObject()
 {
-    QWidget *widget = new QWidget(this);
-    setCentralWidget(widget);
-    m_ui.setupUi(widget);
+    //QWidget *widget = new QWidget(this);
+    //setCentralWidget(widget);
+    //m_ui.setupUi(widget);
     //FIXME revert back to 5 * 60 * 1000 on merge
     QTimer::singleShot(50, this, &distroreleasenotifierWindow::releaseUpgradeCheck);
     
     QTimer *regularCheck = new QTimer(this);
     regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh at least once every day
-    connect(regularCheck, &QTimer::timeout, this, &distroreleasenotifierWindow::refreshDatabase);
+    connect(regularCheck, &QTimer::timeout, this, &distroreleasenotifierWindow::releaseUpgradeCheck);
 }
 
 distroreleasenotifierWindow::~distroreleasenotifierWindow()
