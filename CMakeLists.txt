@@ -24,7 +24,13 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 add_subdirectory(src)
-add_subdirectory(icons)
+
+install( FILES do-release-upgrade releasechecker DESTINATION ${DATA_INSTALL_DIR}/distro-release-notifier
+        PERMISSIONS
+        OWNER_EXECUTE OWNER_READ OWNER_WRITE
+        GROUP_EXECUTE GROUP_READ
+        WORLD_EXECUTE WORLD_READ
+    )
 
 # Make it possible to use the po files fetched by the fetch-translations step
 ki18n_install(po)

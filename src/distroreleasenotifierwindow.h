@@ -1,5 +1,5 @@
 /*
- Copyright (C) %{CURRENT_YEAR} by %{AUTHOR} <%{EMAIL}>
+ Copyright 2018 Jonathan Riddell <jr@jriddell.org>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as

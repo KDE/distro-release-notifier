@@ -1,5 +1,5 @@
 /*
- Copyright (C) %{CURRENT_YEAR} by %{AUTHOR} <%{EMAIL}>
+ Copyright 2018 Jonathan Riddell <jr@jriddell.org>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
@@ -34,6 +34,10 @@ distroreleasenotifierWindow::distroreleasenotifierWindow()
     m_ui.setupUi(widget);
     //FIXME revert back to 5 * 60 * 1000 on merge
     QTimer::singleShot(50, this, &distroreleasenotifierWindow::releaseUpgradeCheck);
+    
+    QTimer *regularCheck = new QTimer(this);
+    regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh at least once every day
+    connect(regularCheck, &QTimer::timeout, this, &distroreleasenotifierWindow::refreshDatabase);
 }
 
 distroreleasenotifierWindow::~distroreleasenotifierWindow()
@@ -76,5 +80,10 @@ void distroreleasenotifierWindow::checkReleaseUpgradeFinished(int exitStatus)
 void distroreleasenotifierWindow::releaseUpgradeActivated()
 {
     qDebug() << "XXX releaseUpgradeActivated()";
-    QProcess::startDetached(QStringLiteral("/usr/share/distro-release-notifier/do-release-upgrade"));
+    QString releaseUpgradeExe = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("distro-release-notifier/do-release-upgrade"));
+    if (releaseUpgradeExe.isEmpty()) {
+        qWarning() << "Couldn't find the do-release-upgrade script " << releaseUpgradeExe << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        return;
+    }
+    QProcess::startDetached(releaseUpgradeExe);
 }

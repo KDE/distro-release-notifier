@@ -5,15 +5,13 @@ set( distroreleasenotifier_SRCS
 
 ki18n_wrap_ui(distroreleasenotifier_SRCS distroreleasenotifier.ui)
 
-add_executable( distroreleasenotifier ${distroreleasenotifier_SRCS} )
+add_executable( distro-release-notifier ${distroreleasenotifier_SRCS} )
 
-target_link_libraries( distroreleasenotifier
+target_link_libraries( distro-release-notifier
     KF5::CoreAddons
     KF5::I18n
     KF5::Notifications
     Qt5::Widgets
 )
 
-install( TARGETS distroreleasenotifier ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
-install( PROGRAMS org.example.distroreleasenotifier.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
-install( FILES org.example.distroreleasenotifier.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR} )
+install( TARGETS distro-release-notifier ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )

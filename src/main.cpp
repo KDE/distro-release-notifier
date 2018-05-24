@@ -1,5 +1,5 @@
 /*
- Copyright (C) %{CURRENT_YEAR} by %{AUTHOR} <%{EMAIL}>
+ Copyright 2018 Jonathan Riddell <jr@jriddell.org>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
@@ -37,14 +37,10 @@ int main(int argc, char **argv)
 
     KAboutData aboutData( QStringLiteral("distroreleasenotifier"),
                           i18n("distroreleasenotifier"),
-                          QStringLiteral("%{VERSION}"),
-                          i18n("A Simple Application written with KDE Frameworks"),
+                          QStringLiteral("0.1"),
+                          i18n("Checks for new Ubuntu releases and notifies"),
                           KAboutLicense::GPL,
-                          i18n("Copyright %{CURRENT_YEAR}, %{AUTHOR} <%{EMAIL}>"));
-
-    aboutData.addAuthor(i18n("%{AUTHOR}"),i18n("Author"), QStringLiteral("%{EMAIL}"));
-    aboutData.setOrganizationDomain("example.org");
-    aboutData.setDesktopFileName(QStringLiteral("org.example.distroreleasenotifier"));
+                          i18n("Copyright 2018 Jonathan Riddell <jr@jriddell.org>"));
 
     KAboutData::setApplicationData(aboutData);
     application.setWindowIcon(QIcon::fromTheme(QStringLiteral("distroreleasenotifier")));
