@@ -33,17 +33,16 @@ int main(int argc, char **argv)
 {
     QCoreApplication application(argc, argv);
 
-    KLocalizedString::setApplicationDomain("distroreleasenotifier");
+    KLocalizedString::setApplicationDomain("distro-release-notifier");
 
-    KAboutData aboutData( QStringLiteral("distroreleasenotifier"),
-                          i18n("distroreleasenotifier"),
+    KAboutData aboutData( QStringLiteral("distro-release-notifier"),
+                          i18n("distro-release-notifier"),
                           QStringLiteral("0.1"),
                           i18n("Checks for new Ubuntu releases and notifies"),
                           KAboutLicense::GPL,
                           i18n("Copyright 2018 Jonathan Riddell <jr@jriddell.org>"));
 
     KAboutData::setApplicationData(aboutData);
-    //application.setWindowIcon(QIcon::fromTheme(QStringLiteral("distroreleasenotifier")));
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
@@ -51,8 +50,8 @@ int main(int argc, char **argv)
     parser.process(application);
     aboutData.processCommandLine(&parser);
 
-    distroreleasenotifierWindow *mainWindow = new distroreleasenotifierWindow;
-    //mainWindow->show();
+    distroReleaseNotifier *mainObject = new distroReleaseNotifier;
+    Q_UNUSED(mainObject);
 
     return application.exec();
 }

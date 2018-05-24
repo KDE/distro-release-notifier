@@ -18,8 +18,8 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DISTRORELEASENOTIFIERWINDOW_H
-#define DISTRORELEASENOTIFIERWINDOW_H
+#ifndef DISTRORELEASENOTIFIER_H
+#define DISTRORELEASENOTIFIER_H
 
 
 #include "ui_distroreleasenotifier.h"
@@ -35,19 +35,19 @@
  * @author %{AUTHOR} <%{EMAIL}>
  * @version %{VERSION}
  */
-class distroreleasenotifierWindow : public QObject
+class distroReleaseNotifier : public QObject
 {
     Q_OBJECT
 public:
     /**
      * Default Constructor
      */
-    distroreleasenotifierWindow();
+    distroReleaseNotifier();
 
     /**
      * Default Destructor
      */
-    ~distroreleasenotifierWindow() override;
+    ~distroReleaseNotifier() override;
 
 private:
     // this is the name of the root widget inside our Ui file
@@ -60,4 +60,4 @@ private Q_SLOTS:
     void releaseUpgradeActivated();
 };
 
-#endif // DISTRORELEASENOTIFIERWINDOW_H
+#endif // DISTRORELEASENOTIFIER_H

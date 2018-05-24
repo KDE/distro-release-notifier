@@ -26,25 +26,22 @@
 #include <QTextCodec>
 #include <QTimer>
 
-distroreleasenotifierWindow::distroreleasenotifierWindow()
+distroReleaseNotifier::distroReleaseNotifier()
     : QObject()
 {
-    //QWidget *widget = new QWidget(this);
-    //setCentralWidget(widget);
-    //m_ui.setupUi(widget);
     //FIXME revert back to 5 * 60 * 1000 on merge
-    QTimer::singleShot(50, this, &distroreleasenotifierWindow::releaseUpgradeCheck);
+    QTimer::singleShot(50, this, &distroReleaseNotifier::releaseUpgradeCheck);
     
     QTimer *regularCheck = new QTimer(this);
     regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh at least once every day
-    connect(regularCheck, &QTimer::timeout, this, &distroreleasenotifierWindow::releaseUpgradeCheck);
+    connect(regularCheck, &QTimer::timeout, this, &distroReleaseNotifier::releaseUpgradeCheck);
 }
 
-distroreleasenotifierWindow::~distroreleasenotifierWindow()
+distroReleaseNotifier::~distroReleaseNotifier()
 {
 }
 
-void distroreleasenotifierWindow::releaseUpgradeCheck()
+void distroReleaseNotifier::releaseUpgradeCheck()
 {
     QString checkerFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("distro-release-notifier/releasechecker"));
     if (checkerFile.isEmpty()) {
@@ -53,11 +50,11 @@ void distroreleasenotifierWindow::releaseUpgradeCheck()
     }
     qDebug() << "XXX Running releasechecker";
     m_checkerProcess = new QProcess(this);
-    connect(m_checkerProcess, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &distroreleasenotifierWindow::checkReleaseUpgradeFinished);
+    connect(m_checkerProcess, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &distroReleaseNotifier::checkReleaseUpgradeFinished);
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
 }
 
-void distroreleasenotifierWindow::checkReleaseUpgradeFinished(int exitStatus)
+void distroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
 {
     qDebug() << "XXX PackageKitNotifier::checkUpgradeFinished(int exitStatus)";
     if (exitStatus == 0) {
@@ -69,7 +66,7 @@ void distroreleasenotifierWindow::checkReleaseUpgradeFinished(int exitStatus)
         notification->setActions(QStringList{QLatin1String("Upgrade")});
         notification->setTitle(i18n("Upgrade available"));
         notification->setText(i18n("New version: %1", QTextCodec::codecForMib(106)->toUnicode(checkerOutput)));
-        connect(notification, &KNotification::action1Activated, this, &distroreleasenotifierWindow::releaseUpgradeActivated);
+        connect(notification, &KNotification::action1Activated, this, &distroReleaseNotifier::releaseUpgradeActivated);
         notification->sendEvent();
     }
 
@@ -77,7 +74,7 @@ void distroreleasenotifierWindow::checkReleaseUpgradeFinished(int exitStatus)
     m_checkerProcess = nullptr;
 }
 
-void distroreleasenotifierWindow::releaseUpgradeActivated()
+void distroReleaseNotifier::releaseUpgradeActivated()
 {
     qDebug() << "XXX releaseUpgradeActivated()";
     QString releaseUpgradeExe = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("distro-release-notifier/do-release-upgrade"));
