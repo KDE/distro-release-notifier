@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=distro-release-notifier
+Name=Distro Release Notifier
+OnlyShowIn=KDE;
+Type=Application
+X-KDE-StartupNotify=false
