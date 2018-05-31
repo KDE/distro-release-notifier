@@ -1,6 +1,18 @@
 [Desktop Entry]
 Name=distroreleasenotifier
+Name[ca]=distroreleasenotifier
+Name[ca@valencia]=distroreleasenotifier
+Name[pt]=distroreleasenotifier
+Name[sv]=distroreleasenotifier
+Name[uk]=distroreleasenotifier
+Name[x-test]=xxdistroreleasenotifierxx
 Exec=distroreleasenotifier
 Icon=distroreleasenotifier
 Type=Application
 GenericName=A Simple KDE Application
+GenericName[ca]=Una aplicació senzilla pel KDE
+GenericName[ca@valencia]=Una aplicació senzilla pel KDE
+GenericName[pt]=Uma Aplicação Simples para o KDE
+GenericName[sv]=Ett enkelt KDE-program
+GenericName[uk]=Проста програма для KDE
+GenericName[x-test]=xxA Simple KDE Applicationxx

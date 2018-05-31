@@ -1,6 +1,12 @@
 [Desktop Entry]
 Exec=distro-release-notifier
 Name=Distro Release Notifier
+Name[ca]=Notificador del llançament de la distribució
+Name[ca@valencia]=Notificador del llançament de la distribució
+Name[pt]=Notificação de Versões da Distribuição
+Name[sv]=Underrättelse om distributionsutgåva
+Name[uk]=Засіб сповіщення про випуски
+Name[x-test]=xxDistro Release Notifierxx
 OnlyShowIn=KDE;
 Type=Application
 X-KDE-StartupNotify=false
