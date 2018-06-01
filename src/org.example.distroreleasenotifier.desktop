@@ -2,6 +2,7 @@
 Name=distroreleasenotifier
 Name[ca]=distroreleasenotifier
 Name[ca@valencia]=distroreleasenotifier
+Name[nl]=distroreleasenotifier
 Name[pt]=distroreleasenotifier
 Name[sv]=distroreleasenotifier
 Name[uk]=distroreleasenotifier
@@ -12,6 +13,8 @@ Type=Application
 GenericName=A Simple KDE Application
 GenericName[ca]=Una aplicació senzilla pel KDE
 GenericName[ca@valencia]=Una aplicació senzilla pel KDE
+GenericName[fr]=Une application simple pour KDE
+GenericName[nl]=Een eenvoudige KDE toepassing
 GenericName[pt]=Uma Aplicação Simples para o KDE
 GenericName[sv]=Ett enkelt KDE-program
 GenericName[uk]=Проста програма для KDE
