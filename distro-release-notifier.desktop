@@ -3,6 +3,7 @@ Exec=distro-release-notifier
 Name=Distro Release Notifier
 Name[ca]=Notificador del llançament de la distribució
 Name[ca@valencia]=Notificador del llançament de la distribució
+Name[es]=Notificador de lanzamientos de la distribución
 Name[fr]=Notification de publication d'une nouvelle version de la distribution
 Name[id]=Pemberitahu Rilis Distro
 Name[it]=Notificatore del rilascio della distro
