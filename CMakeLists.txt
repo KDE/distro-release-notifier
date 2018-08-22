@@ -24,6 +24,10 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     KIO
 )
 
+# update flavor is derived from the installed metapackage(s) by pkg.split('-')[-1].captialize
+# it is therefore less accurate and good looking than /etc/os-release
+option(NAME_FROM_FLAVOR "Get distro name from update flavor [default is from /etc/os-release]" OFF)
+
 add_subdirectory(src)
 
 install(FILES distro-release-notifier.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})

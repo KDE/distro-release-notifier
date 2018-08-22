@@ -3,6 +3,7 @@
 # releasechecker.py
 #
 #  Copyright (c) 2010 Jonathan Thomas <echidnaman@kubuntu.org>
+#  Copyright (c) 2018 Harald Sitter <sitter@kde.org>
 #
 #  Author: Jonathan Thomas <echidnaman@kubuntu.org>
 #
@@ -22,7 +23,9 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys, time
+import json
+import sys
+import time
 sys.path.insert(0, '/usr/lib/python3/dist-packages/')
 
 from UpdateManager.Core.MetaRelease import MetaReleaseCore
@@ -40,8 +43,8 @@ if __name__ == "__main__":
     flavor = metaRelease.flavor_name
 
     if new_dist is not None:
-        print(flavor, new_dist.version)
+        print(json.dumps({'flavor': flavor,
+                          'new_dist_version': new_dist.version}))
         sys.exit(0)
     else:
         sys.exit(1)
-

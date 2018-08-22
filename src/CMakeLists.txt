@@ -1,6 +1,9 @@
+configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+
 set(distroreleasenotifier_SRCS
     main.cpp
     distroreleasenotifier.cpp
+    OSRelease.cpp
 )
 
 ecm_qt_declare_logging_category(distroreleasenotifier_SRCS

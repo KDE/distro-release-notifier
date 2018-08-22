@@ -1,5 +1,6 @@
 /*
  Copyright 2018 Jonathan Riddell <jr@jriddell.org>
+ Copyright 2018 Harald Sitter <sitter@kde.org>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
@@ -23,12 +24,14 @@
 #include <KNotification>
 #include <KLocalizedString>
 
+#include <QJsonDocument>
 #include <QProcess>
 #include <QStandardPaths>
-#include <QTextCodec>
 #include <QTimer>
 
+#include "config.h"
 #include "debug.h"
+#include "OSRelease.h"
 
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
@@ -60,6 +63,11 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     }
     qCDebug(NOTIFIER) << "Running releasechecker";
     m_checkerProcess = new QProcess(this);
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    // Force utf-8. In case the system has bogus encoding configured we'll still
+    // be able to properly decode.
+    env.insert("PYTHONIOENCODING", "utf-8");
+    m_checkerProcess->setProcessEnvironment(env);
     connect(m_checkerProcess, QOverload<int>::of(&QProcess::finished),
             this, &DistroReleaseNotifier::checkReleaseUpgradeFinished);
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
@@ -71,25 +79,39 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
     if (m_notification != nullptr) {
         m_notification->close();
         m_notification->deleteLater();
-    }
-    m_notification = nullptr;
-    if (exitStatus == 0) {
-        QByteArray checkerOutput = m_checkerProcess->readAllStandardOutput();
-        qCDebug(NOTIFIER) << checkerOutput;
-        m_notification = new KNotification(QLatin1String("notification"),
-                                           KNotification::Persistent | KNotification::DefaultEvent,
-                                           this);
-        m_notification->setIconName(QStringLiteral("system-software-update"));
-        m_notification->setActions(QStringList{QLatin1String("Upgrade")});
-        m_notification->setTitle(i18n("Upgrade available"));
-        m_notification->setText(i18n("New version: %1", QTextCodec::codecForMib(106)->toUnicode(checkerOutput)));
-        connect(m_notification, &KNotification::action1Activated,
-                this, &DistroReleaseNotifier::releaseUpgradeActivated);
-        m_notification->sendEvent();
+        m_notification = nullptr;
     }
 
+    auto process = m_checkerProcess;
     m_checkerProcess->deleteLater();
     m_checkerProcess = nullptr;
+
+    if (exitStatus != 0) {
+        return;
+    }
+
+    const QByteArray checkerOutput = process->readAllStandardOutput();
+    qCDebug(NOTIFIER) << checkerOutput;
+    auto document = QJsonDocument::fromJson(checkerOutput);
+    Q_ASSERT(document.isObject());
+    auto map = document.toVariant().toMap();
+    auto flavor = map.value(QStringLiteral("flavor")).toString();
+    auto newDist = map.value(QStringLiteral("new_dist_version")).toString();
+
+    auto name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
+    const QString label = QString("%1 %2").arg(name, newDist);
+
+    m_notification = new KNotification(QLatin1String("notification"),
+                                       KNotification::Persistent | KNotification::DefaultEvent,
+                                       this);
+    m_notification->setIconName(QStringLiteral("system-software-update"));
+    m_notification->setActions(QStringList{QLatin1String("Upgrade")});
+    m_notification->setTitle(i18n("Upgrade available"));
+    m_notification->setText(i18n("New version: %1", label));
+    connect(m_notification, &KNotification::action1Activated,
+            this, &DistroReleaseNotifier::releaseUpgradeActivated);
+    m_notification->sendEvent();
+
 }
 
 void DistroReleaseNotifier::releaseUpgradeActivated()

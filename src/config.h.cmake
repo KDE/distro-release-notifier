@@ -1,0 +1,1 @@
+#cmakedefine01 NAME_FROM_FLAVOR
