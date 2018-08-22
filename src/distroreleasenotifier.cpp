@@ -116,12 +116,17 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
 
 void DistroReleaseNotifier::releaseUpgradeActivated()
 {
-    bool ret = QProcess::startDetached(
-                QStringLiteral("do-release-upgrade"),
-                QStringList { QStringLiteral("-m"), QStringLiteral("desktop"),
-                              QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE") }
-                );
-    if (!ret) {
-        qCWarning(NOTIFIER) << "Couldn't start do-release-upgrade";
-    }
+    // pkexec is being difficult. It will refuse to auth a startDetached service
+    // because it won't have a parent and parentless commands are not allowed
+    // to auth.
+    // Instead hold on to the process.
+    // For future reference: another approach is to sh -c and hold
+    // do-release-upgrade as a fork of that sh.
+    auto process = new QProcess(this);
+    process->setProcessChannelMode(QProcess::ForwardedChannels);
+    connect(process, QOverload<int>::of(&QProcess::finished),
+            this, [process](){ process->deleteLater(); });
+    process->start(QStringLiteral("do-release-upgrade"),
+                   QStringList { QStringLiteral("-m"), QStringLiteral("desktop"),
+                                 QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE") });
 }
