@@ -19,7 +19,7 @@
 */
 
 // application header
-#include "distroreleasenotifierwindow.h"
+#include "distroreleasenotifier.h"
 
 // KF headers
 #include <KAboutData>

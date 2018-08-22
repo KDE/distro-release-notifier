@@ -1,6 +1,6 @@
 set(distroreleasenotifier_SRCS
     main.cpp
-    distroreleasenotifierwindow.cpp
+    distroreleasenotifier.cpp
 )
 
 ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
