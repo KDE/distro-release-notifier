@@ -40,16 +40,17 @@ public:
      */
     ~DistroReleaseNotifier() override;
 
+private Q_SLOTS:
+    void checkReleaseUpgradeFinished(int exitStatus);
+    void releaseUpgradeCheck();
+    void releaseUpgradeActivated();
+
 private:
     // this is the name of the root widget inside our Ui file
     // you can rename it in designer and then change it here
     Ui::mainWidget m_ui;
     QProcess* m_checkerProcess;
     KNotification *m_notification;
-private Q_SLOTS:
-    void checkReleaseUpgradeFinished(int exitStatus);
-    void releaseUpgradeCheck();
-    void releaseUpgradeActivated();
 };
 
 #endif // DISTRORELEASENOTIFIER_H
