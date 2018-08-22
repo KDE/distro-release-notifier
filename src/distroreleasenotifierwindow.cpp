@@ -28,8 +28,8 @@
 
 distroReleaseNotifier::distroReleaseNotifier()
     : QObject()
+    , m_notification(nullptr)
 {
-    m_notification = nullptr;
     // check after 10 seconds
     QTimer::singleShot(10 * 1000, this, &distroReleaseNotifier::releaseUpgradeCheck);
 
