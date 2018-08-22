@@ -46,7 +46,7 @@ private Q_SLOTS:
     void releaseUpgradeActivated();
 
 private:
-    QProcess* m_checkerProcess;
+    QProcess *m_checkerProcess;
     KNotification *m_notification;
 };
 
