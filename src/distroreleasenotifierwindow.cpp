@@ -28,8 +28,8 @@
 #include <QTextCodec>
 #include <QTimer>
 
-distroReleaseNotifier::distroReleaseNotifier()
-    : QObject()
+distroReleaseNotifier::distroReleaseNotifier(QObject *parent)
+    : QObject(parent)
     , m_notification(nullptr)
 {
     // check after 10 seconds

@@ -33,7 +33,7 @@ public:
     /**
      * Default Constructor
      */
-    distroReleaseNotifier();
+    distroReleaseNotifier(QObject *parent = nullptr);
 
     /**
      * Default Destructor
