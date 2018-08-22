@@ -47,7 +47,9 @@ DistroReleaseNotifier::~DistroReleaseNotifier()
 
 void DistroReleaseNotifier::releaseUpgradeCheck()
 {
-    QString checkerFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("distro-release-notifier/releasechecker"));
+    const QString checkerFile =
+            QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                   QStringLiteral("distro-release-notifier/releasechecker"));
     if (checkerFile.isEmpty()) {
         qWarning() << "Couldn't find the releasechecker" << checkerFile << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
         return;
@@ -84,7 +86,9 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
 
 void DistroReleaseNotifier::releaseUpgradeActivated()
 {
-    QString releaseUpgradeExe = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("distro-release-notifier/do-release-upgrade"));
+    const QString releaseUpgradeExe =
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                               QStringLiteral("distro-release-notifier/do-release-upgrade"));
     if (releaseUpgradeExe.isEmpty()) {
         qWarning() << "Couldn't find the do-release-upgrade script " << releaseUpgradeExe << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
         return;
