@@ -1,2 +1,0 @@
-#!/bin/sh
-do-release-upgrade -m desktop -f DistUpgradeViewKDE

@@ -94,14 +94,12 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
 
 void DistroReleaseNotifier::releaseUpgradeActivated()
 {
-    const QString releaseUpgradeExe =
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                               QStringLiteral("distro-release-notifier/do-release-upgrade"));
-    if (releaseUpgradeExe.isEmpty()) {
-        qCWarning(NOTIFIER) << "Couldn't find the do-release-upgrade script "
-                            << releaseUpgradeExe
-                            << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-        return;
+    bool ret = QProcess::startDetached(
+                QStringLiteral("do-release-upgrade"),
+                QStringList { QStringLiteral("-m"), QStringLiteral("desktop"),
+                              QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE") }
+                );
+    if (!ret) {
+        qCWarning(NOTIFIER) << "Couldn't start do-release-upgrade";
     }
-    QProcess::startDetached(releaseUpgradeExe);
 }
