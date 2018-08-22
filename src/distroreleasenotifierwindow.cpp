@@ -59,7 +59,8 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     }
     qCDebug(NOTIFIER) << "Running releasechecker";
     m_checkerProcess = new QProcess(this);
-    connect(m_checkerProcess, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &DistroReleaseNotifier::checkReleaseUpgradeFinished);
+    connect(m_checkerProcess, QOverload<int>::of(&QProcess::finished),
+            this, &DistroReleaseNotifier::checkReleaseUpgradeFinished);
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
 }
 
@@ -79,7 +80,8 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
         m_notification->setActions(QStringList{QLatin1String("Upgrade")});
         m_notification->setTitle(i18n("Upgrade available"));
         m_notification->setText(i18n("New version: %1", QTextCodec::codecForMib(106)->toUnicode(checkerOutput)));
-        connect(m_notification, &KNotification::action1Activated, this, &DistroReleaseNotifier::releaseUpgradeActivated);
+        connect(m_notification, &KNotification::action1Activated,
+                this, &DistroReleaseNotifier::releaseUpgradeActivated);
         m_notification->sendEvent();
     }
 
