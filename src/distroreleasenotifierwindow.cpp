@@ -24,9 +24,10 @@
 
 #include <QProcess>
 #include <QStandardPaths>
-#include <QDebug>
 #include <QTextCodec>
 #include <QTimer>
+
+#include "debug.h"
 
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
@@ -51,10 +52,12 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
             QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                    QStringLiteral("distro-release-notifier/releasechecker"));
     if (checkerFile.isEmpty()) {
-        qWarning() << "Couldn't find the releasechecker" << checkerFile << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        qCWarning(NOTIFIER) << "Couldn't find the releasechecker"
+                            << checkerFile
+                            << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
         return;
     }
-    qDebug() << "Running releasechecker";
+    qCDebug(NOTIFIER) << "Running releasechecker";
     m_checkerProcess = new QProcess(this);
     connect(m_checkerProcess, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &DistroReleaseNotifier::checkReleaseUpgradeFinished);
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
@@ -70,7 +73,7 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
     m_notification = nullptr;
     if (exitStatus == 0) {
         QByteArray checkerOutput = m_checkerProcess->readAllStandardOutput();
-        qDebug() << checkerOutput;
+        qCDebug(NOTIFIER) << checkerOutput;
         m_notification = new KNotification(QLatin1String("notification"), KNotification::Persistent | KNotification::DefaultEvent);
         m_notification->setIconName(QStringLiteral("system-software-update"));
         m_notification->setActions(QStringList{QLatin1String("Upgrade")});
@@ -90,7 +93,9 @@ void DistroReleaseNotifier::releaseUpgradeActivated()
         QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                QStringLiteral("distro-release-notifier/do-release-upgrade"));
     if (releaseUpgradeExe.isEmpty()) {
-        qWarning() << "Couldn't find the do-release-upgrade script " << releaseUpgradeExe << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        qCWarning(NOTIFIER) << "Couldn't find the do-release-upgrade script "
+                            << releaseUpgradeExe
+                            << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
         return;
     }
     QProcess::startDetached(releaseUpgradeExe);

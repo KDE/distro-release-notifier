@@ -3,6 +3,11 @@ set(distroreleasenotifier_SRCS
     distroreleasenotifierwindow.cpp
 )
 
+ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
+    HEADER debug.h
+    IDENTIFIER NOTIFIER
+    CATEGORY_NAME org.kde.distro-release-notifier)
+
 ki18n_wrap_ui(distroreleasenotifier_SRCS distroreleasenotifier.ui)
 
 add_executable(distro-release-notifier ${distroreleasenotifier_SRCS})
