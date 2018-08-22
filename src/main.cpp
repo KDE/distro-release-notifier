@@ -50,8 +50,6 @@ int main(int argc, char **argv)
     parser.process(application);
     aboutData.processCommandLine(&parser);
 
-    DistroReleaseNotifier *mainObject = new DistroReleaseNotifier;
-    Q_UNUSED(mainObject);
-
+    DistroReleaseNotifier mainObject;
     return application.exec();
 }
