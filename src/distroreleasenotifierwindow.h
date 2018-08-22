@@ -21,7 +21,7 @@
 #ifndef DISTRORELEASENOTIFIER_H
 #define DISTRORELEASENOTIFIER_H
 
-#include "ui_distroreleasenotifier.h"
+#include <QObject>
 
 class KNotification;
 class QProcess;
@@ -46,9 +46,6 @@ private Q_SLOTS:
     void releaseUpgradeActivated();
 
 private:
-    // this is the name of the root widget inside our Ui file
-    // you can rename it in designer and then change it here
-    Ui::mainWidget m_ui;
     QProcess* m_checkerProcess;
     KNotification *m_notification;
 };

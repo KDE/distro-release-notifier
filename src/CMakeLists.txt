@@ -8,8 +8,6 @@ ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
     IDENTIFIER NOTIFIER
     CATEGORY_NAME org.kde.distro-release-notifier)
 
-ki18n_wrap_ui(distroreleasenotifier_SRCS distroreleasenotifier.ui)
-
 add_executable(distro-release-notifier ${distroreleasenotifier_SRCS})
 
 target_link_libraries(distro-release-notifier

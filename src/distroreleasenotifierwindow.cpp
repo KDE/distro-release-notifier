@@ -21,6 +21,7 @@
 #include "distroreleasenotifierwindow.h"
 
 #include <KNotification>
+#include <KLocalizedString>
 
 #include <QProcess>
 #include <QStandardPaths>
