@@ -26,19 +26,19 @@
 class KNotification;
 class QProcess;
 
-class distroReleaseNotifier : public QObject
+class DistroReleaseNotifier : public QObject
 {
     Q_OBJECT
 public:
     /**
      * Default Constructor
      */
-    distroReleaseNotifier(QObject *parent = nullptr);
+    DistroReleaseNotifier(QObject *parent = nullptr);
 
     /**
      * Default Destructor
      */
-    ~distroReleaseNotifier() override;
+    ~DistroReleaseNotifier() override;
 
 private:
     // this is the name of the root widget inside our Ui file
