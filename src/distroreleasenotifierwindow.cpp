@@ -20,6 +20,8 @@
 
 #include "distroreleasenotifierwindow.h"
 
+#include <KNotification>
+
 #include <QProcess>
 #include <QStandardPaths>
 #include <QDebug>

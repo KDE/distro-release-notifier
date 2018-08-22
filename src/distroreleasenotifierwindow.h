@@ -21,12 +21,10 @@
 #ifndef DISTRORELEASENOTIFIER_H
 #define DISTRORELEASENOTIFIER_H
 
-
 #include "ui_distroreleasenotifier.h"
 
-#include <KNotification>
-#include <QMainWindow>
-#include <QProcess>
+class KNotification;
+class QProcess;
 
 class distroReleaseNotifier : public QObject
 {
