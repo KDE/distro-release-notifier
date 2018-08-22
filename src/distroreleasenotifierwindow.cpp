@@ -75,7 +75,9 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
     if (exitStatus == 0) {
         QByteArray checkerOutput = m_checkerProcess->readAllStandardOutput();
         qCDebug(NOTIFIER) << checkerOutput;
-        m_notification = new KNotification(QLatin1String("notification"), KNotification::Persistent | KNotification::DefaultEvent);
+        m_notification = new KNotification(QLatin1String("notification"),
+                                           KNotification::Persistent | KNotification::DefaultEvent,
+                                           this);
         m_notification->setIconName(QStringLiteral("system-software-update"));
         m_notification->setActions(QStringList{QLatin1String("Upgrade")});
         m_notification->setTitle(i18n("Upgrade available"));
