@@ -1,21 +1,6 @@
 [Desktop Entry]
 Exec=distro-release-notifier
 Name=Distribution Release Notifier
-Name[ca]=Notificador del llançament de la distribució
-Name[ca@valencia]=Notificador del llançament de la distribució
-Name[es]=Notificador de lanzamientos de la distribución
-Name[fr]=Notification de publication d'une nouvelle version de la distribution
-Name[id]=Pemberitahu Rilis Distro
-Name[it]=Notificatore del rilascio della distro
-Name[nl]=Distro Release Notifier
-Name[nn]=Utgåvevarslar for distro
-Name[pl]=Powiadomienia o wydaniach dystrybucji
-Name[pt]=Notificação de Versões da Distribuição
-Name[pt_BR]=Notificador de lançamento de distribuição
-Name[sk]=Pripomienkovač aktualizácie distribúcie
-Name[sv]=Underrättelse om distributionsutgåva
-Name[uk]=Засіб сповіщення про випуски
-Name[x-test]=xxDistro Release Notifierxx
 OnlyShowIn=KDE;
 Type=Application
 X-KDE-StartupNotify=false
