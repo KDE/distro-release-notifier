@@ -122,11 +122,11 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     // This replaces a potentially pre-existing notification. Notifications
     // are auto-delted, so we need to do no house keeping here. This will
     // automatically replace the previous notification.
-    auto notification = new KNotification(QLatin1String("notification"),
+    auto notification = new KNotification(QLatin1Literal("notification"),
                                           KNotification::Persistent | KNotification::DefaultEvent,
                                           this);
     notification->setIconName(QStringLiteral("system-software-update"));
-    notification->setActions(QStringList{QLatin1String("Upgrade")});
+    notification->setActions(QStringList{QLatin1Literal("Upgrade")});
     notification->setTitle(i18n("Upgrade available"));
     notification->setText(i18n("New version: %1", label));
     connect(notification, &KNotification::action1Activated,
