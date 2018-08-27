@@ -47,7 +47,11 @@ if __name__ == "__main__":
     new_dist = metaRelease.new_dist
     flavor = metaRelease.flavor_name
 
-    if new_dist is not None:
+    if 'MOCK_RELEASE' in os.environ:
+        print(json.dumps({'flavor': 'MockFlavor',
+                          'new_dist_version': '42'}))
+        sys.exit(0)
+    elif new_dist is not None:
         print(json.dumps({'flavor': flavor,
                           'new_dist_version': new_dist.version}))
         sys.exit(0)
