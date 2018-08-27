@@ -97,7 +97,10 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     m_checkerProcess->deleteLater();
     m_checkerProcess = nullptr;
 
-    if (exitCode != 0) {
+    const QByteArray checkerOutput = process->readAllStandardOutput();
+
+    // Make sure clearly invalid output doesn't get run through qjson at all.
+    if (exitCode != 0 || checkerOutput.isEmpty()) {
         if (exitCode != 32) { // 32 is special exit on no new release
             qCWarning(NOTIFIER()) << "Failed to run releasechecker";
         } else {
@@ -106,7 +109,6 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
         return;
     }
 
-    const QByteArray checkerOutput = process->readAllStandardOutput();
     qCDebug(NOTIFIER) << checkerOutput;
     auto document = QJsonDocument::fromJson(checkerOutput);
     Q_ASSERT(document.isObject());
