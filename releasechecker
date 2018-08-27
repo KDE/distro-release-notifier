@@ -47,4 +47,4 @@ if __name__ == "__main__":
                           'new_dist_version': new_dist.version}))
         sys.exit(0)
     else:
-        sys.exit(1)
+        sys.exit(32)

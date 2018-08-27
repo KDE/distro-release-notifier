@@ -88,6 +88,11 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
     m_checkerProcess = nullptr;
 
     if (exitStatus != 0) {
+        if (exitStatus != 32) { // 32 is special exit on no new release
+            qCWarning(NOTIFIER()) << "Failed to run releasechecker";
+        } else {
+            qCDebug(NOTIFIER()) << "No new release found";
+        }
         return;
     }
 
