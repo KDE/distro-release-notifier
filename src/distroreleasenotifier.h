@@ -41,7 +41,7 @@ public:
     ~DistroReleaseNotifier() override;
 
 private Q_SLOTS:
-    void checkReleaseUpgradeFinished(int exitStatus);
+    void checkReleaseUpgradeFinished(int exitCode);
     void releaseUpgradeCheck();
     void releaseUpgradeActivated();
 

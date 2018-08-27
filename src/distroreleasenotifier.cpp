@@ -83,14 +83,14 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
 }
 
-void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
+void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
 {
     auto process = m_checkerProcess;
     m_checkerProcess->deleteLater();
     m_checkerProcess = nullptr;
 
-    if (exitStatus != 0) {
-        if (exitStatus != 32) { // 32 is special exit on no new release
+    if (exitCode != 0) {
+        if (exitCode != 32) { // 32 is special exit on no new release
             qCWarning(NOTIFIER()) << "Failed to run releasechecker";
         } else {
             qCDebug(NOTIFIER()) << "No new release found";
