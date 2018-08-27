@@ -67,7 +67,15 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
                             << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
         return;
     }
+
+    if (m_checkerProcess) {
+        // Guard against multiple polls from dbus
+        qCDebug(NOTIFIER) << "Check still running";
+        return;
+    }
+
     qCDebug(NOTIFIER) << "Running releasechecker";
+
     m_checkerProcess = new QProcess(this);
     m_checkerProcess->setProcessChannelMode(QProcess::ForwardedErrorChannel);
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
