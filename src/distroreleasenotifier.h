@@ -24,7 +24,6 @@
 #include <QObject>
 
 class DBusInterface;
-class KNotification;
 class QProcess;
 
 class DistroReleaseNotifier : public QObject
@@ -49,7 +48,6 @@ private Q_SLOTS:
 private:
     DBusInterface *m_dbus;
     QProcess *m_checkerProcess;
-    KNotification *m_notification;
 };
 
 #endif // DISTRORELEASENOTIFIER_H

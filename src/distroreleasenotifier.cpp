@@ -37,7 +37,6 @@
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
     , m_dbus(new DBusInterface(this))
-    , m_notification(nullptr)
 {
     // check after 10 seconds
     QTimer::singleShot(10 * 1000, this, &DistroReleaseNotifier::releaseUpgradeCheck);
@@ -86,13 +85,6 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
 
 void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
 {
-    // close old notification first
-    if (m_notification != nullptr) {
-        m_notification->close();
-        m_notification->deleteLater();
-        m_notification = nullptr;
-    }
-
     auto process = m_checkerProcess;
     m_checkerProcess->deleteLater();
     m_checkerProcess = nullptr;
@@ -117,17 +109,19 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitStatus)
     auto name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
     const QString label = QString("%1 %2").arg(name, newDist);
 
-    m_notification = new KNotification(QLatin1String("notification"),
-                                       KNotification::Persistent | KNotification::DefaultEvent,
-                                       this);
-    m_notification->setIconName(QStringLiteral("system-software-update"));
-    m_notification->setActions(QStringList{QLatin1String("Upgrade")});
-    m_notification->setTitle(i18n("Upgrade available"));
-    m_notification->setText(i18n("New version: %1", label));
-    connect(m_notification, &KNotification::action1Activated,
+    // This replaces a potentially pre-existing notification. Notifications
+    // are auto-delted, so we need to do no house keeping here. This will
+    // automatically replace the previous notification.
+    auto notification = new KNotification(QLatin1String("notification"),
+                                          KNotification::Persistent | KNotification::DefaultEvent,
+                                          this);
+    notification->setIconName(QStringLiteral("system-software-update"));
+    notification->setActions(QStringList{QLatin1String("Upgrade")});
+    notification->setTitle(i18n("Upgrade available"));
+    notification->setText(i18n("New version: %1", label));
+    connect(notification, &KNotification::action1Activated,
             this, &DistroReleaseNotifier::releaseUpgradeActivated);
-    m_notification->sendEvent();
-
+    notification->sendEvent();
 }
 
 void DistroReleaseNotifier::releaseUpgradeActivated()
