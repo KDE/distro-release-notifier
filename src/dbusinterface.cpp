@@ -29,8 +29,10 @@ DBusInterface::DBusInterface(QObject *parent)
 {
     new DistroReleaseNotifierAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    Q_ASSERT(dbus.registerObject("/", this));
-    Q_ASSERT(dbus.registerService("org.kde.DistroReleaseNotifier"));
+    bool ret = dbus.registerObject("/", this);
+    Q_ASSERT_X(ret, Q_FUNC_INFO, "Failed to register / on org.kde.DistroReleaseNotifier");
+    ret = dbus.registerService("org.kde.DistroReleaseNotifier");
+    Q_ASSERT_X(ret, Q_FUNC_INFO, "Failed to register org.kde.DistroReleaseNotifier");
 }
 
 DBusInterface::~DBusInterface()
