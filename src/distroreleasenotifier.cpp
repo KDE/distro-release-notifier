@@ -63,6 +63,7 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     }
     qCDebug(NOTIFIER) << "Running releasechecker";
     m_checkerProcess = new QProcess(this);
+    m_checkerProcess->setProcessChannelMode(QProcess::ForwardedErrorChannel);
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     // Force utf-8. In case the system has bogus encoding configured we'll still
     // be able to properly decode.
