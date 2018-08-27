@@ -30,11 +30,13 @@
 #include <QTimer>
 
 #include "config.h"
+#include "dbusinterface.h"
 #include "debug.h"
 #include "OSRelease.h"
 
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
+    , m_dbus(new DBusInterface(this))
     , m_notification(nullptr)
 {
     // check after 10 seconds
@@ -44,6 +46,11 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh once every day
     connect(regularCheck, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
     regularCheck->start();
+
+    connect(m_dbus, &DBusInterface::useDevelChanged,
+            this, &DistroReleaseNotifier::releaseUpgradeCheck);
+    connect(m_dbus, &DBusInterface::pollingRequested,
+            this, &DistroReleaseNotifier::releaseUpgradeCheck);
 }
 
 DistroReleaseNotifier::~DistroReleaseNotifier()
@@ -68,6 +75,9 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     // Force utf-8. In case the system has bogus encoding configured we'll still
     // be able to properly decode.
     env.insert("PYTHONIOENCODING", "utf-8");
+    if (m_dbus->useDevel()) {
+        env.insert("USE_DEVEL", "1");
+    }
     m_checkerProcess->setProcessEnvironment(env);
     connect(m_checkerProcess, QOverload<int>::of(&QProcess::finished),
             this, &DistroReleaseNotifier::checkReleaseUpgradeFinished);
@@ -132,7 +142,12 @@ void DistroReleaseNotifier::releaseUpgradeActivated()
     process->setProcessChannelMode(QProcess::ForwardedChannels);
     connect(process, QOverload<int>::of(&QProcess::finished),
             this, [process](){ process->deleteLater(); });
-    process->start(QStringLiteral("do-release-upgrade"),
-                   QStringList { QStringLiteral("-m"), QStringLiteral("desktop"),
-                                 QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE") });
+    auto args = QStringList({
+                                QStringLiteral("-m"), QStringLiteral("desktop"),
+                                QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE")
+                            });
+    if (m_dbus->useDevel()) {
+        args << "--devel-release";
+    }
+    process->start(QStringLiteral("do-release-upgrade"), args);
 }

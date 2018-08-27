@@ -24,6 +24,7 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import json
+import os
 import sys
 import time
 sys.path.insert(0, '/usr/lib/python3/dist-packages/')
@@ -35,8 +36,12 @@ if __name__ == "__main__":
     """ check for updates, if there are any say so """
 
     init_proxy()
+
+    useDevel = 'USE_DEVEL' in os.environ
+
     #FIXME: implement command line options for MetaReleaseCore args
-    metaRelease = MetaReleaseCore(False, False)
+    metaRelease = MetaReleaseCore(useDevelopmentRelease=useDevel,
+                                  useProposed=False)
     while metaRelease.downloading:
         time.sleep(0.5)
     new_dist = metaRelease.new_dist

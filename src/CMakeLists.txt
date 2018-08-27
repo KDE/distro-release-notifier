@@ -2,6 +2,7 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 set(distroreleasenotifier_SRCS
     main.cpp
+    dbusinterface.cpp
     distroreleasenotifier.cpp
     OSRelease.cpp
 )
@@ -10,6 +11,13 @@ ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
     HEADER debug.h
     IDENTIFIER NOTIFIER
     CATEGORY_NAME org.kde.distro-release-notifier)
+
+qt5_generate_dbus_interface(
+    dbusinterface.h
+    ${CMAKE_CURRENT_BINARY_DIR}/org.kde.DistroReleaseNotifier.xml
+    OPTIONS -a
+)
+qt5_add_dbus_adaptor(distroreleasenotifier_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.DistroReleaseNotifier.xml dbusinterface.h DBusInterface)
 
 add_executable(distro-release-notifier ${distroreleasenotifier_SRCS})
 

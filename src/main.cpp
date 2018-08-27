@@ -50,6 +50,9 @@ int main(int argc, char **argv)
     parser.process(application);
     aboutData.processCommandLine(&parser);
 
+    // NB: we are not using kdbusservice because it's largely useless.
+    // This service is only ever started via autostart and if not asserting
+    // that registering the service is good enough for our purposes.
     DistroReleaseNotifier mainObject;
     return application.exec();
 }

@@ -1,5 +1,5 @@
 /*
- Copyright 2018 Jonathan Riddell <jr@jriddell.org>
+ Copyright 2018 Harald Sitter <sitter@kde.org>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
@@ -18,38 +18,32 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DISTRORELEASENOTIFIER_H
-#define DISTRORELEASENOTIFIER_H
+#ifndef DBUSINTERFACE_H
+#define DBUSINTERFACE_H
 
 #include <QObject>
 
-class DBusInterface;
-class KNotification;
-class QProcess;
-
-class DistroReleaseNotifier : public QObject
+class DBusInterface : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.DistroReleaseNotifier")
+    Q_PROPERTY(bool UseDevel READ useDevel WRITE setUseDevel NOTIFY useDevelChanged)
 public:
-    /**
-     * Default Constructor
-     */
-    DistroReleaseNotifier(QObject *parent = nullptr);
+    DBusInterface(QObject *parent = nullptr);
+    ~DBusInterface();
 
-    /**
-     * Default Destructor
-     */
-    ~DistroReleaseNotifier() override;
+    bool useDevel() const;
+    void setUseDevel(bool use);
 
-private Q_SLOTS:
-    void checkReleaseUpgradeFinished(int exitStatus);
-    void releaseUpgradeCheck();
-    void releaseUpgradeActivated();
+    Q_SCRIPTABLE void Poll();
+
+signals:
+    void useDevelChanged();
+    // Emitted when Poll is called to notify of the reuqest
+    void pollingRequested();
 
 private:
-    DBusInterface *m_dbus;
-    QProcess *m_checkerProcess;
-    KNotification *m_notification;
+    bool m_useDevel;
 };
 
-#endif // DISTRORELEASENOTIFIER_H
+#endif // DBUSINTERFACE_H
