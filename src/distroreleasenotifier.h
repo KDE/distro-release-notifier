@@ -44,10 +44,18 @@ private Q_SLOTS:
     void checkReleaseUpgradeFinished(int exitCode);
     void releaseUpgradeCheck();
     void releaseUpgradeActivated();
+    void forceCheck();
 
 private:
     DBusInterface *m_dbus;
     QProcess *m_checkerProcess;
+
+    // This acts as a safe guard. We listen to network device connections
+    // to check on network connections. This can get super annoying for users
+    // if we do in fact act on this a lot of times. So, instead this var
+    // tracks if we ever had a successful check and if so prevents any further
+    // checks from even running.
+    bool m_hasChecked;
 };
 
 #endif // DISTRORELEASENOTIFIER_H

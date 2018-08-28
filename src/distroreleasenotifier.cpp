@@ -38,6 +38,7 @@
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
     , m_dbus(new DBusInterface(this))
+    , m_hasChecked(false)
 {
     // check after 10 seconds
     auto networkTimer = new QTimer(this);
@@ -47,8 +48,9 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     networkTimer->start();
 
     auto dailyTimer = new QTimer(this);
-    dailyTimer->setInterval(24 * 60 * 60 * 1000); //refresh once every day
-    connect(dailyTimer, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
+    dailyTimer->setInterval(24 * 60 * 60 * 1000); // refresh once every day
+    connect(dailyTimer, &QTimer::timeout,
+            this, &DistroReleaseNotifier::forceCheck);
     dailyTimer->start();
 
     auto networkNotifier = NetworkManager::notifier();
@@ -63,9 +65,9 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     });
 
     connect(m_dbus, &DBusInterface::useDevelChanged,
-            this, &DistroReleaseNotifier::releaseUpgradeCheck);
+            this, &DistroReleaseNotifier::forceCheck);
     connect(m_dbus, &DBusInterface::pollingRequested,
-            this, &DistroReleaseNotifier::releaseUpgradeCheck);
+            this, &DistroReleaseNotifier::forceCheck);
 }
 
 DistroReleaseNotifier::~DistroReleaseNotifier()
@@ -74,6 +76,13 @@ DistroReleaseNotifier::~DistroReleaseNotifier()
 
 void DistroReleaseNotifier::releaseUpgradeCheck()
 {
+    if (m_hasChecked) {
+        // Don't check again if we had a successful check again. We don't wanna
+        // be spamming the user with the notification. This is reset eventually
+        // by a timer to remind the user.
+        return;
+    }
+
     const QString checkerFile =
             QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                    QStringLiteral("distro-release-notifier/releasechecker"));
@@ -109,6 +118,8 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
 
 void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
 {
+    m_hasChecked = true;
+
     auto process = m_checkerProcess;
     m_checkerProcess->deleteLater();
     m_checkerProcess = nullptr;
@@ -170,4 +181,10 @@ void DistroReleaseNotifier::releaseUpgradeActivated()
         args << "--devel-release";
     }
     process->start(QStringLiteral("do-release-upgrade"), args);
+}
+
+void DistroReleaseNotifier::forceCheck()
+{
+    m_hasChecked = false;
+    releaseUpgradeCheck();
 }
