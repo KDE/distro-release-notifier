@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export QT=5
+
+exec qdbus org.kde.DistroReleaseNotifier / org.kde.DistroReleaseNotifier.UseDevel true

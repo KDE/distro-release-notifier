@@ -27,7 +27,15 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 
 # update flavor is derived from the installed metapackage(s) by pkg.split('-')[-1].captialize
 # it is therefore less accurate and good looking than /etc/os-release
-option(NAME_FROM_FLAVOR "Get distro name from update flavor [default is from /etc/os-release]" OFF)
+option(NAME_FROM_FLAVOR
+    "Get distro name from update flavor [default is from /etc/os-release]"
+    OFF)
+option(INSTALL_PREVIEW_UPGRADE
+    "Whether to install a tiny helper binary to make pre-release upgrades more accessible. Also set PREVIEW_UPGRADE_NAME."
+    OFF)
+
+set(PREVIEW_UPGRADE_NAME "distro-preview-upgrade"
+    CACHE STRING "Name to install the upgrade preview helper as.")
 
 add_subdirectory(src)
 

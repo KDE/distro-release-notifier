@@ -1,3 +1,7 @@
+if (${INSTALL_PREVIEW_UPGRADE})
+    add_subdirectory(preview)
+endif()
+
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 set(distroreleasenotifier_SRCS
