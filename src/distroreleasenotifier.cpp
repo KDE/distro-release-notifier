@@ -38,6 +38,7 @@
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
     , m_dbus(new DBusInterface(this))
+    , m_checkerProcess(nullptr)
     , m_hasChecked(false)
 {
     // check after 10 seconds
