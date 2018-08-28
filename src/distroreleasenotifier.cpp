@@ -23,6 +23,7 @@
 
 #include <KNotification>
 #include <KLocalizedString>
+#include <NetworkManagerQt/Manager>
 
 #include <QJsonDocument>
 #include <QProcess>
@@ -39,12 +40,27 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     , m_dbus(new DBusInterface(this))
 {
     // check after 10 seconds
-    QTimer::singleShot(10 * 1000, this, &DistroReleaseNotifier::releaseUpgradeCheck);
+    auto networkTimer = new QTimer(this);
+    networkTimer->setSingleShot(true);
+    networkTimer->setInterval(10 * 1000);
+    connect(networkTimer, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
+    networkTimer->start();
 
-    QTimer *regularCheck = new QTimer(this);
-    regularCheck->setInterval(24 * 60 * 60 * 1000); //refresh once every day
-    connect(regularCheck, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
-    regularCheck->start();
+    auto dailyTimer = new QTimer(this);
+    dailyTimer->setInterval(24 * 60 * 60 * 1000); //refresh once every day
+    connect(dailyTimer, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
+    dailyTimer->start();
+
+    auto networkNotifier = NetworkManager::notifier();
+    connect(networkNotifier, &NetworkManager::Notifier::connectivityChanged,
+            [this, networkTimer](NetworkManager::Connectivity connectivity) {
+        if (connectivity == NetworkManager::Connectivity::Full) {
+            // (re)start the timer. The timer will make sure we collect up
+            // multiple signals arriving in quick succession into a single
+            // check.
+            networkTimer->start();
+        }
+    });
 
     connect(m_dbus, &DBusInterface::useDevelChanged,
             this, &DistroReleaseNotifier::releaseUpgradeCheck);

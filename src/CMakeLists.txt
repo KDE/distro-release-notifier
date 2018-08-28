@@ -24,7 +24,9 @@ add_executable(distro-release-notifier ${distroreleasenotifier_SRCS})
 target_link_libraries(distro-release-notifier
     KF5::CoreAddons
     KF5::I18n
+    KF5::NetworkManagerQt
     KF5::Notifications
+    Qt5::Network
     Qt5::Widgets
 )
 
