@@ -21,8 +21,8 @@
 
 #include "distroreleasenotifier.h"
 
-#include <KNotification>
 #include <KLocalizedString>
+#include <KNotification>
 #include <NetworkManagerQt/Manager>
 
 #include <QJsonDocument>
