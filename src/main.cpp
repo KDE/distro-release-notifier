@@ -26,12 +26,12 @@
 #include <KLocalizedString>
 
 // Qt headers
-#include <QCoreApplication>
+#include <QApplication>
 #include <QCommandLineParser>
 
 int main(int argc, char **argv)
 {
-    QCoreApplication application(argc, argv);
+    QApplication application(argc, argv);
 
     KLocalizedString::setApplicationDomain("distro-release-notifier");
 

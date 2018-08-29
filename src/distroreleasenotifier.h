@@ -24,6 +24,7 @@
 #include <QObject>
 
 class DBusInterface;
+class Notifier;
 class QProcess;
 
 class DistroReleaseNotifier : public QObject
@@ -49,6 +50,7 @@ private Q_SLOTS:
 private:
     DBusInterface *m_dbus;
     QProcess *m_checkerProcess;
+    Notifier *m_notifier;
 
     // This acts as a safe guard. We listen to network device connections
     // to check on network connections. This can get super annoying for users

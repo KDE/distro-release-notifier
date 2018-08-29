@@ -8,6 +8,7 @@ set(distroreleasenotifier_SRCS
     main.cpp
     dbusinterface.cpp
     distroreleasenotifier.cpp
+    notifier.cpp
     OSRelease.cpp
 )
 
