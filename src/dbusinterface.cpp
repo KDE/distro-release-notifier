@@ -25,7 +25,7 @@
 
 DBusInterface::DBusInterface(QObject *parent)
     : QObject(parent)
-    , m_useDevel(false)
+    , m_useDevel(qEnvironmentVariableIsSet("DEVEL_RELEASE"))
 {
     new DistroReleaseNotifierAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
