@@ -55,6 +55,10 @@ int main(int argc, char **argv)
     // This service is only ever started via autostart and if not asserting
     // that registering the service is good enough for our purposes.
     DistroReleaseNotifier mainObject;
+
+    // Do not lazy init this on setting up the notification. It makes a 5kb
+    // difference if we have the dbusservice under monitoring or not.
     ScreenSaverInhibitor inhibitor;
+
     return application.exec();
 }
