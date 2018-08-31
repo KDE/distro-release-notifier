@@ -25,6 +25,8 @@
 #include <KNotification>
 #include <KStatusNotifierItem>
 
+#include "upgraderwatcher.h"
+
 Notifier::Notifier(QObject *parent)
     : QObject(parent)
     , m_notifier(nullptr)
@@ -74,6 +76,14 @@ void Notifier::init()
     m_notifier = new KStatusNotifierItem(this);
     connect(m_notifier, &KStatusNotifierItem::activateRequested,
             this, &Notifier::activateRequested);
+
+    // Watch upgrader running and delete the KSNI while it is up to prevent
+    // the user from triggering an upgrade while upgrading.
+    auto watcher = UpgraderWatcher::self();
+    connect(watcher, &UpgraderWatcher::upgraderRunning, [this]() {
+        delete m_notifier;
+        m_notifier = nullptr;
+    });
 }
 
 
