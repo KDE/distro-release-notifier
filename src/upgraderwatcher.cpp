@@ -20,6 +20,7 @@
 
 #include "upgraderwatcher.h"
 
+#include <QDBusConnection>
 #include <QDBusServiceWatcher>
 
 UpgraderWatcher *UpgraderWatcher::self()
@@ -32,6 +33,7 @@ UpgraderWatcher::UpgraderWatcher(QObject *parent)
     : QObject(parent)
 {
     auto watcher = new QDBusServiceWatcher(this);
+    watcher->setConnection(QDBusConnection::systemBus());
     watcher->addWatchedService("com.ubuntu.ReleaseUpgrader");
     watcher->addWatchedService("com.ubuntu.ReleaseUpgrader.KDE");
     connect(watcher, &QDBusServiceWatcher::serviceRegistered,
