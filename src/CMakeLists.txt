@@ -10,6 +10,7 @@ set(distroreleasenotifier_SRCS
     distroreleasenotifier.cpp
     notifier.cpp
     OSRelease.cpp
+    upgraderwatcher.cpp
 )
 
 ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
