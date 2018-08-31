@@ -10,6 +10,7 @@ set(distroreleasenotifier_SRCS
     distroreleasenotifier.cpp
     notifier.cpp
     OSRelease.cpp
+    screensaverinhibitor.cpp
     upgraderwatcher.cpp
 )
 

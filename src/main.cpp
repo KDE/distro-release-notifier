@@ -20,6 +20,7 @@
 
 // application header
 #include "distroreleasenotifier.h"
+#include "screensaverinhibitor.h"
 
 // KF headers
 #include <KAboutData>
@@ -54,5 +55,6 @@ int main(int argc, char **argv)
     // This service is only ever started via autostart and if not asserting
     // that registering the service is good enough for our purposes.
     DistroReleaseNotifier mainObject;
+    ScreenSaverInhibitor inhibitor;
     return application.exec();
 }
