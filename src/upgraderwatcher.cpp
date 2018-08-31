@@ -38,6 +38,6 @@ UpgraderWatcher::UpgraderWatcher(QObject *parent)
     watcher->addWatchedService("com.ubuntu.ReleaseUpgrader.KDE");
     connect(watcher, &QDBusServiceWatcher::serviceRegistered,
             this, &UpgraderWatcher::upgraderRunning);
-    connect(watcher, &QDBusServiceWatcher::serviceRegistered,
+    connect(watcher, &QDBusServiceWatcher::serviceUnregistered,
             this, &UpgraderWatcher::upgraderNotRunning);
 }
