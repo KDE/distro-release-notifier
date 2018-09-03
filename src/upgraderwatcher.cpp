@@ -23,6 +23,8 @@
 #include <QDBusConnection>
 #include <QDBusServiceWatcher>
 
+#include "debug.h"
+
 UpgraderWatcher *UpgraderWatcher::self()
 {
     static UpgraderWatcher watcher;
@@ -40,4 +42,15 @@ UpgraderWatcher::UpgraderWatcher(QObject *parent)
             this, &UpgraderWatcher::upgraderRunning);
     connect(watcher, &QDBusServiceWatcher::serviceUnregistered,
             this, &UpgraderWatcher::upgraderNotRunning);
+    if (!NOTIFIER().isDebugEnabled()) {
+        return;
+    }
+    connect(watcher, &QDBusServiceWatcher::serviceRegistered,
+            [](const QString &service) {
+        qCDebug(NOTIFIER) << "Service registered" << service;
+    });
+    connect(watcher, &QDBusServiceWatcher::serviceUnregistered,
+            [](const QString &service) {
+        qCDebug(NOTIFIER) << "Service unregistered" << service;
+    });
 }
