@@ -33,6 +33,9 @@
 int main(int argc, char **argv)
 {
     QApplication application(argc, argv);
+    // SNI is considered a window. We don't want to close when the SNI
+    // gets dropped. We run all the time to check for releases regularly.
+    application.setQuitOnLastWindowClosed(false);
 
     KLocalizedString::setApplicationDomain("distro-release-notifier");
 
