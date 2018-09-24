@@ -20,6 +20,8 @@
 
 #include "dbusinterface.h"
 
+#include <QCoreApplication>
+
 #include "debug.h"
 #include "distroreleasenotifieradaptor.h"
 
@@ -29,10 +31,17 @@ DBusInterface::DBusInterface(QObject *parent)
 {
     new DistroReleaseNotifierAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    bool ret = dbus.registerObject("/", this);
-    Q_ASSERT_X(ret, Q_FUNC_INFO, "Failed to register / on org.kde.DistroReleaseNotifier");
-    ret = dbus.registerService("org.kde.DistroReleaseNotifier");
-    Q_ASSERT_X(ret, Q_FUNC_INFO, "Failed to register org.kde.DistroReleaseNotifier");
+    bool objectRet = dbus.registerObject("/", this);
+    Q_ASSERT_X(objectRet, Q_FUNC_INFO, "Failed to register / on org.kde.DistroReleaseNotifier");
+    bool serviceRet = dbus.registerService("org.kde.DistroReleaseNotifier");
+    Q_ASSERT_X(serviceRet, Q_FUNC_INFO, "Failed to register org.kde.DistroReleaseNotifier");
+    if (!objectRet || !serviceRet) {
+        // If this build isn't qFatal, manually exit on errors.
+        // We'd not get here if it was fatal!
+        qCWarning(NOTIFIER, "Failed to register org.kde.DistroReleaseNotifier");
+        // Exit directly, not through qApp.
+        exit(1);
+    }
 }
 
 DBusInterface::~DBusInterface()
