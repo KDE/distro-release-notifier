@@ -29,6 +29,7 @@
 // Qt headers
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QSessionManager>
 
 int main(int argc, char **argv)
 {
@@ -54,11 +55,22 @@ int main(int argc, char **argv)
     parser.process(application);
     aboutData.processCommandLine(&parser);
 
+    // Disable session management for the notifier. We do not ever want to get
+    // restored. The notifier gets autostarted, or not at all.
+    QGuiApplication::setFallbackSessionManagementEnabled(false);
+    auto disableSessionManagement = [](QSessionManager &sm) {
+        sm.setRestartHint(QSessionManager::RestartNever);
+    };
+    QObject::connect(&application, &QGuiApplication::commitDataRequest,
+                     disableSessionManagement);
+    QObject::connect(&application, &QGuiApplication::saveStateRequest,
+                     disableSessionManagement);
+
     if (application.isSessionRestored()) {
-        // The notifier may only be auto-started. Do not ever restore it from
-        // a previous session. Otherwise it'd start a new one for each
-        // log in if they don't error out due to dbus claiming.
-        // (and they wouldn't because this isn't a proper unique app)
+        // Do not ever restore it from a previous session. Session restoration
+        // wasn't always disabled, so make sure restoration attempts are discard
+        // for sessions which have older notifiers in their restoration list
+        // still.
         return 0;
     }
 
