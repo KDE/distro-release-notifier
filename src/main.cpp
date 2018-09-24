@@ -54,6 +54,14 @@ int main(int argc, char **argv)
     parser.process(application);
     aboutData.processCommandLine(&parser);
 
+    if (application.isSessionRestored()) {
+        // The notifier may only be auto-started. Do not ever restore it from
+        // a previous session. Otherwise it'd start a new one for each
+        // log in if they don't error out due to dbus claiming.
+        // (and they wouldn't because this isn't a proper unique app)
+        return 0;
+    }
+
     // NB: we are not using kdbusservice because it's largely useless.
     // This service is only ever started via autostart and if not asserting
     // that registering the service is good enough for our purposes.
