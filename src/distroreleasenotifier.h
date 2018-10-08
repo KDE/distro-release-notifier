@@ -22,10 +22,13 @@
 #define DISTRORELEASENOTIFIER_H
 
 #include <QObject>
+#include <QDate>
 
 class DBusInterface;
 class Notifier;
 class QProcess;
+class QNetworkReply;
+class QDate;
 
 class DistroReleaseNotifier : public QObject
 {
@@ -46,6 +49,7 @@ private Q_SLOTS:
     void releaseUpgradeCheck();
     void releaseUpgradeActivated();
     void forceCheck();
+    void replyFinished(QNetworkReply* reply);
 
 private:
     DBusInterface *m_dbus;
@@ -58,6 +62,8 @@ private:
     // tracks if we ever had a successful check and if so prevents any further
     // checks from even running.
     bool m_hasChecked;
+    bool m_EolRequestRunning;
+    QDate *m_eolDate;
 };
 
 #endif // DISTRORELEASENOTIFIER_H

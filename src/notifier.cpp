@@ -33,7 +33,7 @@ Notifier::Notifier(QObject *parent)
 {
 }
 
-void Notifier::show(const QString &name, const QString &version)
+void Notifier::show(const QString &name, const QString &version, const QDate &eolDate)
 {
     // Delayed init. Otherwise we have the KSNI up when no upgrades are available.
     init();

@@ -27,6 +27,8 @@
 #include <QProcess>
 #include <QStandardPaths>
 #include <QTimer>
+#include <QNetworkReply>
+#include <QDate>
 
 #include "config.h"
 #include "dbusinterface.h"
@@ -44,7 +46,8 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     // check after 10 seconds
     auto networkTimer = new QTimer(this);
     networkTimer->setSingleShot(true);
-    networkTimer->setInterval(10 * 1000);
+//    networkTimer->setInterval(10 * 1000);
+    networkTimer->setInterval(1 * 1000);
     connect(networkTimer, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
     networkTimer->start();
 
@@ -149,7 +152,38 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
 
     auto name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
 
-    m_notifier->show(name, version);
+    //download eol notification
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    connect(manager, SIGNAL(finished(QNetworkReply*)),
+        this, SLOT(replyFinished(QNetworkReply*)));
+
+    m_EolRequestRunning = true;
+    manager->get(QNetworkRequest(QUrl("http://embra.edinburghlinux.co.uk/~jr/tmp/eol.json")));
+    while(m_EolRequestRunning) {
+        QCoreApplication::processEvents();
+    }
+    
+    m_notifier->show(name, version, QDate());
+}
+
+void DistroReleaseNotifier::replyFinished(QNetworkReply* reply) 
+{
+    //qCDebug(NOTIFIER) << "Finished";
+    //qCDebug(NOTIFIER) << reply->readAll();
+    QString versionId = OSRelease().versionId;
+    auto document = QJsonDocument::fromJson(reply->readAll());
+    if (!document.isObject()) {
+        return;
+    }
+    auto map = document.toVariant().toMap();
+    auto dateString = map.value(versionId).toString();
+    QStringList dateStringPieces = dateString.split("-");
+    if (!(dateStringPieces.length() == 3)) {
+        return;
+    }
+    m_eolDate = new QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
+    qCDebug(NOTIFIER) << "EOL" << m_eolDate;
+    return;
 }
 
 void DistroReleaseNotifier::releaseUpgradeActivated()
