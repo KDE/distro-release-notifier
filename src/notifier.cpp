@@ -33,7 +33,7 @@ Notifier::Notifier(QObject *parent)
 {
 }
 
-void Notifier::show(const QString &name, const QString &version, const QDate &eolDate)
+void Notifier::show(const QString &name, const QString &version, const bool eol, const QDate *eolDate)
 {
     // Delayed init. Otherwise we have the KSNI up when no upgrades are available.
     init();
@@ -41,7 +41,10 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     const QString label = QString("%1 %2").arg(name, version);
 
     const QString title = i18n("Upgrade available");
-    const QString text = i18n("New version: %1", label);
+    QString text = i18n("New version: %1", label);
+    if (eol) {
+        text.append("EOL!");
+    }
     const QString icon = QStringLiteral("system-software-update");
 
     m_notifier->setIconByName(icon);

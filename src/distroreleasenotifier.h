@@ -64,6 +64,7 @@ private:
     bool m_hasChecked;
     bool m_EolRequestRunning;
     QDate *m_eolDate;
+    bool m_eol;
 };
 
 #endif // DISTRORELEASENOTIFIER_H
