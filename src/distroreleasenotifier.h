@@ -63,7 +63,6 @@ private:
     bool m_hasChecked;
     bool m_EolRequestRunning;
     QDate m_eolDate;
-    bool m_eol;
     QString m_name;
     QString m_version;
 };

@@ -35,7 +35,7 @@ Notifier::Notifier(QObject *parent)
 {
 }
 
-void Notifier::show(const QString &name, const QString &version, const bool eol, const QDate &eolDate)
+void Notifier::show(const QString &name, const QString &version, const QDate &eolDate)
 {
     // Delayed init. Otherwise we have the KSNI up when no upgrades are available.
     init();
@@ -44,9 +44,9 @@ void Notifier::show(const QString &name, const QString &version, const bool eol,
 
     const QString title = i18n("Upgrade available");
     QString text = i18n("%1.", label);
-    if (eol && eolDate > QDate::currentDate()) {
+    if (eolDate.isValid() && eolDate > QDate::currentDate()) {
         text.append(i18n("\nThis version will stop receiving updates and security fixes in %1 days.", -eolDate.daysTo(QDate::currentDate())));
-    } else if (eol) {
+    } else if (!eolDate.isNull()) {
         text.append(i18nc("Warning notice with emoji", "\nThis version will no longer receive updates or security fixes from KDE neon.\n%1 Upgrade Now!", "☢"));
     }
     const QString icon = QStringLiteral("system-software-update");

@@ -168,7 +168,7 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     const QByteArray eolOutput = reply->readAll();
     auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
-        m_notifier->show(m_name, m_version, false, QDate());
+        m_notifier->show(m_name, m_version, QDate());
         return;
     }
     auto map = document.toVariant().toMap();
@@ -176,7 +176,7 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     qCDebug(NOTIFIER) << "versionId:" << versionId;
     qCDebug(NOTIFIER) << "dateString" << dateString;
     m_eolDate = QDate::fromString(dateString, Qt::ISODate);
-    m_notifier->show(m_name, m_version, true, m_eolDate);
+    m_notifier->show(m_name, m_version, m_eolDate);
     return;
 }
 
