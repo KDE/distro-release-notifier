@@ -22,7 +22,6 @@
 #define DISTRORELEASENOTIFIER_H
 
 #include <QObject>
-#include <QDate>
 
 class DBusInterface;
 class Notifier;
@@ -62,7 +61,6 @@ private:
     // checks from even running.
     bool m_hasChecked;
     bool m_EolRequestRunning;
-    QDate m_eolDate;
     QString m_name;
     QString m_version;
 };
