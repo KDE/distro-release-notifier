@@ -63,7 +63,7 @@ private:
     // checks from even running.
     bool m_hasChecked;
     bool m_EolRequestRunning;
-    QDate *m_eolDate;
+    QDate m_eolDate;
     bool m_eol;
 };
 

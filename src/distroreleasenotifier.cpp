@@ -191,8 +191,8 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply* reply)
         return;
     }
     m_eol = true;
-    m_eolDate = new QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
-    qCDebug(NOTIFIER) << "EOL" << m_eolDate->toString("dd.MM.yyyy");
+    m_eolDate = QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
+    qCDebug(NOTIFIER) << "EOL" << m_eolDate.toString("dd.MM.yyyy");
     m_EolRequestRunning = false;
     return;
 }
