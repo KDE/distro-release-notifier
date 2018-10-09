@@ -60,7 +60,6 @@ private:
     // tracks if we ever had a successful check and if so prevents any further
     // checks from even running.
     bool m_hasChecked;
-    bool m_EolRequestRunning;
     QString m_name;
     QString m_version;
 };
