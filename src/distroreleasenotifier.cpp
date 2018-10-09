@@ -27,6 +27,8 @@
 #include <QProcess>
 #include <QStandardPaths>
 #include <QTimer>
+#include <QNetworkReply>
+#include <QDate>
 
 #include "config.h"
 #include "dbusinterface.h"
@@ -145,11 +147,44 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     Q_ASSERT(document.isObject());
     auto map = document.toVariant().toMap();
     auto flavor = map.value(QStringLiteral("flavor")).toString();
-    auto version = map.value(QStringLiteral("new_dist_version")).toString();
+    m_version = map.value(QStringLiteral("new_dist_version")).toString();
 
-    auto name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
+    m_name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
 
-    m_notifier->show(name, version);
+    //download eol notification
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    connect(manager, SIGNAL(finished(QNetworkReply*)),
+        this, SLOT(replyFinished(QNetworkReply*)));
+
+    manager->get(QNetworkRequest(QUrl("http://releases.neon.kde.org/eol.json")));
+
+}
+
+/*
+ * Parses the eol.json file which is in a JSON hash of format release_version: eol_date
+ * e.g. {"16.04": "2018-10-02"}
+ */
+void DistroReleaseNotifier::replyFinished(QNetworkReply* reply)
+{
+    QString versionId = OSRelease().versionId;
+    const QByteArray eolOutput = reply->readAll();
+    auto document = QJsonDocument::fromJson(eolOutput);
+    if (!document.isObject()) {
+        m_notifier->show(m_name, m_version, false, QDate());
+        return;
+    }
+    auto map = document.toVariant().toMap();
+    auto dateString = map.value(versionId).toString();
+    qCDebug(NOTIFIER) << "versionId:" << versionId;
+    qCDebug(NOTIFIER) << "dateString" << dateString;
+    QStringList dateStringPieces = dateString.split("-");
+    if (!(dateStringPieces.length() == 3)) {
+        m_notifier->show(m_name, m_version, false, QDate());
+        return;
+    }
+    m_eolDate = QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
+    m_notifier->show(m_name, m_version, true, m_eolDate);
+    return;
 }
 
 void DistroReleaseNotifier::releaseUpgradeActivated()

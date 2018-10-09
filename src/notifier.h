@@ -30,7 +30,7 @@ class Notifier : public QObject
     Q_OBJECT
 public:
     Notifier(QObject *parent = nullptr);
-    void show(const QString &name, const QString &version);
+    void show(const QString &name, const QString &version, const bool eol, const QDate &eolDate);
 
 signals:
     void activateRequested();
