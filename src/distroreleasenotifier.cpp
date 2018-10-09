@@ -46,8 +46,7 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     // check after 10 seconds
     auto networkTimer = new QTimer(this);
     networkTimer->setSingleShot(true);
-//    networkTimer->setInterval(10 * 1000);
-    networkTimer->setInterval(1 * 1000);
+    networkTimer->setInterval(10 * 1000);
     connect(networkTimer, &QTimer::timeout, this, &DistroReleaseNotifier::releaseUpgradeCheck);
     networkTimer->start();
 
@@ -168,15 +167,12 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
 
 void DistroReleaseNotifier::replyFinished(QNetworkReply* reply) 
 {
-    qCDebug(NOTIFIER) << "Finished";
     QString versionId = OSRelease().versionId;
-    versionId = "16.04"; // FIXME testing
     const QByteArray eolOutput = reply->readAll();
     auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
         m_EolRequestRunning = false;
         m_eol = false;
-        qCDebug(NOTIFIER) << "!object" << m_eolDate;
         return;
     }
     auto map = document.toVariant().toMap();
@@ -185,14 +181,12 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply* reply)
     qCDebug(NOTIFIER) << "dateString" << dateString;
     QStringList dateStringPieces = dateString.split("-");
     if (!(dateStringPieces.length() == 3)) {
-        qCDebug(NOTIFIER) << "!3" << m_eolDate << dateStringPieces.length();
         m_eol = false;
         m_EolRequestRunning = false;
         return;
     }
     m_eol = true;
     m_eolDate = QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
-    qCDebug(NOTIFIER) << "EOL" << m_eolDate.toString("dd.MM.yyyy");
     m_EolRequestRunning = false;
     return;
 }
