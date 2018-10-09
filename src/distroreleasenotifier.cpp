@@ -151,22 +151,17 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     Q_ASSERT(document.isObject());
     auto map = document.toVariant().toMap();
     auto flavor = map.value(QStringLiteral("flavor")).toString();
-    auto version = map.value(QStringLiteral("new_dist_version")).toString();
+    m_version = map.value(QStringLiteral("new_dist_version")).toString();
 
-    auto name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
+    m_name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
 
     //download eol notification
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
     connect(manager, SIGNAL(finished(QNetworkReply*)),
         this, SLOT(replyFinished(QNetworkReply*)));
 
-    m_EolRequestRunning = true;
     manager->get(QNetworkRequest(QUrl("http://releases.neon.kde.org/eol.json")));
-    while(m_EolRequestRunning) {
-        QCoreApplication::processEvents();
-    }
 
-    m_notifier->show(name, version, m_eol, m_eolDate);
 }
 
 void DistroReleaseNotifier::replyFinished(QNetworkReply* reply) 
@@ -175,8 +170,7 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply* reply)
     const QByteArray eolOutput = reply->readAll();
     auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
-        m_EolRequestRunning = false;
-        m_eol = false;
+        m_notifier->show(m_name, m_version, false, QDate());
         return;
     }
     auto map = document.toVariant().toMap();
@@ -185,13 +179,11 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply* reply)
     qCDebug(NOTIFIER) << "dateString" << dateString;
     QStringList dateStringPieces = dateString.split("-");
     if (!(dateStringPieces.length() == 3)) {
-        m_eol = false;
-        m_EolRequestRunning = false;
+        m_notifier->show(m_name, m_version, false, QDate());
         return;
     }
-    m_eol = true;
     m_eolDate = QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
-    m_EolRequestRunning = false;
+    m_notifier->show(m_name, m_version, true, m_eolDate);
     return;
 }
 
