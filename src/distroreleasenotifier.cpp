@@ -155,7 +155,7 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     connect(manager, &QNetworkAccessManager::finished,
             this, &DistroReleaseNotifier::replyFinished);
 
-    auto req = QNetworkRequest(QUrl("https://releases.neon.kde.org/eol.json"));
+    auto request = QNetworkRequest(QUrl("https://releases.neon.kde.org/eol.json"));
     request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
     manager->get(request);
 }
