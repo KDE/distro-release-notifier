@@ -175,12 +175,7 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     auto dateString = map.value(versionId).toString();
     qCDebug(NOTIFIER) << "versionId:" << versionId;
     qCDebug(NOTIFIER) << "dateString" << dateString;
-    QStringList dateStringPieces = dateString.split("-");
-    if (!(dateStringPieces.length() == 3)) {
-        m_notifier->show(m_name, m_version, false, QDate());
-        return;
-    }
-    m_eolDate = QDate(dateStringPieces[0].toInt(), dateStringPieces[1].toInt(), dateStringPieces[2].toInt());
+    m_eolDate = QDate::fromString(dateString, Qt::ISODate);
     m_notifier->show(m_name, m_version, true, m_eolDate);
     return;
 }
