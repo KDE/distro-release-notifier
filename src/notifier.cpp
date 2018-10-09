@@ -24,6 +24,7 @@
 #include <KLocalizedString>
 #include <KNotification>
 #include <KStatusNotifierItem>
+#include <QDate>
 
 #include "upgraderwatcher.h"
 
@@ -41,9 +42,11 @@ void Notifier::show(const QString &name, const QString &version, const bool eol,
     const QString label = QString("%1 %2").arg(name, version);
 
     const QString title = i18n("Upgrade available");
-    QString text = i18n("New version: %1", label);
-    if (eol) {
-        text.append("EOL!");
+    QString text = i18n("New version: %1.", label);
+    if (eol && *eolDate > QDate::currentDate()) {
+        text.append(i18n("\nYou will stop receiving updates from %1.", eolDate->toString("dddd d MMMM yyyy")));
+    } else if (eol) {
+        text.append(i18n("\nYou will no longer receive updates from KDE neon."));
     }
     const QString icon = QStringLiteral("system-software-update");
 

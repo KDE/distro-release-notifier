@@ -162,18 +162,16 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     while(m_EolRequestRunning) {
         QCoreApplication::processEvents();
     }
-    
+
     m_notifier->show(name, version, m_eol, m_eolDate);
 }
 
 void DistroReleaseNotifier::replyFinished(QNetworkReply* reply) 
 {
-    //qCDebug(NOTIFIER) << "Finished";
-    //qCDebug(NOTIFIER) << reply->readAll();
+    qCDebug(NOTIFIER) << "Finished";
     QString versionId = OSRelease().versionId;
     versionId = "16.04"; // FIXME testing
-    const QByteArray eolOutput = reply->readLine();
-    qCDebug(NOTIFIER) << "eolOutput: " << eolOutput;
+    const QByteArray eolOutput = reply->readAll();
     auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
         m_EolRequestRunning = false;
