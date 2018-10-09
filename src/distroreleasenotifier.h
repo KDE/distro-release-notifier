@@ -48,7 +48,7 @@ private Q_SLOTS:
     void releaseUpgradeCheck();
     void releaseUpgradeActivated();
     void forceCheck();
-    void replyFinished(QNetworkReply* reply);
+    void replyFinished(QNetworkReply *reply);
 
 private:
     DBusInterface *m_dbus;

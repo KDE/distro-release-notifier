@@ -148,10 +148,9 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     auto map = document.toVariant().toMap();
     auto flavor = map.value(QStringLiteral("flavor")).toString();
     m_version = map.value(QStringLiteral("new_dist_version")).toString();
-
     m_name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
 
-    //download eol notification
+    // Download eol notification
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
     connect(manager, SIGNAL(finished(QNetworkReply*)),
         this, SLOT(replyFinished(QNetworkReply*)));
@@ -163,7 +162,7 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
  * Parses the eol.json file which is in a JSON hash of format release_version: eol_date
  * e.g. {"16.04": "2018-10-02"}
  */
-void DistroReleaseNotifier::replyFinished(QNetworkReply* reply)
+void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
 {
     QString versionId = OSRelease().versionId;
     const QByteArray eolOutput = reply->readAll();
