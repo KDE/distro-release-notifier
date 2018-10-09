@@ -152,8 +152,8 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
 
     // Download eol notification
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    connect(manager, SIGNAL(finished(QNetworkReply*)),
-        this, SLOT(replyFinished(QNetworkReply*)));
+    connect(manager, &QNetworkAccessManager::finished,
+            this, &DistroReleaseNotifier::replyFinished);
 
     manager->get(QNetworkRequest(QUrl("https://releases.neon.kde.org/eol.json")));
 }
