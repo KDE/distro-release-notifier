@@ -28,7 +28,6 @@ class DBusInterface;
 class Notifier;
 class QProcess;
 class QNetworkReply;
-class QDate;
 
 class DistroReleaseNotifier : public QObject
 {
