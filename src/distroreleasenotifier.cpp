@@ -164,15 +164,15 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
  */
 void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
 {
-    QString versionId = OSRelease().versionId;
+    const QString versionId = OSRelease().versionId;
     const QByteArray eolOutput = reply->readAll();
-    auto document = QJsonDocument::fromJson(eolOutput);
+    const auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
         m_notifier->show(m_name, m_version, QDate());
         return;
     }
-    auto map = document.toVariant().toMap();
-    auto dateString = map.value(versionId).toString();
+    const auto map = document.toVariant().toMap();
+    const auto dateString = map.value(versionId).toString();
     qCDebug(NOTIFIER) << "versionId:" << versionId;
     qCDebug(NOTIFIER) << "dateString" << dateString;
     m_eolDate = QDate::fromString(dateString, Qt::ISODate);
