@@ -166,6 +166,9 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
  */
 void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
 {
+    if (reply->error() != QNetworkReply::NoError) {
+        qCWarning(NOTIFIER) << reply->errorString();
+    }
     const QString versionId = OSRelease().versionId;
     const QByteArray eolOutput = reply->readAll();
     const auto document = QJsonDocument::fromJson(eolOutput);
