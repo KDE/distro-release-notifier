@@ -122,6 +122,10 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
 }
 
+/*
+ * Downloads the eol.json file which is in JSON format release_version: eol_date
+ * e.g. {"16.04": "2018-10-02"}
+ */
 void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
 {
     m_hasChecked = true;
@@ -157,7 +161,7 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
         this, SLOT(replyFinished(QNetworkReply*)));
 
     m_EolRequestRunning = true;
-    manager->get(QNetworkRequest(QUrl("http://embra.edinburghlinux.co.uk/~jr/tmp/eol.json")));
+    manager->get(QNetworkRequest(QUrl("http://releases.neon.kde.org/eol.json")));
     while(m_EolRequestRunning) {
         QCoreApplication::processEvents();
     }
