@@ -34,7 +34,7 @@ static void setVar(QString *var, const QString &value)
     if (error != KShell::NoError) { // Failed to parse.
         return;
     }
-    *var = args.join(QLatin1Char(' '));
+    *var = args.join(QChar(' '));
 }
 
 static void setVar(QStringList *var, const QString &value)
@@ -49,7 +49,7 @@ static void setVar(QStringList *var, const QString &value)
     //       is required to not contain spaces even if more advanced shell escaping
     //       is also allowed...
     QString value_ = value;
-    if (value_.at(0) == QLatin1Char('"') && value_.at(value_.size()-1) == QLatin1Char('"')) {
+    if (value_.at(0) == QChar('"') && value_.at(value_.size()-1) == QChar('"')) {
         value_.remove(0, 1);
         value_.remove(-1, 1);
     }
@@ -89,14 +89,14 @@ OSRelease::OSRelease()
     QString line;
     QStringList comps;
     while (!file.atEnd()) {
-        line = QString::fromLatin1(file.readLine());
+        line = file.readLine();
 
-        if (line.startsWith(QLatin1Char('#'))) {
+        if (line.startsWith(QChar('#'))) {
             // Comment line
             continue;
         }
 
-        comps = line.split(QLatin1Char('='));
+        comps = line.split(QChar('='));
 
         if (comps.size() != 2) {
             // Invalid line.
