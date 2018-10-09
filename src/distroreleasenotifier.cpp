@@ -58,7 +58,7 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
 
     auto networkNotifier = NetworkManager::notifier();
     connect(networkNotifier, &NetworkManager::Notifier::connectivityChanged,
-            [this, networkTimer](NetworkManager::Connectivity connectivity) {
+            [networkTimer](NetworkManager::Connectivity connectivity) {
         if (connectivity == NetworkManager::Connectivity::Full) {
             // (re)start the timer. The timer will make sure we collect up
             // multiple signals arriving in quick succession into a single
