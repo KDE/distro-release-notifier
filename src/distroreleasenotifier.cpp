@@ -23,12 +23,12 @@
 
 #include <NetworkManagerQt/Manager>
 
+#include <QDate>
 #include <QJsonDocument>
+#include <QNetworkReply>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QTimer>
-#include <QNetworkReply>
-#include <QDate>
 
 #include "config.h"
 #include "dbusinterface.h"

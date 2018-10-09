@@ -24,6 +24,7 @@
 #include <KLocalizedString>
 #include <KNotification>
 #include <KStatusNotifierItem>
+
 #include <QDate>
 
 #include "upgraderwatcher.h"
