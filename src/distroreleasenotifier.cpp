@@ -178,7 +178,20 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
         return;
     }
     const auto map = document.toVariant().toMap();
-    const auto dateString = map.value(versionId).toString();
+    auto dateString = map.value(versionId).toString();
+    if (qEnvironmentVariableIsSet("MOCK_RELEASE")) {
+        // If this is a mock we'll construct the date string artifically.
+        // Otherwise we'd have to run a server-side generator which is a bit
+        // more tricky and detatches the code so if the format changes we may
+        // easily forget.
+        if (qEnvironmentVariableIsSet("MOCK_EOL")) {
+            // already eol
+            dateString = QDate::currentDate().addDays(-1).toString("yyyy-MM-dd");
+        } else {
+            // eol in 3 days
+            dateString = QDate::currentDate().addDays(3).toString("yyyy-MM-dd");
+        }
+    }
     qCDebug(NOTIFIER) << "versionId:" << versionId;
     qCDebug(NOTIFIER) << "dateString" << dateString;
     m_notifier->show(m_name, m_version,
