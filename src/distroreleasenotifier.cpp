@@ -173,6 +173,7 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     const QByteArray eolOutput = reply->readAll();
     const auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
+        qCWarning(NOTIFIER) << "EOL reply failed to parse as document" << eolOutput;
         m_notifier->show(m_name, m_version, QDate());
         return;
     }
