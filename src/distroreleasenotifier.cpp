@@ -166,6 +166,7 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
  */
 void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
 {
+    qCDebug(NOTIFIER) << reply->error();
     if (reply->error() != QNetworkReply::NoError) {
         qCWarning(NOTIFIER) << reply->errorString();
     }
