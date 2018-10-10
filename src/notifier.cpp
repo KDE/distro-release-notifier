@@ -87,7 +87,7 @@ void Notifier::init()
     // Watch upgrader running and delete the KSNI while it is up to prevent
     // the user from triggering an upgrade while upgrading.
     auto watcher = UpgraderWatcher::self();
-    connect(watcher, &UpgraderWatcher::upgraderRunning, [this]() {
+    connect(watcher, &UpgraderWatcher::upgraderRunning, this, [this]() {
         delete m_notifier;
         m_notifier = nullptr;
     });

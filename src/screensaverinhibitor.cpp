@@ -30,11 +30,11 @@ ScreenSaverInhibitor::ScreenSaverInhibitor(QObject *parent)
     , m_restriction(nullptr)
 {
     auto watcher = UpgraderWatcher::self();
-    connect(watcher, &UpgraderWatcher::upgraderRunning, [this]() {
+    connect(watcher, &UpgraderWatcher::upgraderRunning, this, [this]() {
         m_restriction = new KNotificationRestrictions(KNotificationRestrictions::ScreenSaver,
                                                       i18nc("Screensaver inhibition reason", "Upgrading Operating System"));
     });
-    connect(watcher, &UpgraderWatcher::upgraderNotRunning, [this]() {
+    connect(watcher, &UpgraderWatcher::upgraderNotRunning, this, [this]() {
         delete m_restriction;
         m_restriction = nullptr;
     });
