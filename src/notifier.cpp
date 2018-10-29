@@ -45,7 +45,9 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     const QString title = i18n("Upgrade available");
     QString text = i18n("%1.", label);
     if (eolDate.isValid() && eolDate > QDate::currentDate()) {
-        text.append(i18n("\nThis version will stop receiving updates and security fixes in %1 days.", -eolDate.daysTo(QDate::currentDate())));
+        text.append(i18np("\nThis version will stop receiving updates and security fixes in 1 day.",
+                          "\nThis version will stop receiving updates and security fixes in %1 days.",
+                          -eolDate.daysTo(QDate::currentDate())));
     } else if (!eolDate.isNull()) {
         text.append(i18nc("Warning notice with emoji", "\nThis version will no longer receive updates or security fixes from KDE neon.\n%1 Upgrade Now!", "☢"));
     }
