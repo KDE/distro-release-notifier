@@ -22,6 +22,7 @@ Name[sv]=Underrättelse om distributionsutgåva
 Name[uk]=Засіб сповіщення про випуски дистрибутивів
 Name[x-test]=xxDistribution Release Notifierxx
 Name[zh_CN]=发行版通知工具
+Name[zh_TW]=發行版釋出版本通知工具
 OnlyShowIn=KDE;
 Type=Application
 X-KDE-StartupNotify=false
