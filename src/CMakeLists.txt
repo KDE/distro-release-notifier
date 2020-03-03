@@ -9,7 +9,6 @@ set(distroreleasenotifier_SRCS
     dbusinterface.cpp
     distroreleasenotifier.cpp
     notifier.cpp
-    OSRelease.cpp
     screensaverinhibitor.cpp
     upgraderwatcher.cpp
 )
