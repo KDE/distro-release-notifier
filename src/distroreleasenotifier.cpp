@@ -22,6 +22,7 @@
 #include "distroreleasenotifier.h"
 
 #include <NetworkManagerQt/Manager>
+#include <KCoreAddons/KOSRelease>
 
 #include <QDate>
 #include <QJsonDocument>
@@ -34,7 +35,6 @@
 #include "dbusinterface.h"
 #include "debug.h"
 #include "notifier.h"
-#include "OSRelease.h"
 
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
@@ -148,7 +148,8 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     auto map = document.toVariant().toMap();
     auto flavor = map.value(QStringLiteral("flavor")).toString();
     m_version = map.value(QStringLiteral("new_dist_version")).toString();
-    m_name = NAME_FROM_FLAVOR ? flavor : OSRelease().name;
+    KOSRelease osrelease;
+    m_name = NAME_FROM_FLAVOR ? flavor : osrelease.name();
 
     // Download eol notification
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
@@ -170,7 +171,8 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     if (reply->error() != QNetworkReply::NoError) {
         qCWarning(NOTIFIER) << reply->errorString();
     }
-    const QString versionId = OSRelease().versionId;
+    KOSRelease osrelease;
+    const QString versionId = osrelease.versionId();
     const QByteArray eolOutput = reply->readAll();
     const auto document = QJsonDocument::fromJson(eolOutput);
     if (!document.isObject()) {
