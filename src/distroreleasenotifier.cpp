@@ -20,6 +20,7 @@
 #include "dbusinterface.h"
 #include "debug.h"
 #include "notifier.h"
+#include "upgraderprocess.h"
 
 DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
     : QObject(parent)
@@ -187,24 +188,20 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
 
 void DistroReleaseNotifier::releaseUpgradeActivated()
 {
-    // pkexec is being difficult. It will refuse to auth a startDetached service
-    // because it won't have a parent and parentless commands are not allowed
-    // to auth.
-    // Instead hold on to the process.
-    // For future reference: another approach is to sh -c and hold
-    // do-release-upgrade as a fork of that sh.
-    auto process = new QProcess(this);
-    process->setProcessChannelMode(QProcess::ForwardedChannels);
-    connect(process, QOverload<int>::of(&QProcess::finished),
-            this, [process](){ process->deleteLater(); });
-    auto args = QStringList({
-                                QStringLiteral("-m"), QStringLiteral("desktop"),
-                                QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE")
-                            });
-    if (m_dbus->useDevel()) {
-        args << "--devel-release";
+    if (m_pendingUpgrader) {
+        // There's a time window between the user clicking upgrade and
+        // the UI registering on dbus. We don't know what's the state of
+        // things and consider the process pending. Should it fail we'll
+        // display the error via UpgraderProcess.
+        qCDebug(NOTIFIER) << "Upgrader requested but still waiting for one";
+        return;
     }
-    process->start(QStringLiteral("do-release-upgrade"), args);
+
+    m_pendingUpgrader = new UpgraderProcess;
+    m_pendingUpgrader->setUseDevel(m_dbus->useDevel());
+    connect(m_pendingUpgrader, &UpgraderProcess::notPending,
+            this, [this]() { m_pendingUpgrader = nullptr; });
+    m_pendingUpgrader->run(); // returns once we are sure the process is up and running
 }
 
 void DistroReleaseNotifier::forceCheck()

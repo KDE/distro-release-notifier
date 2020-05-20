@@ -11,6 +11,7 @@ set(distroreleasenotifier_SRCS
     notifier.cpp
     screensaverinhibitor.cpp
     upgraderwatcher.cpp
+    upgraderprocess.cpp
 )
 
 ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
@@ -32,6 +33,7 @@ target_link_libraries(distro-release-notifier
     KF5::I18n
     KF5::NetworkManagerQt
     KF5::Notifications
+    KF5::WidgetsAddons
     Qt5::Network
     Qt5::Widgets
 )

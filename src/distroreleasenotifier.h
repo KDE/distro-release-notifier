@@ -12,6 +12,7 @@ class DBusInterface;
 class Notifier;
 class QProcess;
 class QNetworkReply;
+class UpgraderProcess;
 
 class DistroReleaseNotifier : public QObject
 {
@@ -47,6 +48,10 @@ private:
     bool m_hasChecked;
     QString m_name;
     QString m_version;
+
+    // Upgrader is started but not yet on dbus = pending.
+    // This process auto-deleted itself.
+    UpgraderProcess *m_pendingUpgrader = nullptr;
 };
 
 #endif // DISTRORELEASENOTIFIER_H
