@@ -23,7 +23,7 @@ DBusInterface::DBusInterface(QObject *parent)
     if (!objectRet || !serviceRet) {
         // If this build isn't qFatal, manually exit on errors.
         // We'd not get here if it was fatal!
-        qCWarning(NOTIFIER, "Failed to register org.kde.DistroReleaseNotifier");
+        qWarning() << "Failed to register org.kde.DistroReleaseNotifier" << objectRet << serviceRet;
         // Exit directly, not through qApp as we haven't even begone execution
         // by the time this ctor runs.
         exit(1);
