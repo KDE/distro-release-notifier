@@ -16,7 +16,6 @@ class DBusInterface : public QObject
     Q_PROPERTY(bool UseDevel READ useDevel WRITE setUseDevel NOTIFY useDevelChanged)
 public:
     DBusInterface(QObject *parent = nullptr);
-    ~DBusInterface();
 
     bool useDevel() const;
     void setUseDevel(bool use);

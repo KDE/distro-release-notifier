@@ -62,10 +62,6 @@ DistroReleaseNotifier::DistroReleaseNotifier(QObject *parent)
             this, &DistroReleaseNotifier::releaseUpgradeActivated);
 }
 
-DistroReleaseNotifier::~DistroReleaseNotifier()
-{
-}
-
 void DistroReleaseNotifier::releaseUpgradeCheck()
 {
     if (m_hasChecked) {

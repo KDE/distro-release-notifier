@@ -25,10 +25,6 @@ DBusInterface::DBusInterface(QObject *parent)
     }
 }
 
-DBusInterface::~DBusInterface()
-{
-}
-
 bool DBusInterface::useDevel() const
 {
     return m_useDevel;

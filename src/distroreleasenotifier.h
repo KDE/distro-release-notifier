@@ -18,15 +18,7 @@ class DistroReleaseNotifier : public QObject
 {
     Q_OBJECT
 public:
-    /**
-     * Default Constructor
-     */
     DistroReleaseNotifier(QObject *parent = nullptr);
-
-    /**
-     * Default Destructor
-     */
-    ~DistroReleaseNotifier() override;
 
 private Q_SLOTS:
     void checkReleaseUpgradeFinished(int exitCode);
