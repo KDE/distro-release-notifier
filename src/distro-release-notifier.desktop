@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Harald Sitter <sitter@kde.org>
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KDEDModule
+X-KDE-Kded-autoload=true
+X-KDE-Kded-load-on-demand=false
+X-KDE-Kded-phase=1
+# NOTE: The lib name must not contain hyphens, the dbus object path is derived from it.
+X-KDE-Library=distroreleasenotifier
+Icon=system-software-update
+
+Name=Operating System Release Notifier
+Comment=Checks for new system releases and notifies when available

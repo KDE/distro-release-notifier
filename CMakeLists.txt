@@ -23,6 +23,7 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     NetworkManagerQt
     Notifications
     WidgetsAddons
+    DBusAddons
     KIO
 )
 
@@ -40,7 +41,6 @@ set(PREVIEW_UPGRADE_NAME "distro-preview-upgrade"
 
 add_subdirectory(src)
 
-install(FILES distro-release-notifier.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 install(FILES releasechecker DESTINATION ${DATA_INSTALL_DIR}/distro-release-notifier
         PERMISSIONS
         OWNER_EXECUTE OWNER_READ OWNER_WRITE

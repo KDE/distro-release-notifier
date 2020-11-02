@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"distro-release-notifier\")
+
 if (${INSTALL_PREVIEW_UPGRADE})
     add_subdirectory(preview)
 endif()
@@ -5,7 +7,7 @@ endif()
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 set(distroreleasenotifier_SRCS
-    main.cpp
+    module.cpp
     dbusinterface.cpp
     distroreleasenotifier.cpp
     notifier.cpp
@@ -26,16 +28,17 @@ qt5_generate_dbus_interface(
 )
 qt5_add_dbus_adaptor(distroreleasenotifier_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.DistroReleaseNotifier.xml dbusinterface.h DBusInterface)
 
-add_executable(distro-release-notifier ${distroreleasenotifier_SRCS})
+add_library(distroreleasenotifier MODULE ${distroreleasenotifier_SRCS})
 
-target_link_libraries(distro-release-notifier
+target_link_libraries(distroreleasenotifier
+    KF5::DBusAddons
     KF5::CoreAddons
     KF5::I18n
     KF5::NetworkManagerQt
     KF5::Notifications
     KF5::WidgetsAddons
     Qt5::Network
-    Qt5::Widgets
 )
 
-install(TARGETS distro-release-notifier ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS distroreleasenotifier DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
+kcoreaddons_desktop_to_json(distroreleasenotifier distro-release-notifier.desktop)

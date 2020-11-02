@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2018 Harald Sitter <sitter@kde.org>
+    SPDX-FileCopyrightText: 2018-2020 Harald Sitter <sitter@kde.org>
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
@@ -16,17 +16,12 @@ DBusInterface::DBusInterface(QObject *parent)
 {
     new DistroReleaseNotifierAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    bool objectRet = dbus.registerObject("/", this);
-    Q_ASSERT_X(objectRet, Q_FUNC_INFO, "Failed to register / on org.kde.DistroReleaseNotifier");
-    bool serviceRet = dbus.registerService("org.kde.DistroReleaseNotifier");
-    Q_ASSERT_X(serviceRet, Q_FUNC_INFO, "Failed to register org.kde.DistroReleaseNotifier");
+    const bool objectRet = dbus.registerObject("/org/kde/DistroReleaseNotifier", this);
+    const bool serviceRet = dbus.registerService("org.kde.DistroReleaseNotifier");
     if (!objectRet || !serviceRet) {
         // If this build isn't qFatal, manually exit on errors.
         // We'd not get here if it was fatal!
-        qWarning() << "Failed to register org.kde.DistroReleaseNotifier" << objectRet << serviceRet;
-        // Exit directly, not through qApp as we haven't even begone execution
-        // by the time this ctor runs.
-        exit(1);
+        qCritical() << "Failed to register org.kde.DistroReleaseNotifier" << objectRet << serviceRet;
     }
 }
 
