@@ -17,7 +17,7 @@ public:
     explicit ScreenSaverInhibitor(QObject *parent = nullptr);
 
 private:
-    KNotificationRestrictions *m_restriction;
+    KNotificationRestrictions *m_restriction = nullptr;
 };
 
 #endif // SCREENSAVERINHIBITOR_H

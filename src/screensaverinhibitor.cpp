@@ -12,7 +12,6 @@
 
 ScreenSaverInhibitor::ScreenSaverInhibitor(QObject *parent)
     : QObject(parent)
-    , m_restriction(nullptr)
 {
     auto watcher = UpgraderWatcher::self();
     connect(watcher, &UpgraderWatcher::upgraderRunning, this, [this]() {
