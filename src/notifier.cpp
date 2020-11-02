@@ -34,7 +34,10 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
                           "\nThis version will stop receiving updates and security fixes in %1 days.",
                           -eolDate.daysTo(QDate::currentDate())));
     } else if (!eolDate.isNull()) {
-        text.append(i18nc("Warning notice with emoji", "\nThis version will no longer receive updates or security fixes from KDE neon.\n%1 Upgrade Now!", "☢"));
+        text.append(
+            i18nc("Warning notice with emoji",
+                  "\nThis version will no longer receive updates or security fixes from KDE neon.\n%1 Upgrade Now!",
+                  QStringLiteral("☢")));
     }
     const QString icon = QStringLiteral("system-software-update");
 
@@ -49,11 +52,11 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     // This replaces a potentially pre-existing notification. Notifications
     // are auto-delted, so we need to do no house keeping here. This will
     // automatically replace the previous notification.
-    auto notification = new KNotification(QLatin1Literal("notification"),
+    auto notification = new KNotification(QStringLiteral("notification"),
                                           KNotification::Persistent | KNotification::DefaultEvent,
                                           this);
     notification->setIconName(icon);
-    notification->setActions(QStringList{QLatin1Literal("Upgrade")});
+    notification->setActions(QStringList{QStringLiteral("Upgrade")});
     notification->setTitle(title);
     notification->setText(text);
     connect(notification, &KNotification::action1Activated,

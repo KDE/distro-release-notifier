@@ -21,8 +21,8 @@ UpgraderWatcher::UpgraderWatcher(QObject *parent)
 {
     auto watcher = new QDBusServiceWatcher(this);
     watcher->setConnection(QDBusConnection::systemBus());
-    watcher->addWatchedService("com.ubuntu.ReleaseUpgrader");
-    watcher->addWatchedService("com.ubuntu.ReleaseUpgrader.KDE");
+    watcher->addWatchedService(QStringLiteral("com.ubuntu.ReleaseUpgrader"));
+    watcher->addWatchedService(QStringLiteral("com.ubuntu.ReleaseUpgrader.KDE"));
     connect(watcher, &QDBusServiceWatcher::serviceRegistered,
             this, &UpgraderWatcher::upgraderRunning);
     connect(watcher, &QDBusServiceWatcher::serviceUnregistered,

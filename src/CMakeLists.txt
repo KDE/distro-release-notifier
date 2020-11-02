@@ -1,5 +1,10 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"distro-release-notifier\")
 
+add_definitions(
+    -DQT_NO_CAST_TO_ASCII
+    -DQT_NO_CAST_FROM_ASCII
+)
+
 if (${INSTALL_PREVIEW_UPGRADE})
     add_subdirectory(preview)
 endif()

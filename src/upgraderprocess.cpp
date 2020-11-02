@@ -41,7 +41,7 @@ void UpgraderProcess::run()
             return;
         }
 
-        const QString newOutput = process->readAllStandardOutput();
+        const QString newOutput = QString::fromUtf8(process->readAllStandardOutput());
         // route this through format string so newlines are preserved
         qCDebug(NOTIFIER, "do-release-upgrader: %s\n", newOutput.toUtf8().constData());
         if (m_waiting) {
@@ -72,7 +72,7 @@ void UpgraderProcess::run()
                                 QStringLiteral("-f"), QStringLiteral("DistUpgradeViewKDE")
                             });
     if (m_useDevel) {
-        args << "--devel-release";
+        args << QStringLiteral("--devel-release");
     }
 
     qCDebug(NOTIFIER) << "Starting do-release-upgrade";

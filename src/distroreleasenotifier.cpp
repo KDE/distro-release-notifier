@@ -98,9 +98,9 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     // Force utf-8. In case the system has bogus encoding configured we'll still
     // be able to properly decode.
-    env.insert("PYTHONIOENCODING", "utf-8");
+    env.insert(QStringLiteral("PYTHONIOENCODING"), QStringLiteral("utf-8"));
     if (m_dbus->useDevel()) {
-        env.insert("USE_DEVEL", "1");
+        env.insert(QStringLiteral("USE_DEVEL"), QStringLiteral("1"));
     }
     m_checkerProcess->setProcessEnvironment(env);
     connect(m_checkerProcess, QOverload<int>::of(&QProcess::finished),
@@ -141,7 +141,7 @@ void DistroReleaseNotifier::checkReleaseUpgradeFinished(int exitCode)
     connect(manager, &QNetworkAccessManager::finished,
             this, &DistroReleaseNotifier::replyFinished);
 
-    auto request = QNetworkRequest(QUrl("https://releases.neon.kde.org/eol.json"));
+    auto request = QNetworkRequest(QUrl(QStringLiteral("https://releases.neon.kde.org/eol.json")));
     request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
     manager->get(request);
 }
@@ -169,14 +169,14 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     if (qEnvironmentVariableIsSet("MOCK_RELEASE")) {
         // If this is a mock we'll construct the date string artificially.
         // Otherwise we'd have to run a server-side generator which is a bit
-        // more tricky and detatches the code so if the format changes we may
+        // more tricky and detaches the code so if the format changes we may
         // easily forget.
         if (qEnvironmentVariableIsSet("MOCK_EOL")) {
             // already eol
-            dateString = QDate::currentDate().addDays(-1).toString("yyyy-MM-dd");
+            dateString = QDate::currentDate().addDays(-1).toString(u"yyyy-MM-dd");
         } else {
             // eol in 3 days
-            dateString = QDate::currentDate().addDays(3).toString("yyyy-MM-dd");
+            dateString = QDate::currentDate().addDays(3).toString(u"yyyy-MM-dd");
         }
     }
     qCDebug(NOTIFIER) << "versionId:" << versionId;

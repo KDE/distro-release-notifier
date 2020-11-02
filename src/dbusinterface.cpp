@@ -16,8 +16,8 @@ DBusInterface::DBusInterface(QObject *parent)
 {
     new DistroReleaseNotifierAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    const bool objectRet = dbus.registerObject("/org/kde/DistroReleaseNotifier", this);
-    const bool serviceRet = dbus.registerService("org.kde.DistroReleaseNotifier");
+    const bool objectRet = dbus.registerObject(QStringLiteral("/org/kde/DistroReleaseNotifier"), this);
+    const bool serviceRet = dbus.registerService(QStringLiteral("org.kde.DistroReleaseNotifier"));
     if (!objectRet || !serviceRet) {
         // If this build isn't qFatal, manually exit on errors.
         // We'd not get here if it was fatal!
