@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(distroreleasenotifier)
 
 set(QT_MIN_VERSION "5.7.0")
-set(KF_MIN_VERSION "5.18.0")
+set(KF_MIN_VERSION "5.50.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
