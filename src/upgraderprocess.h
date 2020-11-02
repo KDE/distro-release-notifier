@@ -9,7 +9,7 @@
 #include <QObject>
 
 /**
- * Runs the upgrader. Possibly displayes UI if the upgrader craps out unexpectedly during
+ * Runs the upgrader. Possibly displays UI if the upgrader craps out unexpectedly during
  * startup.
  */
 class UpgraderProcess : public QObject

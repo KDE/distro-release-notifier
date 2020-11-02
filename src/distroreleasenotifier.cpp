@@ -167,7 +167,7 @@ void DistroReleaseNotifier::replyFinished(QNetworkReply *reply)
     const auto map = document.toVariant().toMap();
     auto dateString = map.value(versionId).toString();
     if (qEnvironmentVariableIsSet("MOCK_RELEASE")) {
-        // If this is a mock we'll construct the date string artifically.
+        // If this is a mock we'll construct the date string artificially.
         // Otherwise we'd have to run a server-side generator which is a bit
         // more tricky and detatches the code so if the format changes we may
         // easily forget.

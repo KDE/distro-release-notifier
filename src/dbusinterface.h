@@ -25,7 +25,7 @@ public:
 
 signals:
     void useDevelChanged();
-    // Emitted when Poll is called to notify of the reuqest
+    // Emitted when Poll is called to notify of the request
     void pollingRequested();
 
 private:
