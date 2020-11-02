@@ -3,8 +3,7 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#ifndef DISTRORELEASENOTIFIER_H
-#define DISTRORELEASENOTIFIER_H
+#pragma once
 
 #include <QObject>
 
@@ -45,5 +44,3 @@ private:
     // This process auto-deleted itself.
     UpgraderProcess *m_pendingUpgrader = nullptr;
 };
-
-#endif // DISTRORELEASENOTIFIER_H

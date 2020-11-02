@@ -3,8 +3,7 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#ifndef UPGRADERPROCESS_H
-#define UPGRADERPROCESS_H
+#pragma once
 
 #include <QObject>
 
@@ -34,5 +33,3 @@ private:
     bool m_waiting = true; // only true while we wait for the proc to fail
     QString m_output;
 };
-
-#endif // UPGRADERPROCESS_H

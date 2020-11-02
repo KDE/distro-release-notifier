@@ -3,8 +3,7 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#ifndef NOTIFIER_H
-#define NOTIFIER_H
+#pragma once
 
 #include <QObject>
 
@@ -26,5 +25,3 @@ private:
 
     KStatusNotifierItem *m_notifier = nullptr;
 };
-
-#endif // NOTIFIER_H

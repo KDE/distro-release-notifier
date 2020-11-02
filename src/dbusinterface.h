@@ -3,9 +3,7 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-
-#ifndef DBUSINTERFACE_H
-#define DBUSINTERFACE_H
+#pragma once
 
 #include <QObject>
 
@@ -30,5 +28,3 @@ signals:
 private:
     bool m_useDevel;
 };
-
-#endif // DBUSINTERFACE_H
