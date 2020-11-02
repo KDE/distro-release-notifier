@@ -14,7 +14,8 @@ class Notifier : public QObject
 {
     Q_OBJECT
 public:
-    Notifier(QObject *parent = nullptr);
+    using QObject::QObject;
+
     void show(const QString &name, const QString &version, const QDate &eolDate);
 
 signals:
@@ -23,7 +24,7 @@ signals:
 private:
     void init();
 
-    KStatusNotifierItem *m_notifier;
+    KStatusNotifierItem *m_notifier = nullptr;
 };
 
 #endif // NOTIFIER_H
