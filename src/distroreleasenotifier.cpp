@@ -99,7 +99,7 @@ void DistroReleaseNotifier::releaseUpgradeCheck()
         env.insert(QStringLiteral("USE_DEVEL"), QStringLiteral("1"));
     }
     m_checkerProcess->setProcessEnvironment(env);
-    connect(m_checkerProcess, QOverload<int>::of(&QProcess::finished),
+    connect(m_checkerProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &DistroReleaseNotifier::checkReleaseUpgradeFinished);
     m_checkerProcess->start(QStringLiteral("/usr/bin/python3"), QStringList() << checkerFile);
 }
