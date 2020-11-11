@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: 2018-2020 Jonathan Riddell <jr@jriddell.org>
+# SPDX-FileCopyrightText: 2018-2020 Harald Sitter <sitter@kde.org>
+
 add_definitions(-DTRANSLATION_DOMAIN=\"distro-release-notifier\")
 
 add_definitions(

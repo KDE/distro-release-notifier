@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: 2018 Harald Sitter <sitter@kde.org>
+
 install(FILES distro-preview-upgrade
     RENAME ${PREVIEW_UPGRADE_NAME}
     DESTINATION ${CMAKE_INSTALL_BINDIR}
