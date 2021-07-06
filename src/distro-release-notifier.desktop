@@ -11,6 +11,7 @@ X-KDE-Library=distroreleasenotifier
 Icon=system-software-update
 
 Name=Operating System Release Notifier
+Name[ar]=إعلام بإصدار نظام التشغيل
 Name[az]=Əməliyyat Sistemi Buraxılışı Bildirişi
 Name[ca]=Notificador del llançament del sistema operatiu
 Name[ca@valencia]=Notificador del llançament del sistema operatiu
@@ -42,6 +43,7 @@ Name[uk]=Засіб сповіщення про випуски операцій�
 Name[x-test]=xxOperating System Release Notifierxx
 Name[zh_CN]=操作系统发布通知
 Comment=Checks for new system releases and notifies when available
+Comment[ar]=يتحقق من إصدارات النظام الجديد ويبلغ عند توفرها
 Comment[az]=Sistemin yeni buraxılışlarını yoxlamaq və mövcud olduqda onları bildirmək
 Comment[ca]=Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible
 Comment[ca@valencia]=Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible
