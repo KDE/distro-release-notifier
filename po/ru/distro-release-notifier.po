@@ -1,0 +1,111 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the distro-release-notifier package.
+#
+# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: distro-release-notifier\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-11-12 02:39+0100\n"
+"PO-Revision-Date: 2020-06-28 17:41+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: src/notifier.cpp:22
+#, kde-format
+msgctxt "KDE neon on 18.04"
+msgid "%1 on %2"
+msgstr "Установлена %1 на основе Ubuntu %2"
+
+#: src/notifier.cpp:24
+#, kde-format
+msgid "Upgrade available"
+msgstr "Доступно обновление"
+
+#: src/notifier.cpp:25
+#, kde-format
+msgid "%1."
+msgstr "%1."
+
+#: src/notifier.cpp:27
+#, kde-format
+msgid ""
+"\n"
+"This version will stop receiving updates and security fixes in 1 day."
+msgid_plural ""
+"\n"
+"This version will stop receiving updates and security fixes in %1 days."
+msgstr[0] ""
+"\n"
+"Выпуск обновлений и исправлений безопасности для этой версии будет прекращён "
+"через %1 день."
+msgstr[1] ""
+"\n"
+"Выпуск обновлений и исправлений безопасности для этой версии будет прекращён "
+"через %1 дня."
+msgstr[2] ""
+"\n"
+"Выпуск обновлений и исправлений безопасности для этой версии будет прекращён "
+"через %1 дней."
+msgstr[3] ""
+"\n"
+"Завтра будет прекращён выпуск обновлений и исправлений безопасности для этой "
+"версии."
+
+#: src/notifier.cpp:33
+#, kde-format
+msgctxt "Warning notice with emoji"
+msgid ""
+"\n"
+"This version will no longer receive updates or security fixes from KDE "
+"neon.\n"
+"%1 Upgrade Now!"
+msgstr ""
+"\n"
+"KDE neon прекратило выпуск обновлений и исправлений для этой версии.\n"
+"%1 Выполните обновление."
+
+#: src/screensaverinhibitor.cpp:19
+#, kde-format
+msgctxt "Screensaver inhibition reason"
+msgid "Upgrading Operating System"
+msgstr "Обновление операционной системы"
+
+#: src/upgraderprocess.cpp:98
+#, kde-format
+msgctxt "@title/window upgrade failure dialog"
+msgid "Upgrade Failed"
+msgstr "Ошибка обновления"
+
+#: src/upgraderprocess.cpp:104
+#, kde-format
+msgctxt "@title title widget above process output"
+msgid "Upgrade failed with the following output:"
+msgstr "Во время обновления произошла ошибка, далее приведено её описание:"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Александр Яворский"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kekcuha@gmail.com"
+
+#~ msgid "distro-release-notifier"
+#~ msgstr "distro-release-notifier"
+
+#~ msgid "Checks for new Ubuntu releases and notifies"
+#~ msgstr "Проверка и уведомления о наличии новых выпусков Ubuntu"
+
+#~ msgid "Copyright 2018 Jonathan Riddell <jr@jriddell.org>"
+#~ msgstr "© Jonathan Riddell <jr@jriddell.org>, 2018"
+
+#~ msgid "New version: %1"
+#~ msgstr "Новая версия: %1"

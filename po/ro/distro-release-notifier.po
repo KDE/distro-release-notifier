@@ -1,0 +1,105 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the distro-release-notifier package.
+# Sergiu Bivol <sergiu@cip.md>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: distro-release-notifier\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-11-12 02:39+0100\n"
+"PO-Revision-Date: 2020-09-01 01:11+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 19.12.3\n"
+
+#: src/notifier.cpp:22
+#, kde-format
+msgctxt "KDE neon on 18.04"
+msgid "%1 on %2"
+msgstr "%1 pe %2"
+
+#: src/notifier.cpp:24
+#, kde-format
+msgid "Upgrade available"
+msgstr "Înnoiri disponibile"
+
+#: src/notifier.cpp:25
+#, kde-format
+msgid "%1."
+msgstr "%1."
+
+#: src/notifier.cpp:27
+#, kde-format
+msgid ""
+"\n"
+"This version will stop receiving updates and security fixes in 1 day."
+msgid_plural ""
+"\n"
+"This version will stop receiving updates and security fixes in %1 days."
+msgstr[0] ""
+"\n"
+"Această versiune va înceta să primească actualizări și corecții de "
+"securitate în 1 zi."
+msgstr[1] ""
+"\n"
+"Această versiune va înceta să primească actualizări și corecții de "
+"securitate în %1 zile."
+msgstr[2] ""
+"\n"
+"Această versiune va înceta să primească actualizări și corecții de "
+"securitate în %1 de zile."
+
+#: src/notifier.cpp:33
+#, kde-format
+msgctxt "Warning notice with emoji"
+msgid ""
+"\n"
+"This version will no longer receive updates or security fixes from KDE "
+"neon.\n"
+"%1 Upgrade Now!"
+msgstr ""
+"\n"
+"Această versiune va înceta să primească actualizări și corecții de "
+"securitate de la KDE neon.\n"
+"%1 Înnoiți acum!"
+
+#: src/screensaverinhibitor.cpp:19
+#, kde-format
+msgctxt "Screensaver inhibition reason"
+msgid "Upgrading Operating System"
+msgstr "Se înnoiește sistemul de operare"
+
+#: src/upgraderprocess.cpp:98
+#, kde-format
+msgctxt "@title/window upgrade failure dialog"
+msgid "Upgrade Failed"
+msgstr "Înnoirea a eșuat"
+
+#: src/upgraderprocess.cpp:104
+#, kde-format
+msgctxt "@title title widget above process output"
+msgid "Upgrade failed with the following output:"
+msgstr "Înnoirea a eșuat cu următorul rezultat:"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Sergiu Bivol"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sergiu@cip.md"
+
+#~ msgid "distro-release-notifier"
+#~ msgstr "notificator de lansare distribuție"
+
+#~ msgid "Checks for new Ubuntu releases and notifies"
+#~ msgstr "Verifică după ediții Ubuntu noi și notifică"
+
+#~ msgid "Copyright 2018 Jonathan Riddell <jr@jriddell.org>"
+#~ msgstr "Drept de autor 2018 Jonathan Riddell <jr@jriddell.org>"
