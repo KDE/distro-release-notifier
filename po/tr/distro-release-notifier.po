@@ -21,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "KDE neon on 18.04"
 msgid "%1 on %2"
-msgstr "%2 üzerinde %1"
+msgstr "%2 tabanlı %1"
 
 #: src/notifier.cpp:24
 #, kde-format
 msgid "Upgrade available"
-msgstr "Yükseltme kullanılabilir"
+msgstr "Yükseltme var"
 
 #: src/notifier.cpp:25
 #, kde-format
