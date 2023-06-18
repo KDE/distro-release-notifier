@@ -82,5 +82,5 @@ Comment[sv]=Söker efter nya systemutgåvor och underrättar när de är tillgä
 Comment[tr]=Yeni sistem sürümlerini denetler ve kullanılabilir olduğunda bildirir
 Comment[uk]=Шукати нові випуски системи і сповіщає щодо їхньої наявності
 Comment[x-test]=xxChecks for new system releases and notifies when availablexx
-Comment[zh_CN]=检查新发布的操作系统版本，并在更新可用时通知
+Comment[zh_CN]=检查新发布的操作系统版本，并在系统有可以安装的更新时通知
 Comment[zh_TW]=檢查新系統版本並於可用時通知
