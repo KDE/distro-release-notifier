@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-11-12 02:39+0100\n"
+"POT-Creation-Date: 2023-09-15 00:48+0000\n"
 "PO-Revision-Date: 2023-04-28 17:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -19,28 +19,31 @@ msgstr ""
 
 #: src/notifier.cpp:22
 #, kde-format
-msgctxt "KDE neon on 18.04"
-msgid "%1 on %2"
-msgstr "%1 en %2"
-
-#: src/notifier.cpp:24
-#, kde-format
 msgid "Upgrade available"
 msgstr "Anovación dispoñíbel"
 
-#: src/notifier.cpp:25
+#: src/notifier.cpp:23
 #, kde-format
-msgid "%1."
-msgstr "%1."
+msgctxt "For example, 'KDE neon 18.04 is available.'"
+msgid "%1 %2 is available."
+msgstr ""
 
-#: src/notifier.cpp:27
-#, kde-format
+#: src/notifier.cpp:25
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "This version will stop receiving updates and security fixes in 1 day."
+#| msgid_plural ""
+#| "\n"
+#| "This version will stop receiving updates and security fixes in %1 days."
 msgid ""
 "\n"
-"This version will stop receiving updates and security fixes in 1 day."
+"Your device will stop receiving updates and security fixes in 1 day - please "
+"upgrade when possible."
 msgid_plural ""
 "\n"
-"This version will stop receiving updates and security fixes in %1 days."
+"Your device will stop receiving updates and security fixes in %1 days - "
+"please upgrade when possible."
 msgstr[0] ""
 "\n"
 "Esta versión deixará de recibir actualizacións e solucións de seguridade "
@@ -50,14 +53,18 @@ msgstr[1] ""
 "Esta versión deixará de recibir actualizacións e solucións de seguridade "
 "dentro de %1 días."
 
-#: src/notifier.cpp:33
-#, kde-format
-msgctxt "Warning notice with emoji"
+#: src/notifier.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "Warning notice with emoji"
+#| msgid ""
+#| "\n"
+#| "This version will no longer receive updates or security fixes from KDE "
+#| "neon.\n"
+#| "%1 Upgrade Now!"
 msgid ""
 "\n"
-"This version will no longer receive updates or security fixes from KDE "
-"neon.\n"
-"%1 Upgrade Now!"
+"Your device is no longer receiving updates or security fixes - please "
+"upgrade now."
 msgstr ""
 "\n"
 "Esta versión non recibirá actualizacións ou solucións de seguridade de KDE "
@@ -81,6 +88,13 @@ msgstr "A anovación fallou"
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
 msgstr "A anovación fallou coa seguinte saída:"
+
+#~ msgctxt "KDE neon on 18.04"
+#~ msgid "%1 on %2"
+#~ msgstr "%1 en %2"
+
+#~ msgid "%1."
+#~ msgstr "%1."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"
