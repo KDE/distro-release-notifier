@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:48+0000\n"
-"PO-Revision-Date: 2020-06-01 13:36+0300\n"
+"PO-Revision-Date: 2023-09-15 15:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.03.70\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -29,16 +29,10 @@ msgstr "Доступне оновлення дистрибутива"
 #, kde-format
 msgctxt "For example, 'KDE neon 18.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "Випущено %1 %2."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -49,33 +43,31 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Оновлення та виправлення захисту цієї системи буде припинено за %1 день."
+"Ваш пристрій перестане отримувати оновлення і виправлення захисту за %1 "
+"день. Будь ласка, виконайте оновлення версії системи, якщо це можливо."
 msgstr[1] ""
 "\n"
-"Оновлення та виправлення захисту цієї системи буде припинено за %1 дні."
+"Ваш пристрій перестане отримувати оновлення і виправлення захисту за %1 дні. "
+"Будь ласка, виконайте оновлення версії системи, якщо це можливо."
 msgstr[2] ""
 "\n"
-"Оновлення та виправлення захисту цієї системи буде припинено за %1 днів."
+"Ваш пристрій перестане отримувати оновлення і виправлення захисту за %1 "
+"днів. Будь ласка, виконайте оновлення версії системи, якщо це можливо."
 msgstr[3] ""
 "\n"
-"Оновлення та виправлення захисту цієї системи буде припинено за день."
+"Ваш пристрій перестане отримувати оновлення і виправлення захисту за день. "
+"Будь ласка, виконайте оновлення версії системи, якщо це можливо."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 msgstr ""
 "\n"
-"Ця версія не оновлюватиметься, KDE neon не виправлятиме у ній вади захисту.\n"
-"%1 Оновіть її негайно!"
+"Ваш пристрій перестане отримувати оновлення і виправлення захисту. Будь "
+"ласка, виконайте оновлення версії системи зараз."
 
 #: src/screensaverinhibitor.cpp:19
 #, kde-format

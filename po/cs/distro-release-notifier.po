@@ -29,13 +29,7 @@ msgid "%1 %2 is available."
 msgstr ""
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -45,32 +39,16 @@ msgid_plural ""
 "Your device will stop receiving updates and security fixes in %1 days - "
 "please upgrade when possible."
 msgstr[0] ""
-"\n"
-"Tato verze přestane dostávat aktualizace a bezpečnostní opravy za 1 den."
 msgstr[1] ""
-"\n"
-"Tato verze přestane dostávat aktualizace a bezpečnostní opravy za %1 dny."
 msgstr[2] ""
-"\n"
-"Tato verze přestane dostávat aktualizace a bezpečnostní opravy za %1 dnů."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 msgstr ""
-"\n"
-"Tato verze nebude nadále dostávat aktualizace nebo bezpečnostní opravy od "
-"KDE neon.\n"
-"%1 Aktualizujte nyní!"
 
 #: src/screensaverinhibitor.cpp:19
 #, kde-format
@@ -89,10 +67,3 @@ msgstr "Aktualizace selhala"
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
 msgstr "Aktualizace selhala s následující zprávou:"
-
-#~ msgctxt "KDE neon on 18.04"
-#~ msgid "%1 on %2"
-#~ msgstr "%1 on %2"
-
-#~ msgid "%1."
-#~ msgstr "%1."
