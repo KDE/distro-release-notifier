@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2018, 2020.
+# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2018, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:48+0000\n"
-"PO-Revision-Date: 2020-06-07 15:10+0200\n"
+"PO-Revision-Date: 2023-09-16 18:34+0200\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -26,16 +26,10 @@ msgstr "Actualización disponible"
 #, kde-format
 msgctxt "For example, 'KDE neon 18.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "%1 %2 está disponible."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -46,30 +40,23 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Esta versión dejará de recibir actualizaciones y parches de seguridad en 1 "
-"día."
+"Su dispositivo dejará de recibir actualizaciones y parches de seguridad en 1 "
+"día. Actualice cuando pueda."
 msgstr[1] ""
 "\n"
-"Esta versión dejará de recibir actualizaciones y parches de seguridad en %1 "
-"días."
+"Su dispositivo dejará de recibir actualizaciones y parches de seguridad en "
+"%1 días. Actualice cuando pueda."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 msgstr ""
 "\n"
-"Esta versión no recibirá más actualizaciones ni parches de seguridad de KDE "
-"neon.\n"
-"%1 ¡Actualize ahora!"
+"Su dispositivo no recibirá más actualizaciones ni parches de seguridad. "
+"¡Actualice ahora!"
 
 #: src/screensaverinhibitor.cpp:19
 #, kde-format
@@ -88,27 +75,3 @@ msgstr "La actualización falló"
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
 msgstr "La actualización falló con el siguiente error:"
-
-#~ msgctxt "KDE neon on 18.04"
-#~ msgid "%1 on %2"
-#~ msgstr "%1 con %2"
-
-#~ msgid "%1."
-#~ msgstr "%1."
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Víctor Rodrigo Córdoba"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "vrcordoba@gmail.com"
-
-#~ msgid "distro-release-notifier"
-#~ msgstr "distro-release-notifier"
-
-#~ msgid "Checks for new Ubuntu releases and notifies"
-#~ msgstr "Comprueba y avisa de nuevos lanzamientos de Ubuntu"
-
-#~ msgid "Copyright 2018 Jonathan Riddell <jr@jriddell.org>"
-#~ msgstr "Derechos de autor 2018 Jonathan Riddell <jr@jriddell.org>"

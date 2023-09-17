@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:48+0000\n"
-"PO-Revision-Date: 2023-09-02 02:56\n"
+"PO-Revision-Date: 2023-09-16 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -27,16 +27,10 @@ msgstr "有可用更新"
 #, kde-format
 msgctxt "For example, 'KDE neon 18.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "%1 %2 已经推出，可以升级。"
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -47,24 +41,17 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"此版本将在 %1 天内停止接收更新和安全修复。"
+"您的设备将在 %1 天后停止获得更新和安全修复 - 请尽快升级系统。"
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 msgstr ""
 "\n"
-"此版本将不再从 KDE neon 收到更新或安全修复。\n"
-"%1 立即升级！"
+"您的设备已不再获得更新和安全修复 - 请立即升级系统。"
 
 #: src/screensaverinhibitor.cpp:19
 #, kde-format
@@ -83,10 +70,3 @@ msgstr "升级失败"
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
 msgstr "升级失败，输出如下："
-
-#~ msgctxt "KDE neon on 18.04"
-#~ msgid "%1 on %2"
-#~ msgstr "%2 上的 %1"
-
-#~ msgid "%1."
-#~ msgstr "%1。"
