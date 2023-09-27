@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:48+0000\n"
-"PO-Revision-Date: 2022-03-26 11:44+0300\n"
+"PO-Revision-Date: 2023-09-26 07:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,27 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
-msgstr "Yükseltme var"
+msgstr "Yükseltme kullanılabilir"
 
 #: src/notifier.cpp:23
 #, kde-format
 msgctxt "For example, 'KDE neon 18.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "%1 %2 kullanılabilir."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -46,29 +40,23 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Bu sürüm, 1 gün içinde güncelleme ve güvenlik onarımlarını almayı durduracak."
+"Aygıtınız 1 gün sonra güncellemeleri ve güvenlik düzeltmelerini almayı "
+"bırakacak. Olabildiğince en kısa sürede yazılımınızı yükseltin."
 msgstr[1] ""
 "\n"
-"Bu sürüm, %1 gün içinde güncelleme ve güvenlik onarımlarını almayı "
-"durduracak."
+"Aygıtınız %1 gün sonra güncellemeleri ve güvenlik düzeltmelerini almayı "
+"bırakacak. Olabildiğince en kısa sürede yazılımınızı yükseltin."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 msgstr ""
 "\n"
-"Bu sürüm, artık KDE neon güncellemelerini ve güvenlik onarımlarını almayı "
-"durduracak.\n"
-"%1 Şimdi Yükseltin!"
+"Aygıtınız artık güncellemeleri veya güvenlik düzeltmelerini almıyor. "
+"Olabildiğince en kısa sürede yazılımınızı yükseltin."
 
 #: src/screensaverinhibitor.cpp:19
 #, kde-format
