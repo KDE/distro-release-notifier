@@ -43,12 +43,12 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Este dispositiu deixarà de rebre actualitzacions i correccions de seguretat "
-"en 1 dia. Actualitzeu-lo quan siga possible."
+"Este dispositiu deixarà de rebre actualitzacions i esmenes de seguretat en 1 "
+"dia. Actualitzeu-lo quan siga possible."
 msgstr[1] ""
 "\n"
-"Este dispositiu deixarà de rebre actualitzacions i correccions de seguretat "
-"en %1 dies. Actualitzeu-lo quan siga possible."
+"Este dispositiu deixarà de rebre actualitzacions i esmenes de seguretat en "
+"%1 dies. Actualitzeu-lo quan siga possible."
 
 #: src/notifier.cpp:30
 #, kde-format
@@ -58,7 +58,7 @@ msgid ""
 "upgrade now."
 msgstr ""
 "\n"
-"Esta dispositiu ja no rebrà actualitzacions o correccions de seguretat. "
+"Esta dispositiu ja no rebrà actualitzacions o esmenes de seguretat. "
 "Actualitzeu-lo ara."
 
 #: src/screensaverinhibitor.cpp:19
