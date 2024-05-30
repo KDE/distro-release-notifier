@@ -1,33 +1,33 @@
-# translation of distro-release-notifier.pot to Esperanto
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:39+0000\n"
-"PO-Revision-Date: 2024-05-29 23:46+0200\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
-"Language-Team: Esperanto <kde-i18n-eo.org>\n"
-"Language: eo\n"
+"PO-Revision-Date: 2024-05-29 09:09+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
-msgstr "Ĝisdatigoj disponeblaj"
+msgstr "יש שדרוג"
 
 #: src/notifier.cpp:23
 #, kde-format
 msgctxt "For example, 'KDE neon 18.04 is available.'"
 msgid "%1 %2 is available."
-msgstr "%1 %2 disponeblas."
+msgstr "%1 %2 זמינה."
 
 #: src/notifier.cpp:25
 #, kde-format
@@ -41,12 +41,19 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Via aparato ĉesos recevi ĝisdatigojn kaj sekurecajn flikojn post 1 tago - "
-"bonvolu aktualigi kiam eblas."
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע מחר - נא לשדרג בהקדם האפשרי."
 msgstr[1] ""
 "\n"
-"Via aparato ĉesos recevi ĝisdatigojn kaj sekurecajn flikojn post %1 tagoj - "
-"bonvolu aktualigi kiam eblas."
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע מחרתיים - נא לשדרג בהקדם "
+"האפשרי."
+msgstr[2] ""
+"\n"
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע בעוד %1 ימים - נא לשדרג "
+"בהקדם האפשרי."
+msgstr[3] ""
+"\n"
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע בעוד %1 ימים - נא לשדרג "
+"בהקדם האפשרי."
 
 #: src/notifier.cpp:30
 #, kde-format
@@ -56,23 +63,22 @@ msgid ""
 "upgrade now."
 msgstr ""
 "\n"
-"Via aparato ne plu estas recevanta ĝisdatigojn aŭ sekurecflikojn - bonvolu "
-"aktualigi nun."
+"המכשיר שלך הפסיק לקבל עדכונים או תיקוני אבטחת מידע - נא לשדרג כעת."
 
 #: src/screensaverinhibitor.cpp:19
 #, kde-format
 msgctxt "Screensaver inhibition reason"
 msgid "Upgrading Operating System"
-msgstr "Ĝisdatigi Operaciumon"
+msgstr "שדרוג מערכת ההפעלה"
 
 #: src/upgraderprocess.cpp:98
 #, kde-format
 msgctxt "@title/window upgrade failure dialog"
 msgid "Upgrade Failed"
-msgstr "Ĝisdatigo Malsukcesis"
+msgstr "השדרוג נכשל"
 
 #: src/upgraderprocess.cpp:104
 #, kde-format
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
-msgstr "Ĝisdatigo malsukcesis kun la sekva eligo:"
+msgstr "השדרוג נכשל עם הפלט הבא:"
