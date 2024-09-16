@@ -20,7 +20,7 @@ public:
 
     Q_SCRIPTABLE void Poll();
 
-signals:
+Q_SIGNALS:
     void useDevelChanged();
     // Emitted when Poll is called to notify of the request
     void pollingRequested();

@@ -30,7 +30,7 @@ void UpgraderProcess::run()
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, [this](){
         m_waiting = false;
-        emit notPending();
+        Q_EMIT notPending();
         deleteLater();
     });
 
@@ -57,7 +57,7 @@ void UpgraderProcess::run()
     connect(UpgraderWatcher::self(), &UpgraderWatcher::upgraderRunning,
             this, [this, unexpectedConnection]() {
         m_waiting = false;
-        emit notPending();
+        Q_EMIT notPending();
         disconnect(unexpectedConnection);
     });
 

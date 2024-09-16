@@ -30,6 +30,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     WidgetsAddons
     DBusAddons
     KIO
+    StatusNotifierItem
 )
 
 # update flavor is derived from the installed metapackage(s) by pkg.split('-')[-1].captialize

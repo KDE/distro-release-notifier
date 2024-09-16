@@ -36,10 +36,10 @@ void DBusInterface::setUseDevel(bool use)
         return;
     }
     m_useDevel = use;
-    emit useDevelChanged();
+    Q_EMIT useDevelChanged();
 }
 
 void DBusInterface::Poll()
 {
-    emit pollingRequested();
+    Q_EMIT pollingRequested();
 }

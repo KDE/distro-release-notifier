@@ -20,12 +20,12 @@ public:
     void setUseDevel(bool useDevel);
     void run();
 
-signals:
+Q_SIGNALS:
     // Either the process finished or it registered on dbus.
     // Notifier should consider this launch concluded.
     void notPending();
 
-private slots:
+private Q_SLOTS:
     void onUnexpectedFinish(int code);
 
 private:

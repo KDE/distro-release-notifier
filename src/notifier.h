@@ -17,7 +17,7 @@ public:
 
     void show(const QString &name, const QString &version, const QDate &eolDate);
 
-signals:
+Q_SIGNALS:
     void activateRequested();
 
 private:

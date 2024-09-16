@@ -13,7 +13,7 @@ class UpgraderWatcher : public QObject
 public:
     static UpgraderWatcher *self();
 
-signals:
+Q_SIGNALS:
     void upgraderRunning();
     void upgraderNotRunning();
 
