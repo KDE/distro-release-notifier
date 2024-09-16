@@ -50,11 +50,8 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     connect(upgradeAction, &KNotificationAction::activated, this, [this] {
                 &Notifier::activateRequested;
     });
-    //notification->setActions(QStringList{QStringLiteral("Upgrade")});
     notification->setTitle(title);
     notification->setText(text);
-//    connect(notification, &KNotification::action1Activated,
-//            this, &Notifier::activateRequested);
     notification->sendEvent();
 }
 
