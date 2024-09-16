@@ -6,13 +6,16 @@
 #include "screensaverinhibitor.h"
 
 #include <KLocalizedString>
-#include <KNotificationRestrictions>
+// TODO This class seems to have vanished, see e.g. kdeconnect-kde plugins/screensaver-inhibit
+// for how to use the freedesktop interface
+//#include <KNotificationRestrictions>
 
 #include "upgraderwatcher.h"
 
 ScreenSaverInhibitor::ScreenSaverInhibitor(QObject *parent)
     : QObject(parent)
 {
+    /*
     auto watcher = UpgraderWatcher::self();
     connect(watcher, &UpgraderWatcher::upgraderRunning, this, [this]() {
         m_restriction = new KNotificationRestrictions(KNotificationRestrictions::ScreenSaver,
@@ -22,4 +25,5 @@ ScreenSaverInhibitor::ScreenSaverInhibitor(QObject *parent)
         delete m_restriction;
         m_restriction = nullptr;
     });
+    */
 }

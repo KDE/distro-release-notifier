@@ -46,11 +46,15 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
                                           KNotification::Persistent | KNotification::DefaultEvent,
                                           this);
     notification->setIconName(icon);
-    notification->setActions(QStringList{QStringLiteral("Upgrade")});
+    auto upgradeAction = notification->addAction(i18n("Open in File Manager"));
+    connect(upgradeAction, &KNotificationAction::activated, this, [this] {
+                &Notifier::activateRequested;
+    });
+    //notification->setActions(QStringList{QStringLiteral("Upgrade")});
     notification->setTitle(title);
     notification->setText(text);
-    connect(notification, &KNotification::action1Activated,
-            this, &Notifier::activateRequested);
+//    connect(notification, &KNotification::action1Activated,
+//            this, &Notifier::activateRequested);
     notification->sendEvent();
 }
 
