@@ -7,10 +7,10 @@ cmake_minimum_required(VERSION 3.0)
 
 project(distroreleasenotifier)
 
-set(QT_MIN_VERSION "5.7.0")
-set(KF_MIN_VERSION "5.50.0")
+set(QT_MIN_VERSION "6.2.0")
+set(KF6_MIN_VERSION "6.2.0")
 
-find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -20,9 +20,9 @@ include(ECMInstallIcons)
 include(ECMQtDeclareLoggingCategory)
 include(FeatureSummary)
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
 
-find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     I18n
     NetworkManagerQt

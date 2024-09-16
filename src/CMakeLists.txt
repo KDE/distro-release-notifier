@@ -33,24 +33,14 @@ ecm_qt_declare_logging_category(distroreleasenotifier_SRCS
     IDENTIFIER NOTIFIER
     CATEGORY_NAME org.kde.distro-release-notifier)
 
-qt5_generate_dbus_interface(
-    dbusinterface.h
-    ${CMAKE_CURRENT_BINARY_DIR}/org.kde.DistroReleaseNotifier.xml
-    OPTIONS -a
-)
-qt5_add_dbus_adaptor(distroreleasenotifier_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.DistroReleaseNotifier.xml dbusinterface.h DBusInterface)
-
-add_library(distroreleasenotifier MODULE ${distroreleasenotifier_SRCS})
+kcoreaddons_add_plugin(distroreleasenotifier SOURCES ${distroreleasenotifier_SRCS} INSTALL_NAMESPACE "kf6/kded")
 
 target_link_libraries(distroreleasenotifier
-    KF5::DBusAddons
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::NetworkManagerQt
-    KF5::Notifications
-    KF5::WidgetsAddons
-    Qt5::Network
+    KF6::DBusAddons
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::NetworkManagerQt
+    KF6::Notifications
+    KF6::WidgetsAddons
+    Qt6::Network
 )
-
-install(TARGETS distroreleasenotifier DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
-kcoreaddons_desktop_to_json(distroreleasenotifier distro-release-notifier.desktop)
