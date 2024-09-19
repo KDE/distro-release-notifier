@@ -2,6 +2,6 @@
 # SPDX-FileCopyrightText: 2018-2020 Harald Sitter <sitter@kde.org>
 # SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-export QT_SELECT=5
+export QT_SELECT=6
 
 exec qdbus org.kde.DistroReleaseNotifier /org/kde/DistroReleaseNotifier org.kde.DistroReleaseNotifier.UseDevel true

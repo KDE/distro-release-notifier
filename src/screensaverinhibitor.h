@@ -6,8 +6,7 @@
 #pragma once
 
 #include <QObject>
-
-class KNotificationRestrictions;
+#include <optional>
 
 class ScreenSaverInhibitor : public QObject
 {
@@ -16,5 +15,5 @@ public:
     explicit ScreenSaverInhibitor(QObject *parent = nullptr);
 
 private:
-    KNotificationRestrictions *m_restriction = nullptr;
+    std::optional<int> m_screensaverDisableCookie;
 };

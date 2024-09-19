@@ -20,7 +20,7 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     init();
 
     const QString title = i18n("Upgrade available");
-    QString text = i18nc("For example, 'KDE neon 18.04 is available.'", "%1 %2 is available.", name, version);
+    QString text = i18nc("For example, 'KDE neon 24.04 is available.'", "%1 %2 is available.", name, version);
     if (eolDate.isValid() && eolDate > QDate::currentDate()) {
         text.append(i18np("\nYour device will stop receiving updates and security fixes in 1 day - please upgrade when possible.",
                           "\nYour device will stop receiving updates and security fixes in %1 days - please upgrade when possible.",
@@ -40,16 +40,15 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     m_notifier->setStandardActionsEnabled(false);
 
     // This replaces a potentially pre-existing notification. Notifications
-    // are auto-delted, so we need to do no house keeping here. This will
+    // are auto-deleted, so we need to do no house keeping here. This will
     // automatically replace the previous notification.
     auto notification = new KNotification(QStringLiteral("notification"),
                                           KNotification::Persistent | KNotification::DefaultEvent,
                                           this);
     notification->setIconName(icon);
-    auto upgradeAction = notification->addAction(i18n("Open in File Manager"));
-    connect(upgradeAction, &KNotificationAction::activated, this, [this] {
-                &Notifier::activateRequested;
-    });
+    auto upgradeAction = notification->addAction(i18n("Upgrade available"));
+    connect(upgradeAction, &KNotificationAction::activated,
+            this, &Notifier::activateRequested);
     notification->setTitle(title);
     notification->setText(text);
     notification->sendEvent();
