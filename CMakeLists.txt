@@ -47,7 +47,7 @@ set(PREVIEW_UPGRADE_NAME "distro-preview-upgrade"
 
 add_subdirectory(src)
 
-install(FILES releasechecker DESTINATION ${DATA_INSTALL_DIR}/distro-release-notifier
+install(FILES releasechecker DESTINATION ${KDE_INSTALL_DATADIR}/distro-release-notifier
         PERMISSIONS
         OWNER_EXECUTE OWNER_READ OWNER_WRITE
         GROUP_EXECUTE GROUP_READ
