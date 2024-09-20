@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2024-09-20 01:57+0000\n"
 "PO-Revision-Date: 2024-04-23 19:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,14 +18,16 @@ msgstr ""
 "notifier.pot\n"
 "X-Crowdin-File-ID: 7173\n"
 
-#: src/notifier.cpp:22
+#: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
 msgid "Upgrade available"
 msgstr "有可用更新"
 
 #: src/notifier.cpp:23
-#, kde-format
-msgctxt "For example, 'KDE neon 18.04 is available.'"
+#, fuzzy, kde-format
+#| msgctxt "For example, 'KDE neon 18.04 is available.'"
+#| msgid "%1 %2 is available."
+msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 已经推出，可以升级。"
 
@@ -53,7 +55,7 @@ msgstr ""
 "\n"
 "您的设备已不再获得更新和安全修复 - 请立即升级系统。"
 
-#: src/screensaverinhibitor.cpp:19
+#: src/screensaverinhibitor.cpp:24
 #, kde-format
 msgctxt "Screensaver inhibition reason"
 msgid "Upgrading Operating System"

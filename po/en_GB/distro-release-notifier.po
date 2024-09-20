@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2024-09-20 01:57+0000\n"
 "PO-Revision-Date: 2024-05-24 19:11+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,14 +17,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.2\n"
 
-#: src/notifier.cpp:22
+#: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
 msgid "Upgrade available"
 msgstr "Upgrade available"
 
 #: src/notifier.cpp:23
-#, kde-format
-msgctxt "For example, 'KDE neon 18.04 is available.'"
+#, fuzzy, kde-format
+#| msgctxt "For example, 'KDE neon 18.04 is available.'"
+#| msgid "%1 %2 is available."
+msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 is available."
 
@@ -58,7 +60,7 @@ msgstr ""
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 
-#: src/screensaverinhibitor.cpp:19
+#: src/screensaverinhibitor.cpp:24
 #, kde-format
 msgctxt "Screensaver inhibition reason"
 msgid "Upgrading Operating System"
