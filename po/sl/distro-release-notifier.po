@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2023-09-15 09:11+0200\n"
+"PO-Revision-Date: 2024-09-20 07:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -24,9 +24,7 @@ msgid "Upgrade available"
 msgstr "Na voljo je posodobitev"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 je na voljo."

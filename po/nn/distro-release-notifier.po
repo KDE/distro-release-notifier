@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2024-09-20 01:57+0000\n"
 "PO-Revision-Date: 2024-07-28 00:38+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -19,16 +19,16 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: src/notifier.cpp:22
+#: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
 msgid "Upgrade available"
 msgstr "Oppgradering tilgjengeleg"
 
 #: src/notifier.cpp:23
 #, kde-format
-msgctxt "For example, 'KDE neon 18.04 is available.'"
+msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
-msgstr "%1 %2 er no tilgjengeleg."
+msgstr ""
 
 #: src/notifier.cpp:25
 #, kde-format
@@ -60,7 +60,7 @@ msgstr ""
 "Denne eininga vil ikkje lenger ta imot tryggleiks­oppdateringar eller andre "
 "oppdateringar. Du bør oppgradera straks."
 
-#: src/screensaverinhibitor.cpp:19
+#: src/screensaverinhibitor.cpp:24
 #, kde-format
 msgctxt "Screensaver inhibition reason"
 msgid "Upgrading Operating System"
