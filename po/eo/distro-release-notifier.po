@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2024-05-29 23:46+0200\n"
+"PO-Revision-Date: 2024-09-21 10:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -24,9 +24,7 @@ msgid "Upgrade available"
 msgstr "Ĝisdatigoj disponeblaj"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 disponeblas."

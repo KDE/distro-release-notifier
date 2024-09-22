@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2023-09-16 06:02+0200\n"
+"PO-Revision-Date: 2024-09-21 05:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -24,9 +24,7 @@ msgid "Upgrade available"
 msgstr "განახლება ხელმისაწვდომია"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "ხელმისაწვდომია %1 %2."
@@ -43,12 +41,12 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"ეს ვერსია განახლებებისა და უსაფრთხოების პაჩების მიღებას 1 დღეში შეწყვეტს - "
-"აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება"
+"თქვენი მოწყობილობა განახლებებისა და უსაფრთხოების პაჩების მიღებას 1 დღეში "
+"შეწყვეტს - აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება."
 msgstr[1] ""
 "\n"
-"ეს ვერსია განახლებებისა და უსაფრთხოების პაჩების მიღებას %1 დღეში შეწყვეტს - "
-"აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება"
+"თქვენი მოწყობილობა განახლებებისა და უსაფრთხოების პაჩების მიღებას %1 დღეში "
+"შეწყვეტს - აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება."
 
 #: src/notifier.cpp:30
 #, kde-format
