@@ -3,13 +3,13 @@
 #
 # pan93412 <pan93412@gmail.com>, 2019.
 # Jeff Huang <s8321414@gmail.com>, 2020.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2023-12-20 17:44+0900\n"
+"PO-Revision-Date: 2024-09-23 20:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -25,9 +25,7 @@ msgid "Upgrade available"
 msgstr "有可供使用的更新"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 已可使用。"
