@@ -2,6 +2,7 @@
     "KPlugin": {
         "Description": "Checks for new system releases and notifies when available",
         "Description[ca]": "Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible",
+        "Description[el]": "Ελέγχει για νέες εκδόσεις του συστήματος και ειδοποιεί όταν είναι διαθέσιμες",
         "Description[es]": "Comprueba si hay nuevos lanzamientos del sistema y los notifica cuando estos están disponibles",
         "Description[fr]": "Vérifie la présence de nouvelles versions du système et envoie des notifications lorsque disponible.",
         "Description[gl]": "Comproba e notifica se hai novas publicacións do sistema.",
