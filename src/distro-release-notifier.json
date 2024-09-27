@@ -1,6 +1,7 @@
 {
     "KPlugin": {
         "Description": "Checks for new system releases and notifies when available",
+        "Description[ar]": "يتحقق من إصدارات النظام الجديد ويبلغ عند توفرها",
         "Description[ca@valencia]": "Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible",
         "Description[ca]": "Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible",
         "Description[el]": "Ελέγχει για νέες εκδόσεις του συστήματος και ειδοποιεί όταν είναι διαθέσιμες",
@@ -8,6 +9,7 @@
         "Description[eu]": "Sistemaren argitalpen berririk dagoen ikuskatu eta dagoenean jakinarazten du",
         "Description[fr]": "Vérifie la présence de nouvelles versions du système et envoie des notifications lorsque disponible.",
         "Description[gl]": "Comproba e notifica se hai novas publicacións do sistema.",
+        "Description[ia]": "Verifica per nove versiones de systema e notifica quando disponibile",
         "Description[ka]": "სისტემის ახალი რელიზების შემოწმება და გაფრთხილება ხელმისაწვდომობის შემთხვევაში",
         "Description[nl]": "Controleert op nieuwe systeemuitgaven en meldingen indien beschikbaar",
         "Description[nn]": "Ser etter og varslar om nye systemutgåver",
@@ -37,6 +39,7 @@
         "Name[he]": "מודיע על הוצאות של מערכת ההפעלה לאור",
         "Name[hi]": "ऑपरेटिंग तंत्र प्रकाशन सूचक",
         "Name[hu]": "Operációs rendszerfrissítés-értesítő",
+        "Name[ia]": "Notification de Version de Systema Operative",
         "Name[id]": "Operating System Release Notifier",
         "Name[it]": "Notificatore di rilasci del sistema operativo",
         "Name[ka]": "ოპერაციული სისტემის რელიზის გაფრთხილება",
