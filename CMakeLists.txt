@@ -54,6 +54,8 @@ install(FILES releasechecker DESTINATION ${KDE_INSTALL_DATADIR}/distro-release-n
         WORLD_EXECUTE WORLD_READ
 )
 
+install(FILES distro-release-notifier.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+
 # Make it possible to use the po files fetched by the fetch-translations step
 ki18n_install(po)
 

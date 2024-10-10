@@ -42,8 +42,8 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     // This replaces a potentially pre-existing notification. Notifications
     // are auto-deleted, so we need to do no house keeping here. This will
     // automatically replace the previous notification.
-    auto notification = new KNotification(QStringLiteral("notification"),
-                                          KNotification::Persistent | KNotification::DefaultEvent,
+    auto notification = new KNotification(QStringLiteral("update"),
+                                          KNotification::Persistent,
                                           this);
     notification->setIconName(icon);
     auto upgradeAction = notification->addAction(i18n("Upgrade available"));
@@ -51,6 +51,7 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
             this, &Notifier::activateRequested);
     notification->setTitle(title);
     notification->setText(text);
+    notification->setComponentName(QStringLiteral("distro-release-notifier"));
     notification->sendEvent();
 }
 

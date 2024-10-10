@@ -1,0 +1,9 @@
+[Global]
+IconName=system-software-update
+Name=Release Notifier
+Comment=Notifications about system updates
+
+[Event/update]
+Name=Update available
+Comment=An update is available
+Action=Popup
