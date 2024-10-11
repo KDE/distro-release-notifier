@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/distro-release-notifier/distro-release-"
+"X-Crowdin-File: /kf6-trunk/messages/distro-release-notifier/distro-release-"
 "notifier.pot\n"
-"X-Crowdin-File-ID: 7173\n"
+"X-Crowdin-File-ID: 56118\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -24,9 +24,7 @@ msgid "Upgrade available"
 msgstr "有可用更新"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 已经推出，可以升级。"
