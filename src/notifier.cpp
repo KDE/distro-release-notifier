@@ -22,12 +22,12 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
     const QString title = i18n("Upgrade available");
     QString text = i18nc("For example, 'KDE neon 24.04 is available.'", "%1 %2 is available.", name, version);
     if (eolDate.isValid() && eolDate > QDate::currentDate()) {
-        text.append(i18np("\nYour device will stop receiving updates and security fixes in 1 day - please upgrade when possible.",
-                          "\nYour device will stop receiving updates and security fixes in %1 days - please upgrade when possible.",
+        text.append(i18np("\nYour device will stop receiving updates and security fixes in 1 day — please upgrade when possible.",
+                          "\nYour device will stop receiving updates and security fixes in %1 days — please upgrade when possible.",
                           -eolDate.daysTo(QDate::currentDate())));
     } else if (!eolDate.isNull()) {
         text.append(
-            i18n("\nYour device is no longer receiving updates or security fixes - please upgrade now."));
+            i18n("\nYour device is no longer receiving updates or security fixes — please upgrade now."));
     }
     const QString icon = QStringLiteral("system-software-update");
 
@@ -46,7 +46,7 @@ void Notifier::show(const QString &name, const QString &version, const QDate &eo
                                           KNotification::Persistent | KNotification::DefaultEvent,
                                           this);
     notification->setIconName(icon);
-    auto upgradeAction = notification->addAction(i18n("Upgrade available"));
+    auto upgradeAction = notification->addAction(i18nc("@action:button", "Upgrade"));
     connect(upgradeAction, &KNotificationAction::activated,
             this, &Notifier::activateRequested);
     notification->setTitle(title);
