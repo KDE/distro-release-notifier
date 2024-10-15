@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2024-09-20 15:40+0200\n"
+"PO-Revision-Date: 2024-10-12 21:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -58,7 +58,7 @@ msgid ""
 "upgrade now."
 msgstr ""
 "\n"
-"Esta dispositiu ja no rebrà actualitzacions o esmenes de seguretat. "
+"Este dispositiu ja no rebrà actualitzacions o esmenes de seguretat. "
 "Actualitzeu-lo ara."
 
 #: src/screensaverinhibitor.cpp:24
