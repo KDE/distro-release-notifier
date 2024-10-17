@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2024-05-31 22:18+0300\n"
+"PO-Revision-Date: 2024-10-16 10:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -24,15 +24,13 @@ msgid "Upgrade available"
 msgstr "יש שדרוג"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 זמינה."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -46,10 +44,16 @@ msgstr[0] ""
 "המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע מחר - נא לשדרג בהקדם האפשרי."
 msgstr[1] ""
 "\n"
-"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע בעוד %1 ימים - נא לשדרג "
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע בעוד יומיים - נא לשדרג "
 "בהקדם האפשרי."
 msgstr[2] ""
+"\n"
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע בעוד %1 יום - נא לשדרג "
+"בהקדם האפשרי."
 msgstr[3] ""
+"\n"
+"המכשיר שלך יפסיק לקבל עדכונים ותיקוני אבטחת מידע בעוד %1 ימים - נא לשדרג "
+"בהקדם האפשרי."
 
 #: src/notifier.cpp:30
 #, kde-format
