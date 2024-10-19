@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2024-05-24 19:11+0100\n"
+"PO-Revision-Date: 2024-10-18 17:19+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -23,9 +23,7 @@ msgid "Upgrade available"
 msgstr "Upgrade available"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 is available."
