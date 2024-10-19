@@ -7,6 +7,7 @@
         "Description[cs]": "Kontroluje a upozorňuje na nová vydání operačního systému",
         "Description[de]": "Auf verfügbare Systemaktualisierungen prüfen und bei Verfügbarkeit benachrichtigen",
         "Description[el]": "Ελέγχει για νέες εκδόσεις του συστήματος και ειδοποιεί όταν είναι διαθέσιμες",
+        "Description[en_GB]": "Checks for new system releases and notifies when available",
         "Description[es]": "Comprueba si hay nuevos lanzamientos del sistema y los notifica cuando estos están disponibles",
         "Description[eu]": "Sistemaren argitalpen berririk dagoen ikuskatu eta dagoenean jakinarazten du",
         "Description[fr]": "Vérifie la présence de nouvelles versions du système et envoie des notifications lorsque disponible.",
