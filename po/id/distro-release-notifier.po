@@ -1,20 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Wantoyo <wantoyek@gmail.com>, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2024 Wantoyo <wantoyek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-20 01:57+0000\n"
-"PO-Revision-Date: 2020-08-27 20:59+0700\n"
-"Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
-"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-11-10 07:34+0700\n"
+"Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
+"Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: src/notifier.cpp:22 src/notifier.cpp:49
 #, kde-format
@@ -25,16 +26,10 @@ msgstr "Tersedia peningkatan"
 #, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "%1 %2 telah tersedia."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day - please "
@@ -45,30 +40,23 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Versi ini akan menghentikan penerimaan pembaruan dan perbaikan keamanan "
-"dalam waktu 1 hari."
+"Perangkat Anda akan berhenti menerima pembaruan dan perbaikan keamanan dalam "
+"1 hari - silakan tingkatkan jika memungkinkan."
 msgstr[1] ""
 "\n"
-"Versi ini akan menghentikan penerimaan pembaruan dan perbaikan keamanan "
-"dalam waktu %1 hari."
+"Perangkat Anda akan berhenti menerima pembaruan dan perbaikan keamanan dalam "
+"%1 hari - silakan tingkatkan jika memungkinkan."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes - please "
 "upgrade now."
 msgstr ""
 "\n"
-" Versi ini tidak akan lagi menerima pembaruan atau perbaikan keamanan dari "
-"KDE neon.\n"
-"%1 Peningkatan Sekarang!"
+"Perangkat Anda tidak bisa lagi menerima pembaruan atau perbaikan keamanan - "
+"silakan tingkatkan sekarang."
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
@@ -80,7 +68,7 @@ msgstr "Peningkatan Sistem Operasi"
 #, kde-format
 msgctxt "@title/window upgrade failure dialog"
 msgid "Upgrade Failed"
-msgstr "Gagal Peningkatan"
+msgstr "Gagal Meningkatkan"
 
 #: src/upgraderprocess.cpp:104
 #, kde-format
