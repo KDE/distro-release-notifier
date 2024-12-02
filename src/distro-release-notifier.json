@@ -10,6 +10,7 @@
         "Description[en_GB]": "Checks for new system releases and notifies when available",
         "Description[es]": "Comprueba si hay nuevos lanzamientos del sistema y los notifica cuando estos están disponibles",
         "Description[eu]": "Sistemaren argitalpen berririk dagoen ikuskatu eta dagoenean jakinarazten du",
+        "Description[fi]": "Tarkistaa uudet järjestelmäjulkaisut ja ilmoittaa, jos niitä on saatavilla",
         "Description[fr]": "Vérifie la présence de nouvelles versions du système et envoie des notifications lorsque disponible.",
         "Description[gl]": "Comproba e notifica se hai novas publicacións do sistema.",
         "Description[he]": "בודק אם יש מהדורות חדשות של המערכת ומודיע כשיש",
