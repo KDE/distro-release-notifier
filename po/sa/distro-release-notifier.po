@@ -1,0 +1,76 @@
+# Sanskrit translations for distro-release-notifier package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the distro-release-notifier package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: distro-release-notifier\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+
+#: src/notifier.cpp:22 src/notifier.cpp:49
+#, kde-format
+msgid "Upgrade available"
+msgstr "उन्नयनं उपलब्धम्"
+
+#: src/notifier.cpp:23
+#, kde-format
+msgctxt "For example, 'KDE neon 24.04 is available.'"
+msgid "%1 %2 is available."
+msgstr "%1 %2 उपलभ्यते ।"
+
+#: src/notifier.cpp:25
+#, kde-format
+msgid ""
+"\n"
+"Your device will stop receiving updates and security fixes in 1 day - please "
+"upgrade when possible."
+msgid_plural ""
+"\n"
+"Your device will stop receiving updates and security fixes in %1 days - "
+"please upgrade when possible."
+msgstr[0] ""
+"\n"
+"भवतः उपकरणं 1 दिवसे अद्यतनं सुरक्षानिराकरणं च प्राप्तुं स्थगयिष्यति - कृपया यदा सम्भवं तदा "
+"उन्नयनं कुर्वन्तु।"
+msgstr[1] ""
+"\n"
+"भवतः यन्त्रं %1 दिवसेषु अद्यतनं सुरक्षानिराकरणं च प्राप्तुं स्थगयिष्यति - कृपया यदा सम्भवं तदा "
+"उन्नयनं कुर्वन्तु ।"
+
+#: src/notifier.cpp:30
+#, kde-format
+msgid ""
+"\n"
+"Your device is no longer receiving updates or security fixes - please "
+"upgrade now."
+msgstr ""
+"\n"
+"भवतः यन्त्रं अद्यतनं वा सुरक्षानिराकरणं वा न प्राप्नोति - कृपया इदानीं उन्नयनं कुर्वन्तु।"
+
+#: src/screensaverinhibitor.cpp:24
+#, kde-format
+msgctxt "Screensaver inhibition reason"
+msgid "Upgrading Operating System"
+msgstr "ऑपरेटिंग सिस्टम् उन्नयनम्"
+
+#: src/upgraderprocess.cpp:98
+#, kde-format
+msgctxt "@title/window upgrade failure dialog"
+msgid "Upgrade Failed"
+msgstr "उन्नयनं विफलम्"
+
+#: src/upgraderprocess.cpp:104
+#, kde-format
+msgctxt "@title title widget above process output"
+msgid "Upgrade failed with the following output:"
+msgstr "निम्नलिखितनिर्गमेन उन्नयनं विफलम् अभवत् ।"
