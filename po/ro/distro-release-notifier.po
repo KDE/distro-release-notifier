@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"POT-Creation-Date: 2025-03-14 00:45+0000\n"
 "PO-Revision-Date: 2024-01-07 16:13+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: src/notifier.cpp:22 src/notifier.cpp:49
+#: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
 msgstr "Înnoire disponibilă"
@@ -32,14 +32,22 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 e disponibil."
 
 #: src/notifier.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in 1 day - "
+#| "please upgrade when possible."
+#| msgid_plural ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in %1 days - "
+#| "please upgrade when possible."
 msgid ""
 "\n"
-"Your device will stop receiving updates and security fixes in 1 day - please "
+"Your device will stop receiving updates and security fixes in 1 day — please "
 "upgrade when possible."
 msgid_plural ""
 "\n"
-"Your device will stop receiving updates and security fixes in %1 days - "
+"Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
@@ -55,15 +63,27 @@ msgstr[2] ""
 "securitate în %1 de zile, înnoiți sistemul."
 
 #: src/notifier.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device is no longer receiving updates or security fixes - please "
+#| "upgrade now."
 msgid ""
 "\n"
-"Your device is no longer receiving updates or security fixes - please "
+"Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
 "Acest dispozitiv nu mai primește actualizări sau corecții de securitate, "
 "înnoiți-l acum."
+
+#: src/notifier.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title/window upgrade failure dialog"
+#| msgid "Upgrade Failed"
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "Înnoirea a eșuat"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format

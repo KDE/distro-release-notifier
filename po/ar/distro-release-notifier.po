@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"POT-Creation-Date: 2025-03-14 00:45+0000\n"
 "PO-Revision-Date: 2024-09-26 11:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: src/notifier.cpp:22 src/notifier.cpp:49
+#: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
 msgstr "تتوفّر ترقية"
@@ -30,14 +30,22 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 متوفّرة."
 
 #: src/notifier.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in 1 day - "
+#| "please upgrade when possible."
+#| msgid_plural ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in %1 days - "
+#| "please upgrade when possible."
 msgid ""
 "\n"
-"Your device will stop receiving updates and security fixes in 1 day - please "
+"Your device will stop receiving updates and security fixes in 1 day — please "
 "upgrade when possible."
 msgid_plural ""
 "\n"
-"Your device will stop receiving updates and security fixes in %1 days - "
+"Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
@@ -65,14 +73,26 @@ msgstr[5] ""
 "عندما يكون ذلك ممكنًا."
 
 #: src/notifier.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device is no longer receiving updates or security fixes - please "
+#| "upgrade now."
 msgid ""
 "\n"
-"Your device is no longer receiving updates or security fixes - please "
+"Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
 "لم يعد جهازك يتلقى تحديثات أو إصلاحات أمنية - يرجى الترقية الآن."
+
+#: src/notifier.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title/window upgrade failure dialog"
+#| msgid "Upgrade Failed"
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "فشلت الترقية"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format

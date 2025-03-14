@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"POT-Creation-Date: 2025-03-14 00:45+0000\n"
 "PO-Revision-Date: 2024-10-11 12:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 24.11.70\n"
 
-#: src/notifier.cpp:22 src/notifier.cpp:49
+#: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
 msgstr "Yükseltme kullanılabilir"
@@ -29,14 +29,22 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 kullanılabilir."
 
 #: src/notifier.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in 1 day - "
+#| "please upgrade when possible."
+#| msgid_plural ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in %1 days - "
+#| "please upgrade when possible."
 msgid ""
 "\n"
-"Your device will stop receiving updates and security fixes in 1 day - please "
+"Your device will stop receiving updates and security fixes in 1 day — please "
 "upgrade when possible."
 msgid_plural ""
 "\n"
-"Your device will stop receiving updates and security fixes in %1 days - "
+"Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
@@ -48,15 +56,27 @@ msgstr[1] ""
 "bırakacak. Olabildiğince en kısa sürede yazılımınızı yükseltin."
 
 #: src/notifier.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device is no longer receiving updates or security fixes - please "
+#| "upgrade now."
 msgid ""
 "\n"
-"Your device is no longer receiving updates or security fixes - please "
+"Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
 "Aygıtınız artık güncellemeleri veya güvenlik düzeltmelerini almıyor. "
 "Olabildiğince en kısa sürede yazılımınızı yükseltin."
+
+#: src/notifier.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title/window upgrade failure dialog"
+#| msgid "Upgrade Failed"
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "Yükseltme Başarısız"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"POT-Creation-Date: 2025-03-14 00:45+0000\n"
 "PO-Revision-Date: 2020-12-19 11:24-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
 
-#: src/notifier.cpp:22 src/notifier.cpp:49
+#: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
 msgstr "ਅੱਪਗਰੇਡ ਮੌਜੂਦ ਹੈ"
@@ -38,11 +38,11 @@ msgstr ""
 #| "This version will stop receiving updates and security fixes in %1 days."
 msgid ""
 "\n"
-"Your device will stop receiving updates and security fixes in 1 day - please "
+"Your device will stop receiving updates and security fixes in 1 day — please "
 "upgrade when possible."
 msgid_plural ""
 "\n"
-"Your device will stop receiving updates and security fixes in %1 days - "
+"Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
@@ -61,12 +61,20 @@ msgstr[1] ""
 #| "%1 Upgrade Now!"
 msgid ""
 "\n"
-"Your device is no longer receiving updates or security fixes - please "
+"Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
 "ਇਹ ਵਰਜ਼ਨ KDE ਨਿਓਨ ਤੋਂ ਅੱਪਡੇਟ ਜਾਂ ਸੁਰੱਖਿਆ ਸੁਧਾਰ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕਰੇਗਾ।neon.\n"
 "%1 ਲਈ ਹੁਣੇ ਅੱਪਗਰੇਡ ਕਰੋ!"
+
+#: src/notifier.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title/window upgrade failure dialog"
+#| msgid "Upgrade Failed"
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "ਅੱਪਗਰੇਡ ਫੇਲ੍ਹ ਹੈ"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format

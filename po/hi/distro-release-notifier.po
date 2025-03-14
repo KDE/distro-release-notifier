@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"POT-Creation-Date: 2025-03-14 00:45+0000\n"
 "PO-Revision-Date: 2021-06-29 20:35+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 21.04.2\n"
 
-#: src/notifier.cpp:22 src/notifier.cpp:49
+#: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
 msgstr "अपग्रेड उपलब्ध"
@@ -39,11 +39,11 @@ msgstr ""
 #| "This version will stop receiving updates and security fixes in %1 days."
 msgid ""
 "\n"
-"Your device will stop receiving updates and security fixes in 1 day - please "
+"Your device will stop receiving updates and security fixes in 1 day — please "
 "upgrade when possible."
 msgid_plural ""
 "\n"
-"Your device will stop receiving updates and security fixes in %1 days - "
+"Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
@@ -62,12 +62,20 @@ msgstr[1] ""
 #| "%1 Upgrade Now!"
 msgid ""
 "\n"
-"Your device is no longer receiving updates or security fixes - please "
+"Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
 "इस संस्करण को अब केडीई निऑन की ओर से अद्यतन एवं सुरक्षा सुधार मिलना बन्द हो जाएगा%1 "
 "अभी अपग्रेड करें!"
+
+#: src/notifier.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title/window upgrade failure dialog"
+#| msgid "Upgrade Failed"
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "अपग्रेड असफल"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format

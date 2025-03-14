@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-20 01:57+0000\n"
+"POT-Creation-Date: 2025-03-14 00:45+0000\n"
 "PO-Revision-Date: 2024-04-23 19:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,7 +18,7 @@ msgstr ""
 "notifier.pot\n"
 "X-Crowdin-File-ID: 56118\n"
 
-#: src/notifier.cpp:22 src/notifier.cpp:49
+#: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
 msgstr "有可用更新"
@@ -30,28 +30,48 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 已经推出，可以升级。"
 
 #: src/notifier.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in 1 day - "
+#| "please upgrade when possible."
+#| msgid_plural ""
+#| "\n"
+#| "Your device will stop receiving updates and security fixes in %1 days - "
+#| "please upgrade when possible."
 msgid ""
 "\n"
-"Your device will stop receiving updates and security fixes in 1 day - please "
+"Your device will stop receiving updates and security fixes in 1 day — please "
 "upgrade when possible."
 msgid_plural ""
 "\n"
-"Your device will stop receiving updates and security fixes in %1 days - "
+"Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
 "您的设备将在 %1 天后停止获得更新和安全修复 - 请尽快升级系统。"
 
 #: src/notifier.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Your device is no longer receiving updates or security fixes - please "
+#| "upgrade now."
 msgid ""
 "\n"
-"Your device is no longer receiving updates or security fixes - please "
+"Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
 "您的设备已不再获得更新和安全修复 - 请立即升级系统。"
+
+#: src/notifier.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title/window upgrade failure dialog"
+#| msgid "Upgrade Failed"
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "升级失败"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
