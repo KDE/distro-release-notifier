@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-21 05:24+0200\n"
+"PO-Revision-Date: 2025-03-14 04:26+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -30,15 +30,7 @@ msgid "%1 %2 is available."
 msgstr "ხელმისაწვდომია %1 %2."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -50,34 +42,28 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "თქვენი მოწყობილობა განახლებებისა და უსაფრთხოების პაჩების მიღებას 1 დღეში "
-"შეწყვეტს - აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება."
+"შეწყვეტს — აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება."
 msgstr[1] ""
 "\n"
 "თქვენი მოწყობილობა განახლებებისა და უსაფრთხოების პაჩების მიღებას %1 დღეში "
-"შეწყვეტს - აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება."
+"შეწყვეტს — აწიეთ ვერსია, როცა ეს შესაძლებელი იქნება."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"ეს ვერსია განახლებებს და უსაფრთხოების პაჩებს აღარ მიიღეთ - ასწიეთ ვერსია "
-"ახლა."
+"თქვენი მოწყობილობა განახლებებს და უსაფრთხოების პაჩებს აღარ მიიღებს — "
+"გააუმჯობესეთ ის."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "განახლების შეცდომა"
+msgstr "გაუმჯობესება"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
