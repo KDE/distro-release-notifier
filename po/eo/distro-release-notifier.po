@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-21 10:41+0200\n"
+"PO-Revision-Date: 2025-03-15 22:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -30,15 +30,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 disponeblas."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -49,50 +41,44 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Via aparato ĉesos recevi ĝisdatigojn kaj sekurecajn flikojn post 1 tago - "
+"Via aparato ĉesos recevi ĝisdatigojn kaj sekurecajn flikojn post 1 tago — "
 "bonvolu aktualigi kiam eblas."
 msgstr[1] ""
 "\n"
-"Via aparato ĉesos recevi ĝisdatigojn kaj sekurecajn flikojn post %1 tagoj - "
+"Via aparato ĉesos recevi ĝisdatigojn kaj sekurecajn flikojn post %1 tagoj — "
 "bonvolu aktualigi kiam eblas."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"Via aparato ne plu estas recevanta ĝisdatigojn aŭ sekurecflikojn - bonvolu "
+"Via aparato ne plu estas recevanta ĝisdatigojn aŭ sekurecflikojn — bonvolu "
 "aktualigi nun."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "Ĝisdatigo Malsukcesis"
+msgstr "Promocii"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
 msgctxt "Screensaver inhibition reason"
 msgid "Upgrading Operating System"
-msgstr "Ĝisdatigi Operaciumon"
+msgstr "Promociante Operaciumon"
 
 #: src/upgraderprocess.cpp:98
 #, kde-format
 msgctxt "@title/window upgrade failure dialog"
 msgid "Upgrade Failed"
-msgstr "Ĝisdatigo Malsukcesis"
+msgstr "Promocio Malsukcesis"
 
 #: src/upgraderprocess.cpp:104
 #, kde-format
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
-msgstr "Ĝisdatigo malsukcesis kun la sekva eligo:"
+msgstr "Promocio malsukcesis kun la sekva eligo:"

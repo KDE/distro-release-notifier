@@ -40,6 +40,8 @@ msgid_plural ""
 "Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
+"\n"
+"您的设备将在 %1 天后停止获得更新和安全修复 — 请尽快升级系统。"
 
 #: src/notifier.cpp:30
 #, kde-format
@@ -48,12 +50,14 @@ msgid ""
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
+"\n"
+"您的设备已不再获得更新和安全修复 — 请立即升级系统。"
 
 #: src/notifier.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr ""
+msgstr "升级"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
