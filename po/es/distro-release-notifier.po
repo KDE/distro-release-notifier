@@ -1,14 +1,14 @@
-# Translation of distro-release-notifier to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Spanish translations for distro-release-notifier.po package.
+# Copyright (C) 2018-2025 This_file_is_part_of_KDE
 # This file is distributed under the same license as the distro-release-notifier package.
 #
-# SPDX-FileCopyrightText: 2018, 2020, 2023, 2024 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
+# SPDX-FileCopyrightText: 2018, 2020, 2023, 2024, 2025 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-22 16:44+0200\n"
+"PO-Revision-Date: 2025-03-15 20:07+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -30,15 +30,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 está disponible."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -50,34 +42,28 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "Su dispositivo dejará de recibir actualizaciones y parches de seguridad en 1 "
-"día. Actualice cuando pueda."
+"día — Actualice cuando pueda."
 msgstr[1] ""
 "\n"
 "Su dispositivo dejará de recibir actualizaciones y parches de seguridad en "
-"%1 días. Actualice cuando pueda."
+"%1 días — Actualice cuando pueda."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"Su dispositivo no recibirá más actualizaciones ni parches de seguridad. "
+"Su dispositivo no recibirá más actualizaciones ni parches de seguridad — "
 "¡Actualice ahora!"
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "La actualización falló"
+msgstr "Actualización"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
