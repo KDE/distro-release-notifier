@@ -75,12 +75,10 @@ msgstr ""
 "ihned proveďte upgrade."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "Aktualizace selhala"
+msgstr "Aktualizovat"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
