@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
-# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-26 11:39+0400\n"
+"PO-Revision-Date: 2025-03-20 10:22+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -30,15 +30,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 متوفّرة."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -49,50 +41,44 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال يوم واحد - يرجى "
+"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال يوم واحد — يرجى "
 "الترقية عندما يكون ذلك ممكنًا."
 msgstr[1] ""
 "\n"
-"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال يوم واحد - يرجى "
+"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال يوم واحد — يرجى "
 "الترقية عندما يكون ذلك ممكنًا."
 msgstr[2] ""
 "\n"
-"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال يومين - يرجى الترقية "
+"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال يومين — يرجى الترقية "
 "عندما يكون ذلك ممكنًا."
 msgstr[3] ""
 "\n"
-"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال %1 أيام - يرجى "
+"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال %1 أيام — يرجى "
 "الترقية عندما يكون ذلك ممكنًا."
 msgstr[4] ""
 "\n"
-"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال %1 يوما - يرجى "
+"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال %1 يوما — يرجى "
 "الترقية عندما يكون ذلك ممكنًا."
 msgstr[5] ""
 "\n"
-"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال %1 يوم - يرجى الترقية "
+"سيتوقف جهازك عن تلقي التحديثات والإصلاحات الأمنية خلال %1 يوم — يرجى الترقية "
 "عندما يكون ذلك ممكنًا."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"لم يعد جهازك يتلقى تحديثات أو إصلاحات أمنية - يرجى الترقية الآن."
+"لم يعد جهازك يتلقى تحديثات أو إصلاحات أمنية — يرجى الترقية الآن."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "فشلت الترقية"
+msgstr "رقِّ"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format

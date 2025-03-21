@@ -1,16 +1,16 @@
 # Translation of distro-release-notifier.po to Catalan (Valencian)
-# Copyright (C) 2018-2024 This_file_is_part_of_KDE
+# Copyright (C) 2018-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
+# SPDX-FileCopyrightText: 2018, 2020, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2018, 2020, 2023.
-# SPDX-FileCopyrightText: 2018, 2020, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-10-12 21:03+0200\n"
+"PO-Revision-Date: 2025-03-14 09:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -32,15 +32,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 està disponible."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -51,19 +43,15 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Este dispositiu deixarà de rebre actualitzacions i esmenes de seguretat en 1 "
-"dia. Actualitzeu-lo quan siga possible."
+"Este dispositiu deixarà de rebre actualitzacions i esmenes de seguretat "
+"d'ací a 1 dia. Actualitzeu-lo quan siga possible."
 msgstr[1] ""
 "\n"
-"Este dispositiu deixarà de rebre actualitzacions i esmenes de seguretat en "
-"%1 dies. Actualitzeu-lo quan siga possible."
+"Este dispositiu deixarà de rebre actualitzacions i esmenes de seguretat "
+"d'ací a %1 dies. Actualitzeu-lo quan siga possible."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
@@ -74,12 +62,10 @@ msgstr ""
 "Actualitzeu-lo ara."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "No s'ha pogut fer l'actualització"
+msgstr "Actualitza"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
