@@ -1,17 +1,17 @@
 # Translation of desktop-release-notifier.po to Euskara/Basque (eu).
 # Copyright (C) 2018, Free Software Foundation.
-# Copyright (C) 2019-2024 This file is copyright:
+# Copyright (C) 2019-2025 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
-# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2018, 2020, 2023, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: Iñigo Salvador Azurmendi <xalba@ni.eus>, 2018, 2020, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-25 22:21+0200\n"
+"PO-Revision-Date: 2025-03-26 20:47+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -33,15 +33,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 erabilgarri dago."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -53,18 +45,14 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "Zure gailuak, egun 1 barru, eguneratzeak eta segurtasun konponketak "
-"jasotzeari utziko dio - mesedez, bertsio-berritu ahal duzunean."
+"jasotzeari utziko dio — mesedez, ahal duzunean bertsio-berritu ezazu."
 msgstr[1] ""
 "\n"
 "Zure gailuak, %1 egun barru, eguneratzeak eta segurtasun konponketak "
-"jasotzeari utziko dio - mesedez, bertsio-berritu ahal duzunean."
+"jasotzeari utziko dio — mesedez, ahal duzunean bertsio-berritu ezazu."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
@@ -72,15 +60,13 @@ msgid ""
 msgstr ""
 "\n"
 "Zure gailuak aurrerantzean ez ditu eguneratzeak eta segurtasun konponketak "
-"jasoko - bertsio-berritu orain."
+"jasoko — bertsio-berritu orain."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "Bertsio-berritzea huts egin du"
+msgstr "Bertsio-berritu"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
