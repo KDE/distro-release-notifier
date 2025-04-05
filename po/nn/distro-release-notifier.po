@@ -32,14 +32,6 @@ msgstr "%1 %2 er no tilgjengeleg."
 
 #: src/notifier.cpp:25
 #, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -59,10 +51,6 @@ msgstr[1] ""
 
 #: src/notifier.cpp:30
 #, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
@@ -74,8 +62,6 @@ msgstr ""
 
 #: src/notifier.cpp:49
 #, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
 msgctxt "@action:button"
 msgid "Upgrade"
 msgstr "Feil ved oppgradering"

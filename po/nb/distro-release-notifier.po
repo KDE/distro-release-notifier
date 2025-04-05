@@ -1,6 +1,5 @@
 # Translation of distro-release-notifier to Norwegian Bokmål
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
