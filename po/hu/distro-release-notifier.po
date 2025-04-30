@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
 #
-# SPDX-FileCopyrightText: 2018, 2020, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2018, 2020, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-30 22:18+0200\n"
+"PO-Revision-Date: 2025-04-29 21:41+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -29,15 +29,7 @@ msgid "%1 %2 is available."
 msgstr "A(z) %1 %2 elérhető."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -49,34 +41,28 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "Az eszköze 1 nap múlva nem kap többé frissítéseket és biztonsági javításokat "
-"- kérjük, frissítsen újabb kiadásra, amint lehet."
+"— kérjük, frissítsen újabb kiadásra, amint lehet."
 msgstr[1] ""
 "\n"
 "Az eszköze %1 nap múlva nem kap többé frissítéseket és biztonsági "
-"javításokat - kérjük, frissítsen újabb kiadásra, amint lehet."
+"javításokat — kérjük, frissítsen újabb kiadásra, amint lehet."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"Az eszköze nem kap többé frissítéseket és biztonsági javításokat - kérjük, "
+"Az eszköze nem kap többé frissítéseket és biztonsági javításokat — kérjük, "
 "frissítsen újabb kiadásra most."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "A frissítés meghiúsult"
+msgstr "Frissítés"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
