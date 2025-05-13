@@ -29,15 +29,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 je dostupné."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -47,32 +39,16 @@ msgid_plural ""
 "Your device will stop receiving updates and security fixes in %1 days — "
 "please upgrade when possible."
 msgstr[0] ""
-"\n"
-"Vaše zařízení přestane dostávat aktualizace a bezpečnostní opravy za 1 den. "
-"Prosím proveďte upgrade co nejdříve."
 msgstr[1] ""
-"\n"
-"Vaše zařízení přestane dostávat aktualizace a bezpečnostní opravy za 1% dny. "
-"Prosím proveďte upgrade co nejdříve."
 msgstr[2] ""
-"\n"
-"Vaše zařízení přestane dostávat aktualizace a bezpečnostní opravy za %1 dnů. "
-"Prosím proveďte upgrade co nejdříve."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
-"\n"
-"Vaše zařízení již nezískává aktualizace nebo bezpečnostní opravy. Prosím, "
-"ihned proveďte upgrade."
 
 #: src/notifier.cpp:49
 #, kde-format
