@@ -28,6 +28,7 @@
         "Description[nn]": "Ser etter og varslar om nye systemutgåver",
         "Description[pl]": "Sprawdza dostępność nowych wydań systemu i powiadamia o nich",
         "Description[pt_BR]": "Verifica por novos lançamentos do sistema e notifica quando disponível",
+        "Description[ru]": "Проверка наличия новых выпусков системы",
         "Description[sa]": "नूतनानां प्रणालीविमोचनानाम् अवलोकनं करोति, उपलब्धे सति च सूचयति",
         "Description[sl]": "Preverja, ali so na voljo nove izdaje sistema, in obvešča, ko so na voljo",
         "Description[sv]": "Söker efter nya systemutgåvor och underrättar när de är tillgängliga",
