@@ -2,6 +2,7 @@
     "KPlugin": {
         "Description": "Checks for new system releases and notifies when available",
         "Description[ar]": "يتحقق من إصدارات النظام الجديد ويبلغ عند توفرها",
+        "Description[az]": "Sistemin yeni buraxılışlarını yoxlamaq və mövcud olduqda onları bildirmək",
         "Description[ca@valencia]": "Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible",
         "Description[ca]": "Comprova si hi ha algun llançament nou del sistema i notifica quan està disponible",
         "Description[cs]": "Kontroluje a upozorňuje na nová vydání operačního systému",
@@ -40,7 +41,7 @@
         "Icon": "system-software-update",
         "Name": "Operating System Release Notifier",
         "Name[ar]": "إعلام بإصدار نظام التشغيل",
-        "Name[az]": "Əməliyyat Sistemi Buraxılışı Bildirişi",
+        "Name[az]": "Əməliyyat sistemi buraxılışı bildirişi",
         "Name[ca@valencia]": "Notificador de llançament del sistema operatiu",
         "Name[ca]": "Notificador de llançament del sistema operatiu",
         "Name[cs]": "Upozornění na vydání operačního systému",
