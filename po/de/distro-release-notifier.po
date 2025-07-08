@@ -2,26 +2,27 @@
 # This file is distributed under the same license as the distro-release-notifier package.
 # Burkhard Lück <lueck@hube-lueck.de>, 2018, 2020.
 # SPDX-FileCopyrightText: 2023, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n@prly.mozmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-09-30 11:14+0200\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2025-05-26 12:47+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
-msgstr "Aktualisierung verfügbar"
+msgstr "Betriebssystemaktualisierung verfügbar"
 
 #: src/notifier.cpp:23
 #, kde-format
@@ -30,15 +31,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 ist verfügbar."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -50,34 +43,31 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "Dieses Gerät wird in einem Tag keine normalen und sicherheitskritischen "
-"Aktualisierung mehr erhalten. Bitte aktualisieren Sie bei Gelegenheit."
+"Aktualisierungen mehr erhalten. Bitte aktualisieren Sie das Betriebssystem "
+"bei Gelegenheit."
 msgstr[1] ""
 "\n"
 "Dieses Gerät wird in %1 Tagen keine normalen und sicherheitskritischen "
-"Aktualisierung mehr erhalten. Bitte aktualisieren Sie bei Gelegenheit."
+"Aktualisierungen mehr erhalten. Bitte aktualisieren Sie das Betriebssystem "
+"bei Gelegenheit."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"Dieses Gerät wird keine normalen und sicherheitskritischen Aktualisierungen "
-"mehr erhalten. Bitte aktualisieren Sie jetzt."
+"Dieses Gerät erhält keine normalen und sicherheitskritischen "
+"Aktualisierungen mehr. Bitte aktualisieren Sie Ihr Betriebssystem auf eine "
+"neuere Version."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "Aktualisierung fehlgeschlagen"
+msgstr "Aktualisieren"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
@@ -95,7 +85,9 @@ msgstr "Aktualisierung fehlgeschlagen"
 #, kde-format
 msgctxt "@title title widget above process output"
 msgid "Upgrade failed with the following output:"
-msgstr "Die Aktualisierung ist mit folgender Fehlermeldung fehlgeschlagen:"
+msgstr ""
+"Die Betriebssystemaktualisierung ist mit folgender Fehlermeldung "
+"fehlgeschlagen:"
 
 #~ msgctxt "KDE neon on 18.04"
 #~ msgid "%1 on %2"
