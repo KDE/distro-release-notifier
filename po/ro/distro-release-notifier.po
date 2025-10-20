@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2024.
+# SPDX-FileCopyrightText: 2020, 2024, 2025 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:45+0000\n"
-"PO-Revision-Date: 2024-01-07 16:13+0000\n"
+"PO-Revision-Date: 2025-10-19 02:32+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -24,23 +24,13 @@ msgid "Upgrade available"
 msgstr "Înnoire disponibilă"
 
 #: src/notifier.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "For example, 'KDE neon 18.04 is available.'"
-#| msgid "%1 %2 is available."
+#, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
 msgstr "%1 %2 e disponibil."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day - "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in %1 days - "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -52,22 +42,18 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "Acest dispozitiv va înceta să primească actualizări și corecții de "
-"securitate în 1 zi, înnoiți sistemul."
+"securitate în 1 zi, înnoiți sistemul când aveți ocazia."
 msgstr[1] ""
 "\n"
 "Acest dispozitiv va înceta să primească actualizări și corecții de "
-"securitate în %1 zile, înnoiți sistemul."
+"securitate în %1 zile, înnoiți sistemul când aveți ocazia."
 msgstr[2] ""
 "\n"
 "Acest dispozitiv va înceta să primească actualizări și corecții de "
-"securitate în %1 de zile, înnoiți sistemul."
+"securitate în %1 de zile, înnoiți sistemul când aveți ocazia."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device is no longer receiving updates or security fixes - please "
-#| "upgrade now."
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
@@ -75,15 +61,13 @@ msgid ""
 msgstr ""
 "\n"
 "Acest dispozitiv nu mai primește actualizări sau corecții de securitate, "
-"înnoiți-l acum."
+"înnoiți acum."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "Înnoirea a eșuat"
+msgstr "Înnoiește"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
