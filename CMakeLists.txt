@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2018 Rik Mills <rikmills@kubuntu.org>
 # SPDX-FileCopyrightText: 2018-2020 Harald Sitter <sitter@kde.org>
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 project(distroreleasenotifier)
 
