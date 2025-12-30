@@ -1,0 +1,83 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the distro-release-notifier package.
+#
+# SPDX-FileCopyrightText: 2025 Agron Selimaj <as9902613@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: distro-release-notifier\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2025-12-29 11:24-0500\n"
+"Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
+"Language-Team: sq\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.0\n"
+
+#: src/notifier.cpp:22
+#, kde-format
+msgid "Upgrade available"
+msgstr "Ka përmirësim të ri"
+
+#: src/notifier.cpp:23
+#, kde-format
+msgctxt "For example, 'KDE neon 24.04 is available.'"
+msgid "%1 %2 is available."
+msgstr "Doli %1 %2."
+
+#: src/notifier.cpp:25
+#, kde-format
+msgid ""
+"\n"
+"Your device will stop receiving updates and security fixes in 1 day — please "
+"upgrade when possible."
+msgid_plural ""
+"\n"
+"Your device will stop receiving updates and security fixes in %1 days — "
+"please upgrade when possible."
+msgstr[0] ""
+"\n"
+"Pajisja juaj do të ndalojë së marri përditësime dhe përmirësime sigurie në 1 "
+"ditë — ju lutemi, përditësime kur të jetë e mundur."
+msgstr[1] ""
+"\n"
+"Pajisja juaj do të ndalojë së marri përditësime dhe përmirësime sigurie në "
+"%1 ditë — ju lutemi, përditësime kur të jetë e mundur."
+
+#: src/notifier.cpp:30
+#, kde-format
+msgid ""
+"\n"
+"Your device is no longer receiving updates or security fixes — please "
+"upgrade now."
+msgstr ""
+"\n"
+"Pajisja juaj ka ndalur së marri përditësime dhe përmirësime sigurie në 1 "
+"ditë — ju lutemi, përditësime tani."
+
+#: src/notifier.cpp:49
+#, kde-format
+msgctxt "@action:button"
+msgid "Upgrade"
+msgstr "Përmirësoni"
+
+#: src/screensaverinhibitor.cpp:24
+#, kde-format
+msgctxt "Screensaver inhibition reason"
+msgid "Upgrading Operating System"
+msgstr "Duke Përmirësuar Sistemin Operativ"
+
+#: src/upgraderprocess.cpp:98
+#, kde-format
+msgctxt "@title/window upgrade failure dialog"
+msgid "Upgrade Failed"
+msgstr "Përmirësimi Dështoi"
+
+#: src/upgraderprocess.cpp:104
+#, kde-format
+msgctxt "@title title widget above process output"
+msgid "Upgrade failed with the following output:"
+msgstr "Përmirësimi dështoi : me këtë rezultat:"
