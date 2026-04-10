@@ -25,7 +25,7 @@ msgstr "Dostupná inovácia"
 #, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "%1 %2 je k dispozícii."
 
 #: src/notifier.cpp:25
 #, kde-format
@@ -54,6 +54,9 @@ msgid ""
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
+"\n"
+"Vaše zariadenie už nedostáva aktualizácie ani bezpečnostné opravy — "
+"aktualizujte teraz."
 
 #: src/notifier.cpp:49
 #, kde-format
