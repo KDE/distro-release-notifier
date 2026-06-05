@@ -51,7 +51,7 @@ msgid ""
 "upgrade now."
 msgstr ""
 "\n"
-"您的设备已不再获得更新和安全修复 — 请立即升级系统。"
+"您的设备已不再获得更新或安全修复 — 请立即升级系统。"
 
 #: src/notifier.cpp:49
 #, kde-format
