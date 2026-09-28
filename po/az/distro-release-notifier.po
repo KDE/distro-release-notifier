@@ -2,26 +2,26 @@
 # This file is distributed under the same license as the distro-release-notifier package.
 #
 # SPDX-FileCopyrightText: 2025 X əyyam
-# SPDX-FileCopyrightText: 2025 linux <xxmn77@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 linux <xxmn77@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-06-02 16:32+0400\n"
-"Last-Translator: linux <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2026-09-26 22:06+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: src/notifier.cpp:22
 #, kde-format
 msgid "Upgrade available"
-msgstr "Ən son yenilənmə əlçatandır"
+msgstr "Yenilənmə mövcuddur"
 
 #: src/notifier.cpp:23
 #, kde-format
@@ -30,15 +30,7 @@ msgid "%1 %2 is available."
 msgstr "%1 %2 əlçatandır"
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 day — "
-#| "please upgrade when possible."
-#| msgid_plural ""
-#| "\n"
-#| "Your device will stop receiving updates and security fixes in 1 days — "
-#| "please upgrade when possible."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -49,12 +41,12 @@ msgid_plural ""
 "please upgrade when possible."
 msgstr[0] ""
 "\n"
-"Bu cihazda yenilənmələrin və təhlükəsizlik düzəlişlərinin alınması 1 gün "
-"sonra dayandırılacaq. Mümkün olduqda ən son versiyaya yeniləyin."
+"1 gündən sonra cihazınız yenilənmələrini və təhlükəsizlik sazlamalarını "
+"almayacaq. Mümkün olduqda yeniləməniz tövsiyyə olunur."
 msgstr[1] ""
 "\n"
-"Bu cihazda yenilənmələrin və təhlükəsizlik düzəlişlərinin alınması 1 gün "
-"sonra dayandırılacaq. Mümkün olduqda ən son versiyaya yeniləyin."
+"%1 gündən sonra cihazınız yenilənmələrini və təhlükəsizlik sazlamalarını "
+"almayacaq. Mümkün olduqda yeniləməniz tövsiyyə olunur."
 
 #: src/notifier.cpp:30
 #, kde-format
