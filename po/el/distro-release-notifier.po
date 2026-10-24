@@ -1,21 +1,23 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the distro-release-notifier package.
 #
 # Stelios <sstavra@gmail.com>, 2020.
+# SPDX-FileCopyrightText: 2026 SPDX-FileCopyrightText :
+# SPDX-FileCopyrightText: 2026 Λευτέρης Τ. <tripoleft@protonmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: distro-release-notifier\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2020-08-09 11:10+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
-"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"PO-Revision-Date: 2026-10-21 13:44+0300\n"
+"Last-Translator: Λευτέρης Τ. <tripoleft@protonmail.com>\n"
+"Language-Team: Greek <kde-i18n-doc@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: src/notifier.cpp:22
 #, kde-format
@@ -26,16 +28,10 @@ msgstr "Διαθέσιμη αναβάθμιση"
 #, kde-format
 msgctxt "For example, 'KDE neon 24.04 is available.'"
 msgid "%1 %2 is available."
-msgstr ""
+msgstr "Το %1 %2 είναι διαθέσιμο."
 
 #: src/notifier.cpp:25
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in 1 day."
-#| msgid_plural ""
-#| "\n"
-#| "This version will stop receiving updates and security fixes in %1 days."
+#, kde-format
 msgid ""
 "\n"
 "Your device will stop receiving updates and security fixes in 1 day — please "
@@ -47,37 +43,28 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "Αυτή η έκδοση θα σταματήσει να λαμβάνει ενημερώσεις και διορθώσεις ασφαλείας "
-"σε 1 ημέρα."
+"σε 1 ημέρα — παρακαλούμε αναβαθμίστε όταν ευκαιρήσετε."
 msgstr[1] ""
 "\n"
 "Αυτή η έκδοση θα σταματήσει να λαμβάνει ενημερώσεις και διορθώσεις ασφαλείας "
-"σε %1 ημέρες."
+"σε %1 ημέρες — παρακαλούμε αναβαθμίστε όταν ευκαιρήσετε."
 
 #: src/notifier.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "Warning notice with emoji"
-#| msgid ""
-#| "\n"
-#| "This version will no longer receive updates or security fixes from KDE "
-#| "neon.\n"
-#| "%1 Upgrade Now!"
+#, kde-format
 msgid ""
 "\n"
 "Your device is no longer receiving updates or security fixes — please "
 "upgrade now."
 msgstr ""
 "\n"
-"Αυτή η έκδοση δε θα λαμβάνει πλέον ενημερώσεις ή διορθώσεις ασφαλείας από το "
-"KDE neon.\n"
-"%1 Αναβαθμίστε τώρα!"
+"Αυτή η συσκευή δεν λαμβάνει ενημερώσεις και διορθώσεις ασφαλείας πλέον — "
+"παρακαλούμε αναβαθμίστε τώρα."
 
 #: src/notifier.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title/window upgrade failure dialog"
-#| msgid "Upgrade Failed"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade"
-msgstr "Αποτυχία αναβάθμισης"
+msgstr "Αναβάθμιση"
 
 #: src/screensaverinhibitor.cpp:24
 #, kde-format
